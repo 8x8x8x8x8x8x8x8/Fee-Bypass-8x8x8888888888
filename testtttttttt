@@ -579,7 +579,7 @@ G2L["38"]["BackgroundTransparency"] = 0.5;
 G2L["38"]["Size"] = UDim2.new(0, 127, 0, 88);
 G2L["38"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["38"]["Text"] = [[Hide Gui]];
-G2L["38"]["Position"] = UDim2.new(-7.73171, 0, 6.05649, 0);
+G2L["38"]["Position"] = UDim2.new(-8.36171, 0, 5.74649, 0);
 
 
 -- StarterGui.ScreenGui.Frame.TextButton.LocalScript
@@ -931,33 +931,508 @@ task.spawn(C_34);
 local function C_36()
 local script = G2L["36"];
 	local button = script.Parent
-	local mainGui = button.Parent
+	local Players = game:GetService("Players")
+	local RunService = game:GetService("RunService")
+	local player = Players.LocalPlayer
 	
-	-- Elements that make up the console content (toggled when opening/closing)
-	local consoleElements = {
-		mainGui:FindFirstChild("Box"),
-		mainGui:FindFirstChild("Execute"),
-		mainGui:FindFirstChild("ClearButton"),
-		mainGui:FindFirstChild("Inject"),
-		mainGui:FindFirstChild("ScrollingFrame"),
-		mainGui:FindFirstChild("Frame"),
-		mainGui:FindFirstChild("ImageButton"),
-	}
+	local toolsGiven = false
 	
-	local isOpen = true
+	local function giveTools()
+		if toolsGiven then return end
+		toolsGiven = true
 	
-	local function setConsoleVisible(visible)
-		for _, element in ipairs(consoleElements) do
-			if element then
-				element.Visible = visible
+		local mouse = player:GetMouse()
+	
+		-- Create the tool (client-sided only)
+		local tool = Instance.new("Tool")
+		tool.Name = "Laser Blaster"
+		tool.ToolTip = "Click to fire lasers!"
+		tool.RequiresHandle = true
+	
+		-- Create a handle part so the tool can be equipped
+		local handle = Instance.new("Part")
+		handle.Name = "Handle"
+		handle.Size = Vector3.new(0.5, 0.5, 1.5)
+		handle.Color = Color3.fromRGB(0, 200, 255)
+		handle.Material = Enum.Material.Neon
+		handle.CanCollide = false
+		handle.Parent = tool
+	
+		-- Add a glow effect to the handle
+		local selectionBox = Instance.new("SelectionBox")
+		selectionBox.Adornee = handle
+		selectionBox.Color3 = Color3.fromRGB(0, 150, 255)
+		selectionBox.LineThickness = 0.05
+		selectionBox.Parent = handle
+	
+		local debounce = false
+	
+		local function fireLaser()
+			if debounce then return end
+			debounce = true
+			task.delay(0.3, function() debounce = false end)
+	
+			local character = player.Character
+			if not character then return end
+			local hrp = character:FindFirstChild("HumanoidRootPart")
+			if not hrp then return end
+	
+			local startPos = hrp.Position
+			local targetPos = mouse.Hit.Position
+			local direction = (targetPos - startPos).Unit
+			local distance = (targetPos - startPos).Magnitude
+	
+			-- Create the laser beam
+			local laser = Instance.new("Part")
+			laser.Anchored = true
+			laser.CanCollide = false
+			laser.Material = Enum.Material.Neon
+			laser.Color = Color3.fromRGB(0, 255, 150)
+			laser.Transparency = 0.2
+			laser.Shape = Enum.PartType.Cylinder
+			laser.Size = Vector3.new(0.2, distance, 0.2)
+	
+			-- Position and orient the laser from start to target
+			local midPoint = (startPos + targetPos) / 2
+			laser.CFrame = CFrame.lookAt(midPoint, targetPos) * CFrame.Angles(0, math.rad(90), 0)
+			laser.Parent = workspace
+	
+			-- Add a point light at the target for extra flair
+			local light = Instance.new("PointLight")
+			light.Color = Color3.fromRGB(0, 255, 150)
+			light.Range = 10
+			light.Brightness = 3
+			light.Parent = laser
+	
+			-- Animate the laser fading out
+			local tweenInfo = TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+			-- Fade and shrink
+			task.spawn(function()
+				local steps = 10
+				for i = 1, steps do
+					local alpha = i / steps
+					laser.Transparency = 0.2 + alpha * 0.8
+					laser.Size = laser.Size * (1 - alpha * 0.1)
+					task.wait(0.025)
+				end
+				laser:Destroy()
+			end)
+	
+			-- Create a small impact explosion effect at the target
+			local impact = Instance.new("Part")
+			impact.Anchored = true
+			impact.CanCollide = false
+			impact.Shape = Enum.PartType.Ball
+			impact.Material = Enum.Material.Neon
+			impact.Color = Color3.fromRGB(0, 255, 200)
+			impact.Size = Vector3.new(1, 1, 1)
+			impact.CFrame = CFrame.new(targetPos)
+			impact.Parent = workspace
+	
+			local impactLight = Instance.new("PointLight")
+			impactLight.Color = Color3.fromRGB(0, 255, 200)
+			impactLight.Range = 15
+			impactLight.Brightness = 5
+			impactLight.Parent = impact
+	
+			task.spawn(function()
+				local steps = 8
+				for i = 1, steps do
+					local alpha = i / steps
+					impact.Transparency = alpha
+					impact.Size = impact.Size + Vector3.new(0.5, 0.5, 0.5)
+					task.wait(0.03)
+				end
+				impact:Destroy()
+			end)
+		end
+	
+		tool.Activated:Connect(fireLaser)
+	
+		-- === NUKE TOOL ===
+		local nukeTool = Instance.new("Tool")
+		nukeTool.Name = "Nuke"
+		nukeTool.ToolTip = "Click to detonate a nuke!"
+		nukeTool.RequiresHandle = true
+	
+		local nukeHandle = Instance.new("Part")
+		nukeHandle.Name = "Handle"
+		nukeHandle.Size = Vector3.new(1, 1, 2)
+		nukeHandle.Color = Color3.fromRGB(255, 85, 0)
+		nukeHandle.Material = Enum.Material.Metal
+		nukeHandle.CanCollide = false
+		nukeHandle.Parent = nukeTool
+	
+		local nukeGlow = Instance.new("SelectionBox")
+		nukeGlow.Adornee = nukeHandle
+		nukeGlow.Color3 = Color3.fromRGB(255, 0, 0)
+		nukeGlow.LineThickness = 0.08
+		nukeGlow.Parent = nukeHandle
+	
+		local nukeDebounce = false
+	
+		local function detonateNuke()
+			if nukeDebounce then return end
+			nukeDebounce = true
+			task.delay(3, function() nukeDebounce = false end)
+	
+			local character = player.Character
+			if not character then return end
+			local hrp = character:FindFirstChild("HumanoidRootPart")
+			if not hrp then return end
+	
+			local targetPos = mouse.Hit.Position
+			local camera = workspace.CurrentCamera
+	
+			-- === TARGETING BEACON ===
+			local beacon = Instance.new("Part")
+			beacon.Anchored = true
+			beacon.CanCollide = false
+			beacon.Shape = Enum.PartType.Cylinder
+			beacon.Material = Enum.Material.Neon
+			beacon.Color = Color3.fromRGB(255, 0, 0)
+			beacon.Size = Vector3.new(0.2, 30, 30)
+			beacon.CFrame = CFrame.new(targetPos) * CFrame.Angles(0, 0, math.rad(90))
+			beacon.Transparency = 0.5
+			beacon.Parent = workspace
+	
+			local beaconLight = Instance.new("PointLight")
+			beaconLight.Color = Color3.fromRGB(255, 0, 0)
+			beaconLight.Range = 40
+			beaconLight.Brightness = 5
+			beaconLight.Parent = beacon
+	
+			-- Vertical targeting beam
+			local beam = Instance.new("Part")
+			beam.Anchored = true
+			beam.CanCollide = false
+			beam.Material = Enum.Material.Neon
+			beam.Color = Color3.fromRGB(255, 50, 50)
+			beam.Size = Vector3.new(1, 300, 1)
+			beam.CFrame = CFrame.new(targetPos + Vector3.new(0, 150, 0))
+			beam.Transparency = 0.3
+			beam.Parent = workspace
+	
+			-- Countdown beep sound
+			local beep = Instance.new("Sound")
+			beep.SoundId = "rbxassetid://9118823104"
+			beep.Volume = 1
+			beep.Parent = beacon
+	
+			-- Flash warning for 1.5 seconds with shrinking beacon
+			for i = 1, 7 do
+				beacon.Transparency = i % 2 == 0 and 0.2 or 0.8
+				beaconLight.Brightness = i % 2 == 0 and 8 or 2
+				beep:Play()
+				task.wait(0.2)
 			end
+			beacon:Destroy()
+			beam:Destroy()
+	
+			-- === DETONATION ===
+	
+			-- Core flash orb (blinding white center)
+			local coreFlash = Instance.new("Part")
+			coreFlash.Anchored = true
+			coreFlash.CanCollide = false
+			coreFlash.Shape = Enum.PartType.Ball
+			coreFlash.Material = Enum.Material.Neon
+			coreFlash.Color = Color3.fromRGB(255, 255, 255)
+			coreFlash.Size = Vector3.new(3, 3, 3)
+			coreFlash.CFrame = CFrame.new(targetPos)
+			coreFlash.Parent = workspace
+	
+			-- Main fireball (color shifts from white -> yellow -> orange -> red -> dark)
+			local fireball = Instance.new("Part")
+			fireball.Anchored = true
+			fireball.CanCollide = false
+			fireball.Shape = Enum.PartType.Ball
+			fireball.Material = Enum.Material.Neon
+			fireball.Color = Color3.fromRGB(255, 255, 255)
+			fireball.Size = Vector3.new(5, 5, 5)
+			fireball.CFrame = CFrame.new(targetPos)
+			fireball.Parent = workspace
+	
+			local fireballLight = Instance.new("PointLight")
+			fireballLight.Color = Color3.fromRGB(255, 200, 100)
+			fireballLight.Range = 100
+			fireballLight.Brightness = 20
+			fireballLight.Parent = fireball
+	
+			-- Inner fireball (hotter core)
+			local innerFire = Instance.new("Part")
+			innerFire.Anchored = true
+			innerFire.CanCollide = false
+			innerFire.Shape = Enum.PartType.Ball
+			innerFire.Material = Enum.Material.Neon
+			innerFire.Color = Color3.fromRGB(255, 255, 200)
+			innerFire.Size = Vector3.new(3, 3, 3)
+			innerFire.CFrame = CFrame.new(targetPos)
+			innerFire.Parent = workspace
+	
+			-- Multiple shockwave rings (3 rings at different speeds)
+			local shockwaves = {}
+			for swIdx = 1, 3 do
+				local sw = Instance.new("Part")
+				sw.Anchored = true
+				sw.CanCollide = false
+				sw.Material = Enum.Material.Neon
+				sw.Color = swIdx == 1 and Color3.fromRGB(255, 255, 200) or (swIdx == 2 and Color3.fromRGB(255, 150, 50) or Color3.fromRGB(200, 80, 30))
+				sw.Transparency = 0.2
+				sw.Size = Vector3.new(1, 0.3, 1)
+				sw.CFrame = CFrame.new(targetPos) * CFrame.Angles(math.rad(90), 0, 0)
+				sw.Parent = workspace
+				shockwaves[swIdx] = {part = sw, speed = 8 + swIdx * 4, growth = 0}
+			end
+	
+			-- Mushroom cloud stem
+			local stem = Instance.new("Part")
+			stem.Anchored = true
+			stem.CanCollide = false
+			stem.Material = Enum.Material.Neon
+			stem.Color = Color3.fromRGB(255, 100, 0)
+			stem.Size = Vector3.new(8, 1, 8)
+			stem.CFrame = CFrame.new(targetPos + Vector3.new(0, 0.5, 0))
+			stem.Parent = workspace
+	
+			-- Mushroom cloud cap
+			local cap = Instance.new("Part")
+			cap.Anchored = true
+			cap.CanCollide = false
+			cap.Shape = Enum.PartType.Ball
+			cap.Material = Enum.Material.Neon
+			cap.Color = Color3.fromRGB(255, 80, 0)
+			cap.Size = Vector3.new(15, 15, 15)
+			cap.CFrame = CFrame.new(targetPos + Vector3.new(0, 8, 0))
+			cap.Parent = workspace
+	
+			-- Ground scorch (dark disc on the ground)
+			local scorch = Instance.new("Part")
+			scorch.Anchored = true
+			scorch.CanCollide = false
+			scorch.Material = Enum.Material.Neon
+			scorch.Color = Color3.fromRGB(20, 10, 5)
+			scorch.Size = Vector3.new(2, 0.1, 2)
+			scorch.CFrame = CFrame.new(targetPos) * CFrame.Angles(math.rad(90), 0, 0)
+			scorch.Transparency = 0.3
+			scorch.Parent = workspace
+	
+			-- Upward light beam (pillar of light shooting into sky)
+			local lightBeam = Instance.new("Part")
+			lightBeam.Anchored = true
+			lightBeam.CanCollide = false
+			lightBeam.Material = Enum.Material.Neon
+			lightBeam.Color = Color3.fromRGB(255, 200, 100)
+			lightBeam.Size = Vector3.new(3, 200, 3)
+			lightBeam.CFrame = CFrame.new(targetPos + Vector3.new(0, 100, 0))
+			lightBeam.Transparency = 0.5
+			lightBeam.Parent = workspace
+	
+			-- === PARTICLE SYSTEMS ===
+	
+			-- Fire particles (orange/red)
+			local fireParticles = Instance.new("ParticleEmitter")
+			fireParticles.Color = ColorSequence.new({
+				ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 255, 200)),
+				ColorSequenceKeypoint.new(0.3, Color3.fromRGB(255, 150, 0)),
+				ColorSequenceKeypoint.new(0.7, Color3.fromRGB(200, 50, 0)),
+				ColorSequenceKeypoint.new(1, Color3.fromRGB(40, 40, 40))
+			})
+			fireParticles.Size = NumberSequence.new({
+				NumberSequenceKeypoint.new(0, 4),
+				NumberSequenceKeypoint.new(1, 0)
+			})
+			fireParticles.Lifetime = NumberRange.new(1.5, 3)
+			fireParticles.Speed = NumberRange.new(40, 80)
+			fireParticles.SpreadAngle = Vector2.new(180, 180)
+			fireParticles.Rate = 0
+			fireParticles.Parent = fireball
+			fireParticles:Emit(300)
+	
+			-- Smoke particles (dark billowing)
+			local smokeParticles = Instance.new("ParticleEmitter")
+			smokeParticles.Color = ColorSequence.new({
+				ColorSequenceKeypoint.new(0, Color3.fromRGB(80, 80, 80)),
+				ColorSequenceKeypoint.new(1, Color3.fromRGB(30, 30, 30))
+			})
+			smokeParticles.Size = NumberSequence.new({
+				NumberSequenceKeypoint.new(0, 8),
+				NumberSequenceKeypoint.new(1, 20)
+			})
+			smokeParticles.Lifetime = NumberRange.new(3, 5)
+			smokeParticles.Speed = NumberRange.new(10, 25)
+			smokeParticles.SpreadAngle = Vector2.new(45, 45)
+			smokeParticles.Acceleration = Vector3.new(0, 30, 0)
+			smokeParticles.Rate = 0
+			smokeParticles.Parent = fireball
+			smokeParticles:Emit(150)
+	
+			-- Spark particles (bright fast streaks)
+			local sparkParticles = Instance.new("ParticleEmitter")
+			sparkParticles.Color = ColorSequence.new(Color3.fromRGB(255, 255, 200), Color3.fromRGB(255, 100, 0))
+			sparkParticles.Size = NumberSequence.new(0.3)
+			sparkParticles.Lifetime = NumberRange.new(0.5, 1.5)
+			sparkParticles.Speed = NumberRange.new(80, 150)
+			sparkParticles.SpreadAngle = Vector2.new(360, 360)
+			sparkParticles.Rate = 0
+			sparkParticles.Parent = fireball
+			sparkParticles:Emit(250)
+	
+			-- Debris particles (chunks flying out)
+			local debrisParticles = Instance.new("ParticleEmitter")
+			debrisParticles.Color = ColorSequence.new(Color3.fromRGB(100, 60, 30), Color3.fromRGB(50, 50, 50))
+			debrisParticles.Size = NumberSequence.new(2)
+			debrisParticles.Lifetime = NumberRange.new(2, 4)
+			debrisParticles.Speed = NumberRange.new(50, 100)
+			debrisParticles.SpreadAngle = Vector2.new(360, 360)
+			debrisParticles.Acceleration = Vector3.new(0, -50, 0)
+			debrisParticles.Rate = 0
+			debrisParticles.Parent = fireball
+			debrisParticles:Emit(100)
+	
+			-- === SCREEN FLASH ===
+			local flashGui = Instance.new("ScreenGui")
+			flashGui.IgnoreGuiInset = true
+			local flashFrame = Instance.new("Frame")
+			flashFrame.Size = UDim2.new(1, 0, 1, 0)
+			flashFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			flashFrame.BackgroundTransparency = 0
+			flashFrame.BorderSizePixel = 0
+			flashFrame.Parent = flashGui
+			flashGui.Parent = player:FindFirstChildOfClass("PlayerGui")
+	
+			-- === CAMERA SHAKE ===
+			local shakeStart = tick()
+			local shakeDuration = 2.5
+			local shakeMagnitude = 5
+	
+			task.spawn(function()
+				local elapsed = 0
+				while elapsed < shakeDuration do
+					elapsed = tick() - shakeStart
+					local intensity = 1 - (elapsed / shakeDuration)
+					local dampening = intensity * intensity
+					local offset = Vector3.new(
+						math.random(-100, 100) / 100 * shakeMagnitude * dampening,
+						math.random(-100, 100) / 100 * shakeMagnitude * dampening,
+						math.random(-100, 100) / 100 * shakeMagnitude * dampening
+					)
+					camera.CFrame = camera.CFrame * CFrame.new(offset * 0.15)
+					task.wait(0.015)
+				end
+			end)
+	
+			-- === ANIMATIONS ===
+	
+			-- Screen flash fade
+			task.spawn(function()
+				for i = 1, 15 do
+					flashFrame.BackgroundTransparency = i / 15
+					task.wait(0.025)
+				end
+				flashGui:Destroy()
+			end)
+	
+			-- Core flash (quick bright burst then fade)
+			task.spawn(function()
+				for i = 1, 8 do
+					local alpha = i / 8
+					coreFlash.Size = coreFlash.Size + Vector3.new(6, 6, 6)
+					coreFlash.Transparency = alpha
+					task.wait(0.02)
+				end
+				coreFlash:Destroy()
+			end)
+	
+			-- Main explosion animation
+			task.spawn(function()
+				local steps = 50
+				for i = 1, steps do
+					local alpha = i / steps
+	
+					-- Fireball: expand and shift color through temperature gradient
+					fireball.Size = fireball.Size + Vector3.new(3, 3, 3)
+					fireball.Transparency = alpha * 0.9
+	
+					-- Color shift: white -> yellow -> orange -> red -> dark red
+					if alpha < 0.15 then
+						fireball.Color = Color3.fromRGB(255, 255, 255)
+					elseif alpha < 0.35 then
+						fireball.Color = Color3.fromRGB(255, 220, 100)
+					elseif alpha < 0.6 then
+						fireball.Color = Color3.fromRGB(255, 120, 0)
+					elseif alpha < 0.85 then
+						fireball.Color = Color3.fromRGB(200, 50, 0)
+					else
+						fireball.Color = Color3.fromRGB(80, 20, 0)
+					end
+	
+					fireballLight.Brightness = 20 * (1 - alpha)
+					fireballLight.Range = 100 * (1 - alpha * 0.5)
+	
+					-- Inner fire
+					innerFire.Size = innerFire.Size + Vector3.new(2, 2, 2)
+					innerFire.Transparency = alpha
+	
+					-- Shockwaves expand at different speeds
+					for _, swData in ipairs(shockwaves) do
+						swData.growth = swData.growth + swData.speed
+						swData.part.Size = Vector3.new(swData.growth, 0.3, swData.growth)
+						swData.part.Transparency = 0.2 + alpha * 0.8
+					end
+	
+					-- Mushroom cloud rises and expands
+					stem.Size = stem.Size + Vector3.new(1.5, 3, 1.5)
+					stem.CFrame = CFrame.new(targetPos + Vector3.new(0, stem.Size.Y / 2, 0))
+					stem.Transparency = alpha * 0.8
+	
+					cap.Size = cap.Size + Vector3.new(3, 3, 3)
+					cap.CFrame = CFrame.new(targetPos + Vector3.new(0, 8 + i * 1.5, 0))
+					cap.Transparency = alpha * 0.7
+	
+					-- Ground scorch grows
+					scorch.Size = scorch.Size + Vector3.new(3, 0, 3)
+					scorch.Transparency = 0.3 + alpha * 0.4
+	
+					-- Light beam fades
+					lightBeam.Transparency = 0.5 + alpha * 0.5
+	
+					task.wait(0.03)
+				end
+	
+				-- Cleanup
+				fireball:Destroy()
+				innerFire:Destroy()
+				for _, swData in ipairs(shockwaves) do
+					swData.part:Destroy()
+				end
+				stem:Destroy()
+				cap:Destroy()
+				scorch:Destroy()
+				lightBeam:Destroy()
+			end)
+		end
+	
+		nukeTool.Activated:Connect(detonateNuke)
+	
+		-- Parent both tools to backpack (client-sided, only this player sees them)
+		local backpack = player:FindFirstChildOfClass("Backpack")
+		if backpack then
+			tool.Parent = backpack
+			nukeTool.Parent = backpack
+		else
+			-- Wait for backpack if character hasn't spawned yet
+			player.CharacterAdded:Connect(function()
+				local bp = player:FindFirstChildOfClass("Backpack")
+				if bp then
+					tool.Parent = bp
+					nukeTool.Parent = bp
+				end
+			end)
 		end
 	end
 	
-	button.MouseButton1Click:Connect(function()
-		isOpen = not isOpen
-		setConsoleVisible(isOpen)
-	end)
+	button.MouseButton1Click:Connect(giveTools)
 	
 end;
 task.spawn(C_36);
