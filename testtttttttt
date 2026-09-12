@@ -128,7 +128,6 @@ G2L["d"] = Instance.new("LocalScript", G2L["c"]);
 
 -- StarterGui.ScreenGui.MainGui.Box
 G2L["e"] = Instance.new("TextBox", G2L["2"]);
-G2L["e"]["CursorPosition"] = -1;
 G2L["e"]["Name"] = [[Box]];
 G2L["e"]["TextXAlignment"] = Enum.TextXAlignment.Left;
 G2L["e"]["BorderSizePixel"] = 0;
@@ -675,12 +674,30 @@ task.spawn(C_10);
 -- StarterGui.ScreenGui.MainGui.Execute.LocalScript
 local function C_13()
 local script = G2L["13"];
-	local textbox = script.Parent.Parent.Box
 	local button = script.Parent
+	local mainGui = button.Parent
+	local textBox = mainGui:FindFirstChild("Box")
+	
+	if not textBox then
+		warn("Execute button: Could not find TextBox named 'Box'")
+		return
+	end
 	
 	button.MouseButton1Click:Connect(function()
-		local text = textbox.Text
-		print(text)
+		local code = textBox.Text
+		if code == "" then
+			return
+		end
+	
+		local fn, err = loadstring(code)
+		if fn then
+			local ok, runtimeErr = pcall(fn)
+			if not ok then
+				warn("Runtime error: " .. tostring(runtimeErr))
+			end
+		else
+			warn("Compile error: " .. tostring(err))
+		end
 	end)
 end;
 task.spawn(C_13);
