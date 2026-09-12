@@ -7,7 +7,7 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
 ]=]
 
--- Instances: 53 | Scripts: 21 | Modules: 0 | Tags: 0
+-- Instances: 56 | Scripts: 22 | Modules: 0 | Tags: 0
 local G2L = {};
 
 -- StarterGui.ScreenGui
@@ -16,34 +16,35 @@ G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 G2L["1"]["ResetOnSpawn"] = false;
 
 
--- StarterGui.ScreenGui.Frame
+-- StarterGui.ScreenGui.MainGui
 G2L["2"] = Instance.new("Frame", G2L["1"]);
 G2L["2"]["BorderSizePixel"] = 0;
 G2L["2"]["BackgroundColor3"] = Color3.fromRGB(20, 20, 62);
 G2L["2"]["Size"] = UDim2.new(0, 615, 0, 387);
-G2L["2"]["Position"] = UDim2.new(0.28593, 0, 0.19978, 0);
+G2L["2"]["Position"] = UDim2.new(0.32889, 0, 0.27904, 0);
 G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Name"] = [[MainGui]];
 
 
--- StarterGui.ScreenGui.Frame.UI Drag
+-- StarterGui.ScreenGui.MainGui.UI Drag
 G2L["3"] = Instance.new("LocalScript", G2L["2"]);
 -- [ERROR] cannot convert Capabilities, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
 G2L["3"]["Sandboxed"] = true;
 G2L["3"]["Name"] = [[UI Drag]];
 
 
--- StarterGui.ScreenGui.Frame.UI Drag._id
+-- StarterGui.ScreenGui.MainGui.UI Drag._id
 G2L["4"] = Instance.new("StringValue", G2L["3"]);
 G2L["4"]["Name"] = [[_id]];
 G2L["4"]["Value"] = [[lakL-TR9q-8bbt-XNlU]];
 
 
--- StarterGui.ScreenGui.Frame.UICorner
+-- StarterGui.ScreenGui.MainGui.UICorner
 G2L["5"] = Instance.new("UICorner", G2L["2"]);
 
 
 
--- StarterGui.ScreenGui.Frame.Frame
+-- StarterGui.ScreenGui.MainGui.Frame
 G2L["6"] = Instance.new("Frame", G2L["2"]);
 G2L["6"]["BorderSizePixel"] = 0;
 G2L["6"]["BackgroundColor3"] = Color3.fromRGB(21, 45, 70);
@@ -52,12 +53,12 @@ G2L["6"]["Position"] = UDim2.new(0.01301, 0, 0.02326, 0);
 G2L["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 
 
--- StarterGui.ScreenGui.Frame.Frame.UICorner
+-- StarterGui.ScreenGui.MainGui.Frame.UICorner
 G2L["7"] = Instance.new("UICorner", G2L["6"]);
 
 
 
--- StarterGui.ScreenGui.Frame.Frame.TextLabel
+-- StarterGui.ScreenGui.MainGui.Frame.TextLabel
 G2L["8"] = Instance.new("TextLabel", G2L["6"]);
 G2L["8"]["TextWrapped"] = true;
 G2L["8"]["BorderSizePixel"] = 0;
@@ -74,12 +75,12 @@ G2L["8"]["Text"] = [[Fe Bypass]];
 G2L["8"]["Position"] = UDim2.new(0, 0, -0.09615, 0);
 
 
--- StarterGui.ScreenGui.Frame.Frame.TextLabel.LocalScript
+-- StarterGui.ScreenGui.MainGui.Frame.TextLabel.LocalScript
 G2L["9"] = Instance.new("LocalScript", G2L["8"]);
 
 
 
--- StarterGui.ScreenGui.Frame.Frame.TextLabel1
+-- StarterGui.ScreenGui.MainGui.Frame.TextLabel1
 G2L["a"] = Instance.new("TextLabel", G2L["6"]);
 G2L["a"]["TextWrapped"] = true;
 G2L["a"]["BorderSizePixel"] = 0;
@@ -94,15 +95,15 @@ G2L["a"]["Size"] = UDim2.new(0, 118, 0, 30);
 G2L["a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["a"]["Text"] = [[First Every Real Fe Bypass]];
 G2L["a"]["Name"] = [[TextLabel1]];
-G2L["a"]["Position"] = UDim2.new(1.06612, 0, 0.21154, 0);
+G2L["a"]["Position"] = UDim2.new(1.1405, 0, 0.19231, 0);
 
 
--- StarterGui.ScreenGui.Frame.Frame.TextLabel1.LocalScript
+-- StarterGui.ScreenGui.MainGui.Frame.TextLabel1.LocalScript
 G2L["b"] = Instance.new("LocalScript", G2L["a"]);
 
 
 
--- StarterGui.ScreenGui.Frame.Frame.TextLabel2
+-- StarterGui.ScreenGui.MainGui.Frame.TextLabel2
 G2L["c"] = Instance.new("TextLabel", G2L["6"]);
 G2L["c"]["TextWrapped"] = true;
 G2L["c"]["BorderSizePixel"] = 0;
@@ -120,15 +121,15 @@ G2L["c"]["Name"] = [[TextLabel2]];
 G2L["c"]["Position"] = UDim2.new(3.80165, 0, 6.09615, 0);
 
 
--- StarterGui.ScreenGui.Frame.Frame.TextLabel2.LocalScript
+-- StarterGui.ScreenGui.MainGui.Frame.TextLabel2.LocalScript
 G2L["d"] = Instance.new("LocalScript", G2L["c"]);
 
 
 
--- StarterGui.ScreenGui.Frame.EditorBox
+-- StarterGui.ScreenGui.MainGui.Box
 G2L["e"] = Instance.new("TextBox", G2L["2"]);
 G2L["e"]["CursorPosition"] = -1;
-G2L["e"]["Name"] = [[EditorBox]];
+G2L["e"]["Name"] = [[Box]];
 G2L["e"]["TextXAlignment"] = Enum.TextXAlignment.Left;
 G2L["e"]["BorderSizePixel"] = 0;
 G2L["e"]["TextSize"] = 14;
@@ -145,7 +146,7 @@ G2L["e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["e"]["Text"] = [[]];
 
 
--- StarterGui.ScreenGui.Frame.ClearButton
+-- StarterGui.ScreenGui.MainGui.ClearButton
 G2L["f"] = Instance.new("TextButton", G2L["2"]);
 G2L["f"]["TextWrapped"] = true;
 G2L["f"]["RichText"] = true;
@@ -162,17 +163,17 @@ G2L["f"]["Name"] = [[ClearButton]];
 G2L["f"]["Position"] = UDim2.new(0.28455, 0, 0.80879, 0);
 
 
--- StarterGui.ScreenGui.Frame.ClearButton.LocalScript
+-- StarterGui.ScreenGui.MainGui.ClearButton.LocalScript
 G2L["10"] = Instance.new("LocalScript", G2L["f"]);
 
 
 
--- StarterGui.ScreenGui.Frame.ClearButton.UICorner
+-- StarterGui.ScreenGui.MainGui.ClearButton.UICorner
 G2L["11"] = Instance.new("UICorner", G2L["f"]);
 
 
 
--- StarterGui.ScreenGui.Frame.ExecuteBtn
+-- StarterGui.ScreenGui.MainGui.Execute
 G2L["12"] = Instance.new("TextButton", G2L["2"]);
 G2L["12"]["TextWrapped"] = true;
 G2L["12"]["RichText"] = true;
@@ -185,21 +186,21 @@ G2L["12"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], 
 G2L["12"]["Size"] = UDim2.new(0, 107, 0, 50);
 G2L["12"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["12"]["Text"] = [[Execute]];
-G2L["12"]["Name"] = [[ExecuteBtn]];
+G2L["12"]["Name"] = [[Execute]];
 G2L["12"]["Position"] = UDim2.new(0.04878, 0, 0.80879, 0);
 
 
--- StarterGui.ScreenGui.Frame.ExecuteBtn.LocalScript
+-- StarterGui.ScreenGui.MainGui.Execute.LocalScript
 G2L["13"] = Instance.new("LocalScript", G2L["12"]);
 
 
 
--- StarterGui.ScreenGui.Frame.ExecuteBtn.UICorner
+-- StarterGui.ScreenGui.MainGui.Execute.UICorner
 G2L["14"] = Instance.new("UICorner", G2L["12"]);
 
 
 
--- StarterGui.ScreenGui.Frame.Inject
+-- StarterGui.ScreenGui.MainGui.Inject
 G2L["15"] = Instance.new("TextButton", G2L["2"]);
 G2L["15"]["TextWrapped"] = true;
 G2L["15"]["RichText"] = true;
@@ -216,17 +217,17 @@ G2L["15"]["Name"] = [[Inject]];
 G2L["15"]["Position"] = UDim2.new(0.52195, 0, 0.80879, 0);
 
 
--- StarterGui.ScreenGui.Frame.Inject.LocalScript
+-- StarterGui.ScreenGui.MainGui.Inject.LocalScript
 G2L["16"] = Instance.new("LocalScript", G2L["15"]);
 
 
 
--- StarterGui.ScreenGui.Frame.Inject.UICorner
+-- StarterGui.ScreenGui.MainGui.Inject.UICorner
 G2L["17"] = Instance.new("UICorner", G2L["15"]);
 
 
 
--- StarterGui.ScreenGui.Frame.ImageLabel
+-- StarterGui.ScreenGui.MainGui.ImageLabel
 G2L["18"] = Instance.new("ImageLabel", G2L["2"]);
 G2L["18"]["BorderSizePixel"] = 0;
 G2L["18"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -236,7 +237,7 @@ G2L["18"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["18"]["Position"] = UDim2.new(0.45854, 0, 0.02326, 0);
 
 
--- StarterGui.ScreenGui.Frame.ScrollingFrame
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame
 G2L["19"] = Instance.new("ScrollingFrame", G2L["2"]);
 G2L["19"]["Active"] = true;
 G2L["19"]["BorderSizePixel"] = 0;
@@ -248,7 +249,7 @@ G2L["19"]["Position"] = UDim2.new(0.74797, 0, 0.02326, 0);
 G2L["19"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 
 
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton
 G2L["1a"] = Instance.new("TextButton", G2L["19"]);
 G2L["1a"]["TextWrapped"] = true;
 G2L["1a"]["RichText"] = true;
@@ -264,12 +265,12 @@ G2L["1a"]["Text"] = [[INF Yeild]];
 G2L["1a"]["Position"] = UDim2.new(0.05128, 0, 0.00904, 0);
 
 
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton.LocalScript
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton.LocalScript
 G2L["1b"] = Instance.new("LocalScript", G2L["1a"]);
 
 
 
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton1
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton1
 G2L["1c"] = Instance.new("TextButton", G2L["19"]);
 G2L["1c"]["TextWrapped"] = true;
 G2L["1c"]["RichText"] = true;
@@ -286,12 +287,12 @@ G2L["1c"]["Name"] = [[TextButton1]];
 G2L["1c"]["Position"] = UDim2.new(0.05128, 0, 0.08269, 0);
 
 
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton1.LocalScript
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton1.LocalScript
 G2L["1d"] = Instance.new("LocalScript", G2L["1c"]);
 
 
 
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton2
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton2
 G2L["1e"] = Instance.new("TextButton", G2L["19"]);
 G2L["1e"]["TextWrapped"] = true;
 G2L["1e"]["RichText"] = true;
@@ -308,12 +309,12 @@ G2L["1e"]["Name"] = [[TextButton2]];
 G2L["1e"]["Position"] = UDim2.new(0.05128, 0, 0.15504, 0);
 
 
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton2.LocalScript
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton2.LocalScript
 G2L["1f"] = Instance.new("LocalScript", G2L["1e"]);
 
 
 
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton3
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton3
 G2L["20"] = Instance.new("TextButton", G2L["19"]);
 G2L["20"]["TextWrapped"] = true;
 G2L["20"]["RichText"] = true;
@@ -330,12 +331,12 @@ G2L["20"]["Name"] = [[TextButton3]];
 G2L["20"]["Position"] = UDim2.new(0.05128, 0, 0.22868, 0);
 
 
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton3.LocalScript
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton3.LocalScript
 G2L["21"] = Instance.new("LocalScript", G2L["20"]);
 
 
 
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton4
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton4
 G2L["22"] = Instance.new("TextButton", G2L["19"]);
 G2L["22"]["TextWrapped"] = true;
 G2L["22"]["RichText"] = true;
@@ -352,12 +353,12 @@ G2L["22"]["Name"] = [[TextButton4]];
 G2L["22"]["Position"] = UDim2.new(0.06838, 0, 0.30491, 0);
 
 
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton4.LocalScript
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton4.LocalScript
 G2L["23"] = Instance.new("LocalScript", G2L["22"]);
 
 
 
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton5
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton5
 G2L["24"] = Instance.new("TextButton", G2L["19"]);
 G2L["24"]["TextWrapped"] = true;
 G2L["24"]["RichText"] = true;
@@ -374,12 +375,12 @@ G2L["24"]["Name"] = [[TextButton5]];
 G2L["24"]["Position"] = UDim2.new(0.06838, 0, 0.37984, 0);
 
 
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton5.LocalScript
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton5.LocalScript
 G2L["25"] = Instance.new("LocalScript", G2L["24"]);
 
 
 
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton6
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton6
 G2L["26"] = Instance.new("TextButton", G2L["19"]);
 G2L["26"]["TextWrapped"] = true;
 G2L["26"]["RichText"] = true;
@@ -396,12 +397,12 @@ G2L["26"]["Name"] = [[TextButton6]];
 G2L["26"]["Position"] = UDim2.new(0.05128, 0, 0.4551, 0);
 
 
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton6.LocalScript
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton6.LocalScript
 G2L["27"] = Instance.new("LocalScript", G2L["26"]);
 
 
 
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton7
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton7
 G2L["28"] = Instance.new("TextButton", G2L["19"]);
 G2L["28"]["TextWrapped"] = true;
 G2L["28"]["RichText"] = true;
@@ -418,12 +419,12 @@ G2L["28"]["Name"] = [[TextButton7]];
 G2L["28"]["Position"] = UDim2.new(0.05128, 0, 0.53068, 0);
 
 
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton7.LocalScript
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton7.LocalScript
 G2L["29"] = Instance.new("LocalScript", G2L["28"]);
 
 
 
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton8
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton8
 G2L["2a"] = Instance.new("TextButton", G2L["19"]);
 G2L["2a"]["TextWrapped"] = true;
 G2L["2a"]["RichText"] = true;
@@ -440,12 +441,12 @@ G2L["2a"]["Name"] = [[TextButton8]];
 G2L["2a"]["Position"] = UDim2.new(0.06838, 0, 0.60884, 0);
 
 
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton8.LocalScript
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton8.LocalScript
 G2L["2b"] = Instance.new("LocalScript", G2L["2a"]);
 
 
 
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton9
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton9
 G2L["2c"] = Instance.new("TextButton", G2L["19"]);
 G2L["2c"]["TextWrapped"] = true;
 G2L["2c"]["RichText"] = true;
@@ -462,12 +463,12 @@ G2L["2c"]["Name"] = [[TextButton9]];
 G2L["2c"]["Position"] = UDim2.new(0.06838, 0, 0.68572, 0);
 
 
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton9.LocalScript
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton9.LocalScript
 G2L["2d"] = Instance.new("LocalScript", G2L["2c"]);
 
 
 
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton10
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton10
 G2L["2e"] = Instance.new("TextButton", G2L["19"]);
 G2L["2e"]["TextWrapped"] = true;
 G2L["2e"]["RichText"] = true;
@@ -484,12 +485,12 @@ G2L["2e"]["Name"] = [[TextButton10]];
 G2L["2e"]["Position"] = UDim2.new(0.05128, 0, 0.76259, 0);
 
 
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton10.LocalScript
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton10.LocalScript
 G2L["2f"] = Instance.new("LocalScript", G2L["2e"]);
 
 
 
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton11
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton11
 G2L["30"] = Instance.new("TextButton", G2L["19"]);
 G2L["30"]["TextWrapped"] = true;
 G2L["30"]["RichText"] = true;
@@ -506,12 +507,12 @@ G2L["30"]["Name"] = [[TextButton11]];
 G2L["30"]["Position"] = UDim2.new(0.05128, 0, 0.84003, 0);
 
 
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton11.LocalScript
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton11.LocalScript
 G2L["31"] = Instance.new("LocalScript", G2L["30"]);
 
 
 
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton12
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton12
 G2L["32"] = Instance.new("TextButton", G2L["19"]);
 G2L["32"]["TextWrapped"] = true;
 G2L["32"]["RichText"] = true;
@@ -528,12 +529,12 @@ G2L["32"]["Name"] = [[TextButton12]];
 G2L["32"]["Position"] = UDim2.new(0.06838, 0, 0.91885, 0);
 
 
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton12.LocalScript
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton12.LocalScript
 G2L["33"] = Instance.new("LocalScript", G2L["32"]);
 
 
 
--- StarterGui.ScreenGui.Frame.ImageButton
+-- StarterGui.ScreenGui.MainGui.ImageButton
 G2L["34"] = Instance.new("ImageButton", G2L["2"]);
 G2L["34"]["BorderSizePixel"] = 0;
 G2L["34"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -543,12 +544,44 @@ G2L["34"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["34"]["Position"] = UDim2.new(0.93821, 0, 0.91214, 0);
 
 
--- StarterGui.ScreenGui.Frame.ImageButton.LocalScript
+-- StarterGui.ScreenGui.MainGui.ImageButton.LocalScript
 G2L["35"] = Instance.new("LocalScript", G2L["34"]);
 
 
 
--- StarterGui.ScreenGui.Frame.UI Drag
+-- StarterGui.ScreenGui.Frame
+G2L["36"] = Instance.new("Frame", G2L["1"]);
+G2L["36"]["BorderSizePixel"] = 0;
+G2L["36"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["36"]["Size"] = UDim2.new(0, 100, 0, 100);
+G2L["36"]["Position"] = UDim2.new(0.49852, 0, 0.10098, 0);
+G2L["36"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["36"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.ScreenGui.Frame.TextButton
+G2L["37"] = Instance.new("TextButton", G2L["36"]);
+G2L["37"]["TextWrapped"] = true;
+G2L["37"]["RichText"] = true;
+G2L["37"]["BorderSizePixel"] = 10;
+G2L["37"]["TextSize"] = 14;
+G2L["37"]["TextScaled"] = true;
+G2L["37"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["37"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["37"]["FontFace"] = Font.new([[rbxasset://fonts/families/PressStart2P.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["37"]["BackgroundTransparency"] = 0.5;
+G2L["37"]["Size"] = UDim2.new(0, 127, 0, 88);
+G2L["37"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["37"]["Text"] = [[Hide Gui]];
+G2L["37"]["Position"] = UDim2.new(-7.73171, 0, 6.05649, 0);
+
+
+-- StarterGui.ScreenGui.Frame.TextButton.LocalScript
+G2L["38"] = Instance.new("LocalScript", G2L["37"]);
+
+
+
+-- StarterGui.ScreenGui.MainGui.UI Drag
 local function C_3()
 local script = G2L["3"];
 	local function makeDraggable()
@@ -588,7 +621,7 @@ local script = G2L["3"];
 	makeDraggable()
 end;
 task.spawn(C_3);
--- StarterGui.ScreenGui.Frame.Frame.TextLabel.LocalScript
+-- StarterGui.ScreenGui.MainGui.Frame.TextLabel.LocalScript
 local function C_9()
 local script = G2L["9"];
 	local label = script.Parent
@@ -601,7 +634,7 @@ local script = G2L["9"];
 	
 end;
 task.spawn(C_9);
--- StarterGui.ScreenGui.Frame.Frame.TextLabel1.LocalScript
+-- StarterGui.ScreenGui.MainGui.Frame.TextLabel1.LocalScript
 local function C_b()
 local script = G2L["b"];
 	local label = script.Parent
@@ -614,7 +647,7 @@ local script = G2L["b"];
 	
 end;
 task.spawn(C_b);
--- StarterGui.ScreenGui.Frame.Frame.TextLabel2.LocalScript
+-- StarterGui.ScreenGui.MainGui.Frame.TextLabel2.LocalScript
 local function C_d()
 local script = G2L["d"];
 	local label = script.Parent
@@ -627,11 +660,11 @@ local script = G2L["d"];
 	
 end;
 task.spawn(C_d);
--- StarterGui.ScreenGui.Frame.ClearButton.LocalScript
+-- StarterGui.ScreenGui.MainGui.ClearButton.LocalScript
 local function C_10()
 local script = G2L["10"];
 	local button = script.Parent
-	local textBox = button.Parent.EditorBox
+	local textBox = button.Parent.Box
 	
 	button.MouseButton1Click:Connect(function()
 		textBox.Text = ""
@@ -639,26 +672,19 @@ local script = G2L["10"];
 	
 end;
 task.spawn(C_10);
--- StarterGui.ScreenGui.Frame.ExecuteBtn.LocalScript
+-- StarterGui.ScreenGui.MainGui.Execute.LocalScript
 local function C_13()
 local script = G2L["13"];
-	ExecuteBtn.MouseButton1Click:Connect(function()
-		local success, err = pcall(function()
-			-- Loadstring default Roblox (hanya bekerja jika exploit kamu mendukung loadstring)
-			local func, compileError = loadstring(EditorBox.Text)
-			if func then
-				task.spawn(func)
-			else
-				warn("Compile Error: " .. tostring(compileError))
-			end
-		end)
-		if not success then
-			warn("Execution Error: " .. tostring(err))
-		end
+	local textbox = script.Parent.Parent.Box
+	local button = script.Parent
+	
+	button.MouseButton1Click:Connect(function()
+		local text = textbox.Text
+		print(text)
 	end)
 end;
 task.spawn(C_13);
--- StarterGui.ScreenGui.Frame.Inject.LocalScript
+-- StarterGui.ScreenGui.MainGui.Inject.LocalScript
 local function C_16()
 local script = G2L["16"];
 	local button = script.Parent
@@ -678,7 +704,7 @@ local script = G2L["16"];
 	end)
 end;
 task.spawn(C_16);
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton.LocalScript
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton.LocalScript
 local function C_1b()
 local script = G2L["1b"];
 	local button = script.Parent
@@ -690,7 +716,7 @@ local script = G2L["1b"];
 	
 end;
 task.spawn(C_1b);
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton1.LocalScript
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton1.LocalScript
 local function C_1d()
 local script = G2L["1d"];
 	local button = script.Parent
@@ -702,7 +728,7 @@ local script = G2L["1d"];
 	
 end;
 task.spawn(C_1d);
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton2.LocalScript
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton2.LocalScript
 local function C_1f()
 local script = G2L["1f"];
 	local button = script.Parent
@@ -714,7 +740,7 @@ local script = G2L["1f"];
 	
 end;
 task.spawn(C_1f);
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton3.LocalScript
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton3.LocalScript
 local function C_21()
 local script = G2L["21"];
 	local button = script.Parent
@@ -726,7 +752,7 @@ local script = G2L["21"];
 	
 end;
 task.spawn(C_21);
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton4.LocalScript
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton4.LocalScript
 local function C_23()
 local script = G2L["23"];
 	local button = script.Parent
@@ -738,7 +764,7 @@ local script = G2L["23"];
 	
 end;
 task.spawn(C_23);
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton5.LocalScript
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton5.LocalScript
 local function C_25()
 local script = G2L["25"];
 	local button = script.Parent
@@ -750,7 +776,7 @@ local script = G2L["25"];
 	
 end;
 task.spawn(C_25);
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton6.LocalScript
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton6.LocalScript
 local function C_27()
 local script = G2L["27"];
 	local button = script.Parent
@@ -762,7 +788,7 @@ local script = G2L["27"];
 	
 end;
 task.spawn(C_27);
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton7.LocalScript
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton7.LocalScript
 local function C_29()
 local script = G2L["29"];
 	local button = script.Parent
@@ -774,7 +800,7 @@ local script = G2L["29"];
 	
 end;
 task.spawn(C_29);
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton8.LocalScript
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton8.LocalScript
 local function C_2b()
 local script = G2L["2b"];
 	local button = script.Parent
@@ -786,7 +812,7 @@ local script = G2L["2b"];
 	
 end;
 task.spawn(C_2b);
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton9.LocalScript
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton9.LocalScript
 local function C_2d()
 local script = G2L["2d"];
 	local button = script.Parent
@@ -798,7 +824,7 @@ local script = G2L["2d"];
 	
 end;
 task.spawn(C_2d);
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton10.LocalScript
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton10.LocalScript
 local function C_2f()
 local script = G2L["2f"];
 	local button = script.Parent
@@ -810,7 +836,7 @@ local script = G2L["2f"];
 	
 end;
 task.spawn(C_2f);
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton11.LocalScript
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton11.LocalScript
 local function C_31()
 local script = G2L["31"];
 	local button = script.Parent
@@ -822,7 +848,7 @@ local script = G2L["31"];
 	
 end;
 task.spawn(C_31);
--- StarterGui.ScreenGui.Frame.ScrollingFrame.TextButton12.LocalScript
+-- StarterGui.ScreenGui.MainGui.ScrollingFrame.TextButton12.LocalScript
 local function C_33()
 local script = G2L["33"];
 	local button = script.Parent
@@ -834,7 +860,7 @@ local script = G2L["33"];
 	
 end;
 task.spawn(C_33);
--- StarterGui.ScreenGui.Frame.ImageButton.LocalScript
+-- StarterGui.ScreenGui.MainGui.ImageButton.LocalScript
 local function C_35()
 local script = G2L["35"];
 	local button = script.Parent
@@ -877,5 +903,22 @@ local script = G2L["35"];
 	end)
 end;
 task.spawn(C_35);
+-- StarterGui.ScreenGui.Frame.TextButton.LocalScript
+local function C_38()
+local script = G2L["38"];
+	local button = script.Parent
+	local mainGui = button.Parent.Parent:WaitForChild("MainGui")
+	
+	button.MouseButton1Click:Connect(function()
+		mainGui.Visible = not mainGui.Visible
+	
+		if mainGui.Visible then
+			button.Text = "☰ Hide GUI"
+		else
+			button.Text = "☰ Show GUI"
+		end
+	end)
+end;
+task.spawn(C_38);
 
 return G2L["1"], require;
