@@ -1,0 +1,176 @@
+--[=[
+ d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
+88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
+88      88    88    88            odD'      88      88    88 88ooo88 
+88  ooo 88    88    88          .88'        88      88    88 88~~~88 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
+]=]
+
+-- Instances: 10 | Scripts: 3 | Modules: 0 | Tags: 0
+local G2L = {};
+
+-- StarterGui.Sound
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["Name"] = [[Sound]];
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+
+
+-- StarterGui.Sound.Sound
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["BorderSizePixel"] = 0;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(255, 148, 0);
+G2L["2"]["Size"] = UDim2.new(0, 373, 0, 194);
+G2L["2"]["Position"] = UDim2.new(0.37259, 0, 0.24647, 0);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Name"] = [[Sound]];
+G2L["2"]["BackgroundTransparency"] = 0.5;
+
+
+-- StarterGui.Sound.Sound.UI Drag
+G2L["3"] = Instance.new("LocalScript", G2L["2"]);
+-- [ERROR] cannot convert Capabilities, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
+G2L["3"]["Sandboxed"] = true;
+G2L["3"]["Name"] = [[UI Drag]];
+
+
+-- StarterGui.Sound.Sound.UI Drag._id
+G2L["4"] = Instance.new("StringValue", G2L["3"]);
+G2L["4"]["Name"] = [[_id]];
+G2L["4"]["Value"] = [[lakL-TR9q-8bbt-XNlU]];
+
+
+-- StarterGui.Sound.Sound.TextLabel
+G2L["5"] = Instance.new("TextLabel", G2L["2"]);
+G2L["5"]["TextWrapped"] = true;
+G2L["5"]["BorderSizePixel"] = 0;
+G2L["5"]["TextSize"] = 14;
+G2L["5"]["TextScaled"] = true;
+G2L["5"]["BackgroundColor3"] = Color3.fromRGB(255, 148, 0);
+G2L["5"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["5"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5"]["BackgroundTransparency"] = -0.01;
+G2L["5"]["RichText"] = true;
+G2L["5"]["Size"] = UDim2.new(0, 373, 0, 55);
+G2L["5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5"]["Text"] = [[8X Audio Player]];
+
+
+-- StarterGui.Sound.Sound.SoundIDBox
+G2L["6"] = Instance.new("TextBox", G2L["2"]);
+G2L["6"]["Name"] = [[SoundIDBox]];
+G2L["6"]["BorderSizePixel"] = 0;
+G2L["6"]["TextWrapped"] = true;
+G2L["6"]["TextSize"] = 14;
+G2L["6"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6"]["TextScaled"] = true;
+G2L["6"]["BackgroundColor3"] = Color3.fromRGB(255, 252, 0);
+G2L["6"]["RichText"] = true;
+G2L["6"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["6"]["Size"] = UDim2.new(0, 308, 0, 50);
+G2L["6"]["Position"] = UDim2.new(0.08311, 0, 0.32474, 0);
+G2L["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6"]["Text"] = [[97869210186766]];
+
+
+-- StarterGui.Sound.Sound.PlayButton
+G2L["7"] = Instance.new("ImageButton", G2L["2"]);
+G2L["7"]["BorderSizePixel"] = 0;
+G2L["7"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7"]["Image"] = [[rbxassetid://18224532618]];
+G2L["7"]["Size"] = UDim2.new(0, 193, 0, 46);
+G2L["7"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7"]["Name"] = [[PlayButton]];
+G2L["7"]["Position"] = UDim2.new(0.24129, 0, 0.69588, 0);
+
+
+-- StarterGui.Sound.Sound.PlayButton.LocalScript
+G2L["8"] = Instance.new("LocalScript", G2L["7"]);
+
+
+
+-- StarterGui.Sound.Sound.TextButton
+G2L["9"] = Instance.new("TextButton", G2L["2"]);
+G2L["9"]["TextWrapped"] = true;
+G2L["9"]["RichText"] = true;
+G2L["9"]["BorderSizePixel"] = 0;
+G2L["9"]["TextSize"] = 14;
+G2L["9"]["TextScaled"] = true;
+G2L["9"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["9"]["BackgroundColor3"] = Color3.fromRGB(255, 39, 0);
+G2L["9"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["9"]["Size"] = UDim2.new(0, 31, 0, 28);
+G2L["9"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["9"]["Text"] = [[X]];
+G2L["9"]["Position"] = UDim2.new(0.91689, 0, 0, 0);
+
+
+-- StarterGui.Sound.Sound.TextButton.LocalScript
+G2L["a"] = Instance.new("LocalScript", G2L["9"]);
+
+
+
+-- StarterGui.Sound.Sound.UI Drag
+local function C_3()
+local script = G2L["3"];
+	local function makeDraggable()
+		local dragToggle = nil
+		local dragSpeed = 0.1
+		local dragStart = nil
+		local startPos = nil
+		local UIS = game:GetService("UserInputService")
+	
+		local function updateInput(input)
+			local delta = input.Position - dragStart
+			script.Parent.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		end
+	
+		script.Parent.InputBegan:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseButton1 then
+				dragToggle = true
+				dragStart = input.Position
+				startPos = script.Parent.Position
+				input.Changed:Connect(function()
+					if input.UserInputState == Enum.UserInputState.End then
+						dragToggle = false
+					end
+				end)
+			end
+		end)
+	
+		script.Parent.InputChanged:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseMovement then
+				if dragToggle then
+					updateInput(input)
+				end
+			end
+		end)
+	end
+	
+	makeDraggable()
+end;
+task.spawn(C_3);
+-- StarterGui.Sound.Sound.PlayButton.LocalScript
+local function C_8()
+local script = G2L["8"];
+	local Sound = Instance.new("Sound")
+	Sound.Parent = game:GetService("SoundService")
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		local id = script.Parent.Parent.SoundIDBox.Text
+	
+		Sound.SoundId = "rbxassetid://" .. id
+		Sound:Play()
+	end)
+end;
+task.spawn(C_8);
+-- StarterGui.Sound.Sound.TextButton.LocalScript
+local function C_a()
+local script = G2L["a"];
+	script.Parent.MouseButton1Click:Connect(function()
+		game.Players.LocalPlayer.PlayerGui:FindFirstChild("Sound"):Destroy()
+	end)
+end;
+task.spawn(C_a);
+
+return G2L["1"], require;
