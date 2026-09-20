@@ -1,0 +1,137 @@
+local Players = game:GetService("Players")
+local UserInputService = game:GetService("UserInputService")
+
+local player = Players.LocalPlayer
+local camera = workspace.CurrentCamera
+
+--// GUI
+local gui = Instance.new("ScreenGui")
+gui.Name = "TeleportToggleGUI"
+gui.ResetOnSpawn = false
+gui.Parent = player:WaitForChild("PlayerGui")
+
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 220, 0, 120)
+frame.Position = UDim2.new(0.5, -110, 0.5, -60)
+frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+frame.BorderSizePixel = 0
+frame.Active = true
+frame.Draggable = true
+frame.Parent = gui
+
+local corner = Instance.new("UICorner")
+corner.CornerRadius = UDim.new(0, 10)
+corner.Parent = frame
+
+local title = Instance.new("TextLabel")
+title.Size = UDim2.new(1, 0, 0, 35)
+title.BackgroundTransparency = 1
+title.Text = "Teleport + Speed"
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.TextSize = 18
+title.Font = Enum.Font.GothamBold
+title.Parent = frame
+
+local toggleButton = Instance.new("TextButton")
+toggleButton.Size = UDim2.new(0, 170, 0, 45)
+toggleButton.Position = UDim2.new(0.5, -85, 0, 55)
+toggleButton.BackgroundColor3 = Color3.fromRGB(60, 170, 80)
+toggleButton.Text = "ON"
+toggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+toggleButton.TextSize = 18
+toggleButton.Font = Enum.Font.GothamBold
+toggleButton.Parent = frame
+
+local buttonCorner = Instance.new("UICorner")
+buttonCorner.CornerRadius = UDim.new(0, 8)
+buttonCorner.Parent = toggleButton
+
+--// Toggle state
+local enabled = true
+
+toggleButton.MouseButton1Click:Connect(function()
+	enabled = not enabled
+
+	if enabled then
+		toggleButton.Text = "ON"
+		toggleButton.BackgroundColor3 = Color3.fromRGB(60, 170, 80)
+	else
+		toggleButton.Text = "OFF"
+		toggleButton.BackgroundColor3 = Color3.fromRGB(180, 60, 60)
+	end
+end)
+
+--// K = Show/Hide GUI
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+	if gameProcessed then return end
+
+	if input.KeyCode == Enum.KeyCode.K then
+		gui.Enabled = not gui.Enabled
+	end
+end)
+
+--// Find FPS display
+local label
+local originalScript
+
+task.spawn(function()
+	local fpsGui = player:WaitForChild("PlayerGui"):WaitForChild("FPS M/S")
+	label = fpsGui:WaitForChild("TextLabel")
+	originalScript = label:FindFirstChild("Fpsdisplay")
+end)
+
+--// Main action
+UserInputService.InputBegan:Connect(function(input, gameProcessed)
+	if gameProcessed then return end
+	if not enabled then return end
+
+	if input.UserInputType == Enum.UserInputType.MouseButton1 then
+
+		local character = player.Character
+		local root = character and character:FindFirstChild("HumanoidRootPart")
+
+		if root then
+
+			-- Teleport forward
+			local distance = 20
+			local direction = camera.CFrame.LookVector
+
+			direction = Vector3.new(
+				direction.X,
+				0,
+				direction.Z
+			)
+
+			if direction.Magnitude > 0 then
+				direction = direction.Unit
+				root.CFrame = root.CFrame + (direction * distance)
+			end
+
+			-- Randomize displayed speed from 90-110
+			local randomSpeed = math.random(90, 110)
+
+			if originalScript then
+				originalScript.Enabled = false
+			end
+
+			if label then
+				label.Text = string.format(
+					"FPS: 60\nSpeed: %d m/s",
+					randomSpeed
+				)
+			end
+
+			task.delay(1, function()
+
+				if label then
+					label.Text = "FPS: 60\nSpeed: 0 m/s"
+				end
+
+				if originalScript then
+					originalScript.Enabled = true
+				end
+
+			end)
+		end
+	end
+end)
