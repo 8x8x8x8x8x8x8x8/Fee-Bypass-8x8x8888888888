@@ -1,0 +1,297 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local PlayerSelector = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local ImageLabel = Instance.new("ImageLabel")
+local TextLabel = Instance.new("TextLabel")
+local TextBox = Instance.new("TextBox")
+local TextButton = Instance.new("TextButton")
+
+--Properties:
+
+PlayerSelector.Name = "PlayerSelector"
+PlayerSelector.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+PlayerSelector.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+PlayerSelector.ResetOnSpawn = false
+
+Frame.Parent = PlayerSelector
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(-0.000213244566, 0, 0.755670428, 0)
+Frame.Size = UDim2.new(0, 430, 0, 215)
+
+ImageLabel.Parent = Frame
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageLabel.BorderSizePixel = 0
+ImageLabel.Position = UDim2.new(-0.00465137558, 0, 0, 0)
+ImageLabel.Size = UDim2.new(0, 430, 0, 215)
+ImageLabel.Image = "rbxassetid://79817011450603"
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(-3.54855558e-08, 0, -0.293023258, 0)
+TextLabel.Size = UDim2.new(0, 430, 0, 50)
+TextLabel.Font = Enum.Font.Bangers
+TextLabel.Text = "Sigma 8x Fling GUI"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+TextBox.Parent = Frame
+TextBox.BackgroundColor3 = Color3.fromRGB(28, 202, 238)
+TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.BorderSizePixel = 0
+TextBox.Position = UDim2.new(0.0372093022, 0, 0.0651162788, 0)
+TextBox.Size = UDim2.new(0, 395, 0, 68)
+TextBox.Font = Enum.Font.SourceSans
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.TextScaled = true
+TextBox.TextSize = 14.000
+TextBox.TextWrapped = true
+
+TextButton.Parent = Frame
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(0.230232552, 0, 0.590697646, 0)
+TextButton.Size = UDim2.new(0, 228, 0, 70)
+TextButton.Font = Enum.Font.Bangers
+TextButton.Text = "Fling Them"
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextScaled = true
+TextButton.TextSize = 14.000
+TextButton.TextWrapped = true
+
+-- Scripts:
+
+local function QYTODBJ_fake_script() -- Frame.LocalScript 
+	local script = Instance.new('LocalScript', Frame)
+
+	local Players = game:GetService("Players")
+	
+	local gui = script.Parent
+	local frame = gui:WaitForChild("Frame")
+	local dropdownButton = frame:WaitForChild("DropdownButton")
+	
+	dropdownButton.Text = "Select Player ▼"
+	
+	-- Create the player list
+	local playerList = Instance.new("ScrollingFrame")
+	playerList.Name = "PlayerList"
+	playerList.Size = UDim2.new(1, 0, 0, 200)
+	playerList.Position = UDim2.new(0, 0, 1, 5)
+	playerList.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+	playerList.Visible = false
+	playerList.ScrollBarThickness = 6
+	playerList.Parent = frame
+	
+	local layout = Instance.new("UIListLayout")
+	layout.Parent = playerList
+	layout.Padding = UDim.new(0, 2)
+	
+	local function updatePlayers()
+		for _, object in ipairs(playerList:GetChildren()) do
+			if object:IsA("TextButton") then
+				object:Destroy()
+			end
+		end
+	
+		for _, target in ipairs(Players:GetPlayers()) do
+			local button = Instance.new("TextButton")
+	
+			button.Size = UDim2.new(1, -10, 0, 35)
+			button.Text = target.Name
+			button.TextColor3 = Color3.new(1, 1, 1)
+			button.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+			button.Parent = playerList
+	
+			button.MouseButton1Click:Connect(function()
+				dropdownButton.Text = target.Name
+				playerList.Visible = false
+			end)
+		end
+	
+		playerList.CanvasSize = UDim2.new(
+			0,
+			0,
+			0,
+			layout.AbsoluteContentSize.Y + 10
+		)
+	end
+	
+	dropdownButton.MouseButton1Click:Connect(function()
+		playerList.Visible = not playerList.Visible
+	
+		if playerList.Visible then
+			updatePlayers()
+		end
+	end)
+	
+	Players.PlayerAdded:Connect(updatePlayers)
+	Players.PlayerRemoving:Connect(updatePlayers)
+	
+	updatePlayers()
+end
+coroutine.wrap(QYTODBJ_fake_script)()
+local function SFAYQ_fake_script() -- TextLabel.LocalScript 
+	local script = Instance.new('LocalScript', TextLabel)
+
+	local label = script.Parent
+	
+	while true do
+		for hue = 0, 1, 0.01 do
+			label.TextColor3 = Color3.fromHSV(hue, 1, 1)
+			task.wait(0.03)
+		end
+	end
+	
+end
+coroutine.wrap(SFAYQ_fake_script)()
+local function TBJKRZ_fake_script() -- TextBox.LocalScript 
+	local script = Instance.new('LocalScript', TextBox)
+
+	local Players = game:GetService("Players")
+	
+	local textBox = script.Parent
+	
+	textBox.FocusLost:Connect(function()
+		local username = textBox.Text
+	
+		local target = Players:FindFirstChild(username)
+	
+		if target then
+			print("Selected player:", target.Name)
+		else
+			print("Player not found")
+		end
+	end)
+	
+end
+coroutine.wrap(TBJKRZ_fake_script)()
+local function KKRW_fake_script() -- TextButton.LocalScript 
+	local script = Instance.new('LocalScript', TextButton)
+
+	local Players = game:GetService("Players")
+	local RunService = game:GetService("RunService")
+	local StarterGui = game:GetService("StarterGui")
+	
+	local player = Players.LocalPlayer
+	local button = script.Parent
+	local gui = button.Parent
+	local textBox = gui:WaitForChild("TextBox")
+	
+	local function notify(title, text)
+		StarterGui:SetCore("SendNotification", {
+			Title = title;
+			Text = text;
+			Duration = 3;
+		})
+	end
+	
+	local function findTarget(name)
+		name = name:lower()
+	
+		for _, p in ipairs(Players:GetPlayers()) do
+			if p ~= player and p.Name:lower():sub(1, #name) == name then
+				return p
+			end
+		end
+	
+		return nil
+	end
+	
+	button.MouseButton1Click:Connect(function()
+		local target = findTarget(textBox.Text)
+	
+		if not target then
+			notify("Player Not Found", "Couldn't find that player.")
+			return
+		end
+	
+		local character = player.Character
+		local targetCharacter = target.Character
+	
+		if not character or not targetCharacter then
+			notify("Error", "Character not found.")
+			return
+		end
+	
+		local root = character:FindFirstChild("HumanoidRootPart")
+		local targetRoot = targetCharacter:FindFirstChild("HumanoidRootPart")
+	
+		if not root or not targetRoot then
+			notify("Error", "HumanoidRootPart not found.")
+			return
+		end
+	
+		-- Save your original position
+		local originalCFrame = root.CFrame
+	
+		notify("Fling", "Starting test on " .. target.Name)
+	
+		local thrust = Instance.new("BodyThrust")
+		thrust.Name = "LocalTestThrust"
+		thrust.Force = Vector3.new(9999, 9999, 9999)
+		thrust.Location = targetRoot.Position
+		thrust.Parent = root
+	
+		local start = os.clock()
+	
+		while os.clock() - start < 3 do
+			if not root.Parent or not targetRoot.Parent then
+				break
+			end
+	
+			root.CFrame = targetRoot.CFrame
+			thrust.Location = targetRoot.Position
+	
+			RunService.Heartbeat:Wait()
+		end
+	
+		thrust:Destroy()
+	
+		root.AssemblyLinearVelocity = Vector3.zero
+		root.AssemblyAngularVelocity = Vector3.zero
+	
+		-- Return to where you started
+		root.CFrame = originalCFrame
+	
+		notify("Fling", "Finished! Returned to starting position.")
+	end)
+end
+coroutine.wrap(KKRW_fake_script)()
+local function XWOJQR_fake_script() -- Frame.Draggable 
+	local script = Instance.new('LocalScript', Frame)
+
+	local UIS = game:GetService("UserInputService")
+	local f = script.Parent
+	local d, s, p
+	
+	f.InputBegan:Connect(function(i)
+		if i.UserInputType == Enum.UserInputType.MouseButton1 then
+			d, s, p = true, i.Position, f.Position
+		end
+	end)
+	
+	UIS.InputChanged:Connect(function(i)
+		if d and i.UserInputType == Enum.UserInputType.MouseMovement then
+			local x = i.Position - s
+			f.Position = UDim2.new(p.X.Scale, p.X.Offset + x.X, p.Y.Scale, p.Y.Offset + x.Y)
+		end
+	end)
+	
+	UIS.InputEnded:Connect(function(i)
+		if i.UserInputType == Enum.UserInputType.MouseButton1 then d = false end
+	end)
+end
+coroutine.wrap(XWOJQR_fake_script)()
