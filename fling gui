@@ -1,82 +1,152 @@
--- Gui to Lua
--- Version: 3.2
+local G2L = {};
 
--- Instances:
+-- StarterGui.PlayerSelector
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["Name"] = [[PlayerSelector]];
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+G2L["1"]["ResetOnSpawn"] = false;
 
-local PlayerSelector = Instance.new("ScreenGui")
-local Frame = Instance.new("Frame")
-local ImageLabel = Instance.new("ImageLabel")
-local TextLabel = Instance.new("TextLabel")
-local TextBox = Instance.new("TextBox")
-local TextButton = Instance.new("TextButton")
 
---Properties:
+-- StarterGui.PlayerSelector.Frame
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["BorderSizePixel"] = 0;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2"]["Size"] = UDim2.new(0, 430, 0, 215);
+G2L["2"]["Position"] = UDim2.new(-0.00027, 0, 0.75567, 0);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 
-PlayerSelector.Name = "PlayerSelector"
-PlayerSelector.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-PlayerSelector.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-PlayerSelector.ResetOnSpawn = false
 
-Frame.Parent = PlayerSelector
-Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Frame.BorderSizePixel = 0
-Frame.Position = UDim2.new(-0.000213244566, 0, 0.755670428, 0)
-Frame.Size = UDim2.new(0, 430, 0, 215)
+-- StarterGui.PlayerSelector.Frame.LocalScript
+G2L["3"] = Instance.new("LocalScript", G2L["2"]);
 
-ImageLabel.Parent = Frame
-ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ImageLabel.BorderSizePixel = 0
-ImageLabel.Position = UDim2.new(-0.00465137558, 0, 0, 0)
-ImageLabel.Size = UDim2.new(0, 430, 0, 215)
-ImageLabel.Image = "rbxassetid://79817011450603"
 
-TextLabel.Parent = Frame
-TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.BorderSizePixel = 0
-TextLabel.Position = UDim2.new(-3.54855558e-08, 0, -0.293023258, 0)
-TextLabel.Size = UDim2.new(0, 430, 0, 50)
-TextLabel.Font = Enum.Font.Bangers
-TextLabel.Text = "Sigma 8x Fling GUI"
-TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 14.000
-TextLabel.TextWrapped = true
 
-TextBox.Parent = Frame
-TextBox.BackgroundColor3 = Color3.fromRGB(28, 202, 238)
-TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextBox.BorderSizePixel = 0
-TextBox.Position = UDim2.new(0.0372093022, 0, 0.0651162788, 0)
-TextBox.Size = UDim2.new(0, 395, 0, 68)
-TextBox.Font = Enum.Font.SourceSans
-TextBox.Text = ""
-TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextBox.TextScaled = true
-TextBox.TextSize = 14.000
-TextBox.TextWrapped = true
+-- StarterGui.PlayerSelector.Frame.ImageLabel
+G2L["4"] = Instance.new("ImageLabel", G2L["2"]);
+G2L["4"]["BorderSizePixel"] = 0;
+G2L["4"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4"]["Image"] = [[rbxassetid://79817011450603]];
+G2L["4"]["Size"] = UDim2.new(0, 430, 0, 215);
+G2L["4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4"]["Position"] = UDim2.new(-0.00465, 0, 0, 0);
 
-TextButton.Parent = Frame
-TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextButton.BorderSizePixel = 0
-TextButton.Position = UDim2.new(0.230232552, 0, 0.590697646, 0)
-TextButton.Size = UDim2.new(0, 228, 0, 70)
-TextButton.Font = Enum.Font.Bangers
-TextButton.Text = "Fling Them"
-TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton.TextScaled = true
-TextButton.TextSize = 14.000
-TextButton.TextWrapped = true
 
--- Scripts:
+-- StarterGui.PlayerSelector.Frame.TextLabel
+G2L["5"] = Instance.new("TextLabel", G2L["2"]);
+G2L["5"]["TextWrapped"] = true;
+G2L["5"]["BorderSizePixel"] = 0;
+G2L["5"]["TextSize"] = 14;
+G2L["5"]["TextScaled"] = true;
+G2L["5"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5"]["FontFace"] = Font.new([[rbxasset://fonts/families/Bangers.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["5"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5"]["BackgroundTransparency"] = 1;
+G2L["5"]["RichText"] = true;
+G2L["5"]["Size"] = UDim2.new(0, 430, 0, 50);
+G2L["5"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5"]["Text"] = [[Sigma 8x Fling GUI]];
+G2L["5"]["Position"] = UDim2.new(-0, 0, -0.29302, 0);
 
-local function QYTODBJ_fake_script() -- Frame.LocalScript 
-	local script = Instance.new('LocalScript', Frame)
 
+-- StarterGui.PlayerSelector.Frame.TextLabel.LocalScript
+G2L["6"] = Instance.new("LocalScript", G2L["5"]);
+
+
+
+-- StarterGui.PlayerSelector.Frame.Draggable
+G2L["7"] = Instance.new("LocalScript", G2L["2"]);
+G2L["7"]["Name"] = [[Draggable]];
+
+
+-- StarterGui.PlayerSelector.Frame.FlingButton
+G2L["8"] = Instance.new("TextButton", G2L["2"]);
+G2L["8"]["TextWrapped"] = true;
+G2L["8"]["RichText"] = true;
+G2L["8"]["BorderSizePixel"] = 5;
+G2L["8"]["TextSize"] = 14;
+G2L["8"]["TextScaled"] = true;
+G2L["8"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["8"]["FontFace"] = Font.new([[rbxasset://fonts/families/Bangers.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["8"]["Size"] = UDim2.new(0, 228, 0, 70);
+G2L["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8"]["Text"] = [[Fling Them]];
+G2L["8"]["Name"] = [[FlingButton]];
+G2L["8"]["Position"] = UDim2.new(0.23023, 0, 0.5907, 0);
+
+
+-- StarterGui.PlayerSelector.Frame.FlingButton.LocalScript
+G2L["9"] = Instance.new("LocalScript", G2L["8"]);
+
+
+
+-- StarterGui.PlayerSelector.Frame.PlayerDropdown
+G2L["a"] = Instance.new("TextButton", G2L["2"]);
+G2L["a"]["TextWrapped"] = true;
+G2L["a"]["RichText"] = true;
+G2L["a"]["BorderSizePixel"] = 5;
+G2L["a"]["TextSize"] = 14;
+G2L["a"]["TextScaled"] = true;
+G2L["a"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["a"]["FontFace"] = Font.new([[rbxasset://fonts/families/Creepster.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["a"]["Size"] = UDim2.new(0, 317, 0, 76);
+G2L["a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a"]["Text"] = [[Select Player ▼]];
+G2L["a"]["Name"] = [[PlayerDropdown]];
+G2L["a"]["Position"] = UDim2.new(0.13023, 0, 0.09767, 0);
+
+
+-- StarterGui.PlayerSelector.Frame.PlayerDropdown.LocalScript
+G2L["b"] = Instance.new("LocalScript", G2L["a"]);
+
+
+
+-- StarterGui.PlayerSelector.Frame.PlayerDropdown.PlayerList
+G2L["c"] = Instance.new("ScrollingFrame", G2L["a"]);
+G2L["c"]["Visible"] = false;
+G2L["c"]["Active"] = true;
+G2L["c"]["BorderSizePixel"] = 5;
+G2L["c"]["CanvasPosition"] = Vector2.new(0, 9.12);
+G2L["c"]["Name"] = [[PlayerList]];
+G2L["c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["c"]["Size"] = UDim2.new(0, 317, 0, 100);
+G2L["c"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["c"]["Position"] = UDim2.new(0, 0, 1.07895, 0);
+G2L["c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+
+
+-- StarterGui.PlayerSelector.Frame.PlayerDropdown.LocalScript1
+G2L["d"] = Instance.new("LocalScript", G2L["a"]);
+G2L["d"]["Name"] = [[LocalScript1]];
+
+
+-- StarterGui.PlayerSelector.Frame.TextLabel1
+G2L["e"] = Instance.new("TextLabel", G2L["2"]);
+G2L["e"]["TextWrapped"] = true;
+G2L["e"]["BorderSizePixel"] = 0;
+G2L["e"]["TextSize"] = 14;
+G2L["e"]["TextScaled"] = true;
+G2L["e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["e"]["FontFace"] = Font.new([[rbxasset://fonts/families/Bangers.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["e"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["e"]["BackgroundTransparency"] = 1;
+G2L["e"]["RichText"] = true;
+G2L["e"]["Size"] = UDim2.new(0, 203, 0, 41);
+G2L["e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["e"]["Text"] = [[Made By 8x8x8x8x8x8x8x8]];
+G2L["e"]["Name"] = [[TextLabel1]];
+G2L["e"]["Position"] = UDim2.new(1.02326, 0, 0, 0);
+
+
+-- StarterGui.PlayerSelector.Frame.TextLabel1.LocalScript
+G2L["f"] = Instance.new("LocalScript", G2L["e"]);
+
+
+
+-- StarterGui.PlayerSelector.Frame.LocalScript
+local function C_3()
+local script = G2L["3"];
 	local Players = game:GetService("Players")
 	
 	local gui = script.Parent
@@ -141,11 +211,11 @@ local function QYTODBJ_fake_script() -- Frame.LocalScript
 	Players.PlayerRemoving:Connect(updatePlayers)
 	
 	updatePlayers()
-end
-coroutine.wrap(QYTODBJ_fake_script)()
-local function SFAYQ_fake_script() -- TextLabel.LocalScript 
-	local script = Instance.new('LocalScript', TextLabel)
-
+end;
+task.spawn(C_3);
+-- StarterGui.PlayerSelector.Frame.TextLabel.LocalScript
+local function C_6()
+local script = G2L["6"];
 	local label = script.Parent
 	
 	while true do
@@ -155,32 +225,36 @@ local function SFAYQ_fake_script() -- TextLabel.LocalScript
 		end
 	end
 	
-end
-coroutine.wrap(SFAYQ_fake_script)()
-local function TBJKRZ_fake_script() -- TextBox.LocalScript 
-	local script = Instance.new('LocalScript', TextBox)
-
-	local Players = game:GetService("Players")
+end;
+task.spawn(C_6);
+-- StarterGui.PlayerSelector.Frame.Draggable
+local function C_7()
+local script = G2L["7"];
+	local UIS = game:GetService("UserInputService")
+	local f = script.Parent
+	local d, s, p
 	
-	local textBox = script.Parent
-	
-	textBox.FocusLost:Connect(function()
-		local username = textBox.Text
-	
-		local target = Players:FindFirstChild(username)
-	
-		if target then
-			print("Selected player:", target.Name)
-		else
-			print("Player not found")
+	f.InputBegan:Connect(function(i)
+		if i.UserInputType == Enum.UserInputType.MouseButton1 then
+			d, s, p = true, i.Position, f.Position
 		end
 	end)
 	
-end
-coroutine.wrap(TBJKRZ_fake_script)()
-local function KKRW_fake_script() -- TextButton.LocalScript 
-	local script = Instance.new('LocalScript', TextButton)
-
+	UIS.InputChanged:Connect(function(i)
+		if d and i.UserInputType == Enum.UserInputType.MouseMovement then
+			local x = i.Position - s
+			f.Position = UDim2.new(p.X.Scale, p.X.Offset + x.X, p.Y.Scale, p.Y.Offset + x.Y)
+		end
+	end)
+	
+	UIS.InputEnded:Connect(function(i)
+		if i.UserInputType == Enum.UserInputType.MouseButton1 then d = false end
+	end)
+end;
+task.spawn(C_7);
+-- StarterGui.PlayerSelector.Frame.FlingButton.LocalScript
+local function C_9()
+local script = G2L["9"];
 	local Players = game:GetService("Players")
 	local RunService = game:GetService("RunService")
 	local StarterGui = game:GetService("StarterGui")
@@ -188,7 +262,7 @@ local function KKRW_fake_script() -- TextButton.LocalScript
 	local player = Players.LocalPlayer
 	local button = script.Parent
 	local gui = button.Parent
-	local textBox = gui:WaitForChild("TextBox")
+	local playerDropdown = gui:WaitForChild("PlayerDropdown")
 	
 	local function notify(title, text)
 		StarterGui:SetCore("SendNotification", {
@@ -211,7 +285,7 @@ local function KKRW_fake_script() -- TextButton.LocalScript
 	end
 	
 	button.MouseButton1Click:Connect(function()
-		local target = findTarget(textBox.Text)
+		local target = findTarget(playerDropdown.Text)
 	
 		if not target then
 			notify("Player Not Found", "Couldn't find that player.")
@@ -268,30 +342,114 @@ local function KKRW_fake_script() -- TextButton.LocalScript
 	
 		notify("Fling", "Finished! Returned to starting position.")
 	end)
-end
-coroutine.wrap(KKRW_fake_script)()
-local function XWOJQR_fake_script() -- Frame.Draggable 
-	local script = Instance.new('LocalScript', Frame)
+end;
+task.spawn(C_9);
+-- StarterGui.PlayerSelector.Frame.PlayerDropdown.LocalScript
+local function C_b()
+local script = G2L["b"];
+	local Players = game:GetService("Players")
+	
+	local dropdown = script.Parent
+	local playerList = dropdown:WaitForChild("PlayerList")
+	
+	playerList.Visible = false
+	playerList:ClearAllChildren()
+	
+	local layout = Instance.new("UIListLayout")
+	layout.Parent = playerList
+	layout.SortOrder = Enum.SortOrder.Name
+	layout.Padding = UDim.new(0, 2)
+	
+	local function updatePlayerList()
+		-- Remove old player buttons
+		for _, child in ipairs(playerList:GetChildren()) do
+			if child:IsA("TextButton") then
+				child:Destroy()
+			end
+		end
+	
+		-- Add EVERY player
+		for _, player in ipairs(Players:GetPlayers()) do
+			local playerButton = Instance.new("TextButton")
+	
+			playerButton.Name = player.Name
+			playerButton.Text = player.Name
+			playerButton.Size = UDim2.new(1, 0, 0, 35)
+			playerButton.BackgroundTransparency = 0
+			playerButton.TextScaled = true
+			playerButton.Parent = playerList
+	
+			playerButton.MouseButton1Click:Connect(function()
+				dropdown.Text = player.Name
+				dropdown:SetAttribute("SelectedPlayer", player.UserId)
+				playerList.Visible = false
+			end)
+		end
+	
+		-- Make the scrolling area fit all players
+		playerList.CanvasSize = UDim2.new(0, 0, 0, layout.AbsoluteContentSize.Y)
+	end
+	
+	dropdown.MouseButton1Click:Connect(function()
+		playerList.Visible = not playerList.Visible
+		updatePlayerList()
+	end)
+	
+	Players.PlayerAdded:Connect(updatePlayerList)
+	Players.PlayerRemoving:Connect(updatePlayerList)
+	
+	updatePlayerList()
+end;
+task.spawn(C_b);
+-- StarterGui.PlayerSelector.Frame.PlayerDropdown.LocalScript1
+local function C_d()
+local script = G2L["d"];
+	local Players = game:GetService("Players")
+	
+	local dropdown = script.Parent
+	local frame = dropdown.Parent
+	local playerList = frame:WaitForChild("PlayerList")
+	
+	local function updateList()
+		for _, object in ipairs(playerList:GetChildren()) do
+			if object:IsA("TextButton") then
+				object:Destroy()
+			end
+		end
+	
+		for _, player in ipairs(Players:GetPlayers()) do
+			local button = Instance.new("TextButton")
+	
+			button.Name = player.Name
+			button.Text = player.DisplayName
+			button.Size = UDim2.new(1, 0, 0, 35)
+			button.Parent = playerList
+		end
+	end
+	
+	dropdown.MouseButton1Click:Connect(function()
+		playerList.Visible = not playerList.Visible
+	end)
+	
+	Players.PlayerAdded:Connect(updateList)
+	Players.PlayerRemoving:Connect(updateList)
+	
+	updateList()
+end;
+task.spawn(C_d);
+-- StarterGui.PlayerSelector.Frame.TextLabel1.LocalScript
+local function C_f()
+local script = G2L["f"];
+	local label = script.Parent
+	
+	while true do
+		for hue = 0, 1, 0.01 do
+			label.TextColor3 = Color3.fromHSV(hue, 1, 1)
+			task.wait(0.03)
+		end
+	end
+	
+end;
+task.spawn(C_f);
 
-	local UIS = game:GetService("UserInputService")
-	local f = script.Parent
-	local d, s, p
-	
-	f.InputBegan:Connect(function(i)
-		if i.UserInputType == Enum.UserInputType.MouseButton1 then
-			d, s, p = true, i.Position, f.Position
-		end
-	end)
-	
-	UIS.InputChanged:Connect(function(i)
-		if d and i.UserInputType == Enum.UserInputType.MouseMovement then
-			local x = i.Position - s
-			f.Position = UDim2.new(p.X.Scale, p.X.Offset + x.X, p.Y.Scale, p.Y.Offset + x.Y)
-		end
-	end)
-	
-	UIS.InputEnded:Connect(function(i)
-		if i.UserInputType == Enum.UserInputType.MouseButton1 then d = false end
-	end)
-end
-coroutine.wrap(XWOJQR_fake_script)()
+return G2L["1"], require;
