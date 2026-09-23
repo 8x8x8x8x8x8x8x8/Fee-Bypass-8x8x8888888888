@@ -38,7 +38,7 @@ local LocalScript1_4 = Instance.new("LocalScript")
 local ExE_1 = Instance.new("TextButton")
 local LocalScript1_5 = Instance.new("LocalScript")
 local LocalScript3_1 = Instance.new("LocalScript")
-local Fake chat_1 = Instance.new("TextButton")
+local FakeChat_1 = Instance.new("TextButton")
 local LocalScript1_6 = Instance.new("LocalScript")
 local LocalScript2_3 = Instance.new("LocalScript")
 local MoreGui_1 = Instance.new("TextButton")
@@ -277,16 +277,16 @@ ExE_1.TextScaled = true
 ExE_1.TextSize = 14
 ExE_1.TextWrapped = true
 
-Fake chat_1.Name = "Fake chat"
-Fake chat_1.Parent = ScrollingFrame_2
-Fake chat_1.Position = UDim2.new(0.09000000357627869, 0, 0.26346153020858765, 0)
-Fake chat_1.Size = UDim2.new(0, 67, 0, 50)
-Fake chat_1.FontFace = Font.new("rbxasset://fonts/families/ComicNeueAngular.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-Fake chat_1.RichText = true
-Fake chat_1.Text = "Fake Chat"
-Fake chat_1.TextScaled = true
-Fake chat_1.TextSize = 14
-Fake chat_1.TextWrapped = true
+FakeChat_1.Name = "Fake chat"
+FakeChat_1.Parent = ScrollingFrame_2
+FakeChat_1.Position = UDim2.new(0.09000000357627869, 0, 0.26346153020858765, 0)
+FakeChat_1.Size = UDim2.new(0, 67, 0, 50)
+FakeChat_1.FontFace = Font.new("rbxasset://fonts/families/ComicNeueAngular.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+FakeChat_1.RichText = true
+FakeChat_1.Text = "Fake Chat"
+FakeChat_1.TextScaled = true
+FakeChat_1.TextSize = 14
+FakeChat_1.TextWrapped = true
 
 MoreGui_1.Name = "MoreGui"
 MoreGui_1.Parent = ScrollingFrame_2
@@ -703,7 +703,7 @@ end
 coroutine.wrap(C6311b1f106784f82846c7e130970b89)()
 
 local function C81d196ae51ea4bd2ad4717c98d9d3d3()
-local script = Instance.new("LocalScript", Fake chat_1)
+local script = Instance.new("LocalScript", FakeChat_1)
 local TextLabel = script.Parent
 
 while true do
@@ -718,7 +718,7 @@ end
 coroutine.wrap(C81d196ae51ea4bd2ad4717c98d9d3d3)()
 
 local function C5e3dfa948b284e7e99e29ba0e535890()
-local script = Instance.new("LocalScript", Fake chat_1)
+local script = Instance.new("LocalScript", FakeChat_1)
 local button = script.Parent
 
 local framesToHide = {
@@ -766,6 +766,7 @@ local button = script.Parent
 local framesToHide = {
 	button.Parent.Parent.AboutFrame,
 	button.Parent.Parent.ExEFrame,
+	button.Parent.Parent.FakeChatFrame,
 }
 
 local frameToShow = button.Parent.Parent.MoreFrame
@@ -989,7 +990,6 @@ button.MouseButton1Click:Connect(function()
 	-- StarterGui.Sound.Sound.UI Drag
 	G2L["3"] = Instance.new("LocalScript", G2L["2"]);
 	-- [ERROR] cannot convert Capabilities, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
-	G2L["3"]["Sandboxed"] = true;
 	G2L["3"]["Name"] = [[UI Drag]];
 
 
@@ -1307,75 +1307,7 @@ button.MouseButton1Click:Connect(function()
 
 
 
-	-- StarterGui.PlayerSelector.Frame.LocalScript
-	local function C_3()
-		local script = G2L["3"];
-		local Players = game:GetService("Players")
-
-		local gui = script.Parent
-		local frame = gui:WaitForChild("Frame")
-		local dropdownButton = frame:WaitForChild("DropdownButton")
-
-		dropdownButton.Text = "Select Player ▼"
-
-		-- Create the player list
-		local playerList = Instance.new("ScrollingFrame")
-		playerList.Name = "PlayerList"
-		playerList.Size = UDim2.new(1, 0, 0, 200)
-		playerList.Position = UDim2.new(0, 0, 1, 5)
-		playerList.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-		playerList.Visible = false
-		playerList.ScrollBarThickness = 6
-		playerList.Parent = frame
-
-		local layout = Instance.new("UIListLayout")
-		layout.Parent = playerList
-		layout.Padding = UDim.new(0, 2)
-
-		local function updatePlayers()
-			for _, object in ipairs(playerList:GetChildren()) do
-				if object:IsA("TextButton") then
-					object:Destroy()
-				end
-			end
-
-			for _, target in ipairs(Players:GetPlayers()) do
-				local button = Instance.new("TextButton")
-
-				button.Size = UDim2.new(1, -10, 0, 35)
-				button.Text = target.Name
-				button.TextColor3 = Color3.new(1, 1, 1)
-				button.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
-				button.Parent = playerList
-
-				button.MouseButton1Click:Connect(function()
-					dropdownButton.Text = target.Name
-					playerList.Visible = false
-				end)
-			end
-
-			playerList.CanvasSize = UDim2.new(
-				0,
-				0,
-				0,
-				layout.AbsoluteContentSize.Y + 10
-			)
-		end
-
-		dropdownButton.MouseButton1Click:Connect(function()
-			playerList.Visible = not playerList.Visible
-
-			if playerList.Visible then
-				updatePlayers()
-			end
-		end)
-
-		Players.PlayerAdded:Connect(updatePlayers)
-		Players.PlayerRemoving:Connect(updatePlayers)
-
-		updatePlayers()
-	end;
-	task.spawn(C_3);
+	-- PlayerSelector player-list setup is handled by PlayerDropdown.LocalScript below.
 	-- StarterGui.PlayerSelector.Frame.TextLabel.LocalScript
 	local function C_6()
 		local script = G2L["6"];
@@ -1435,20 +1367,9 @@ button.MouseButton1Click:Connect(function()
 			})
 		end
 
-		local function findTarget(name)
-			name = name:lower()
-
-			for _, p in ipairs(Players:GetPlayers()) do
-				if p ~= player and p.Name:lower():sub(1, #name) == name then
-					return p
-				end
-			end
-
-			return nil
-		end
-
 		button.MouseButton1Click:Connect(function()
-			local target = findTarget(playerDropdown.Text)
+			local selectedUserId = playerDropdown:GetAttribute("SelectedPlayer")
+			local target = selectedUserId and Players:GetPlayerByUserId(selectedUserId) or nil
 
 			if not target then
 				notify("Player Not Found", "Couldn't find that player.")
@@ -1550,7 +1471,9 @@ button.MouseButton1Click:Connect(function()
 			end
 
 			-- Make the scrolling area fit all players
-			playerList.CanvasSize = UDim2.new(0, 0, 0, layout.AbsoluteContentSize.Y)
+			task.defer(function()
+				playerList.CanvasSize = UDim2.new(0, 0, 0, layout.AbsoluteContentSize.Y + 5)
+			end)
 		end
 
 		dropdown.MouseButton1Click:Connect(function()
@@ -1564,42 +1487,7 @@ button.MouseButton1Click:Connect(function()
 		updatePlayerList()
 	end;
 	task.spawn(C_b);
-	-- StarterGui.PlayerSelector.Frame.PlayerDropdown.LocalScript1
-	local function C_d()
-		local script = G2L["d"];
-		local Players = game:GetService("Players")
-
-		local dropdown = script.Parent
-		local frame = dropdown.Parent
-		local playerList = frame:WaitForChild("PlayerList")
-
-		local function updateList()
-			for _, object in ipairs(playerList:GetChildren()) do
-				if object:IsA("TextButton") then
-					object:Destroy()
-				end
-			end
-
-			for _, player in ipairs(Players:GetPlayers()) do
-				local button = Instance.new("TextButton")
-
-				button.Name = player.Name
-				button.Text = player.DisplayName
-				button.Size = UDim2.new(1, 0, 0, 35)
-				button.Parent = playerList
-			end
-		end
-
-		dropdown.MouseButton1Click:Connect(function()
-			playerList.Visible = not playerList.Visible
-		end)
-
-		Players.PlayerAdded:Connect(updateList)
-		Players.PlayerRemoving:Connect(updateList)
-
-		updateList()
-	end;
-	task.spawn(C_d);
+	-- Duplicate PlayerDropdown.LocalScript1 removed; one dropdown manager is used.
 	-- StarterGui.PlayerSelector.Frame.TextLabel1.LocalScript
 	local function C_f()
 		local script = G2L["f"];
@@ -2206,7 +2094,6 @@ button.MouseButton1Click:Connect(function()
 	-- StarterGui.ScreenGui.MainGui.UI Drag
 	G2L["3"] = Instance.new("LocalScript", G2L["2"]);
 	-- [ERROR] cannot convert Capabilities, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
-	G2L["3"]["Sandboxed"] = true;
 	G2L["3"]["Name"] = [[UI Drag]];
 
 
