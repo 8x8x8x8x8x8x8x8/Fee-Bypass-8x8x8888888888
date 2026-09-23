@@ -38,7 +38,7 @@ local LocalScript1_4 = Instance.new("LocalScript")
 local ExE_1 = Instance.new("TextButton")
 local LocalScript1_5 = Instance.new("LocalScript")
 local LocalScript3_1 = Instance.new("LocalScript")
-local Fake chat_1 = Instance.new("TextButton")
+local Fake_chat_1 = Instance.new("TextButton")
 local LocalScript1_6 = Instance.new("LocalScript")
 local LocalScript2_3 = Instance.new("LocalScript")
 local MoreGui_1 = Instance.new("TextButton")
@@ -148,21 +148,18 @@ ImageLabel_1.BorderSizePixel = 3
 ImageLabel_1.Parent = AboutFrame_1
 ImageLabel_1.Position = UDim2.new(0.5972222089767456, 0, 0.0710659921169281, 0)
 ImageLabel_1.Image = "rbxassetid://131259450173720"
-ImageLabel_1.ImageContent = Content.fromUri("rbxassetid://131259450173720")
 
 ImageLabel1_1.Name = "ImageLabel1"
 ImageLabel1_1.Parent = AboutFrame_1
 ImageLabel1_1.Position = UDim2.new(0.03125, 0, 0.32487308979034424, 0)
 ImageLabel1_1.Size = UDim2.new(0, 151, 0, 125)
 ImageLabel1_1.Image = "rbxassetid://6862780932"
-ImageLabel1_1.ImageContent = Content.fromUri("rbxassetid://6862780932")
 
 ImageLabel2_1.Name = "ImageLabel2"
 ImageLabel2_1.Parent = AboutFrame_1
 ImageLabel2_1.Position = UDim2.new(0.5972222089767456, 0, 0.6446700692176819, 0)
 ImageLabel2_1.Size = UDim2.new(0, 100, 0, 62)
 ImageLabel2_1.Image = "rbxassetid://141309138"
-ImageLabel2_1.ImageContent = Content.fromUri("rbxassetid://141309138")
 
 ExEFrame_1.BackgroundColor3 = Color3.fromRGB(191, 191, 191)
 ExEFrame_1.Name = "ExEFrame"
@@ -278,16 +275,16 @@ ExE_1.TextScaled = true
 ExE_1.TextSize = 14
 ExE_1.TextWrapped = true
 
-Fake chat_1.Name = "Fake chat"
-Fake chat_1.Parent = ScrollingFrame_2
-Fake chat_1.Position = UDim2.new(0.09000000357627869, 0, 0.26346153020858765, 0)
-Fake chat_1.Size = UDim2.new(0, 67, 0, 50)
-Fake chat_1.FontFace = Font.new("rbxasset://fonts/families/ComicNeueAngular.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
-Fake chat_1.RichText = true
-Fake chat_1.Text = "Fake Chat"
-Fake chat_1.TextScaled = true
-Fake chat_1.TextSize = 14
-Fake chat_1.TextWrapped = true
+Fake_chat_1.Name = "Fake chat"
+Fake_chat_1.Parent = ScrollingFrame_2
+Fake_chat_1.Position = UDim2.new(0.09000000357627869, 0, 0.26346153020858765, 0)
+Fake_chat_1.Size = UDim2.new(0, 67, 0, 50)
+Fake_chat_1.FontFace = Font.new("rbxasset://fonts/families/ComicNeueAngular.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+Fake_chat_1.RichText = true
+Fake_chat_1.Text = "Fake Chat"
+Fake_chat_1.TextScaled = true
+Fake_chat_1.TextSize = 14
+Fake_chat_1.TextWrapped = true
 
 MoreGui_1.Name = "MoreGui"
 MoreGui_1.Parent = ScrollingFrame_2
@@ -406,7 +403,7 @@ Toggle_1.TextScaled = true
 Toggle_1.TextSize = 14
 Toggle_1.TextWrapped = true
 
-local function Ceeb1faa42453484d9cd7866038e7112()
+local function Ce3be4efcc98944ddbda4f350ac11c44()
 local script = Instance.new("LocalScript", Close_1)
 local button = script.Parent
 local gui = button:FindFirstAncestorOfClass("ScreenGui")
@@ -417,9 +414,9 @@ end)
 
 end
 
-coroutine.wrap(Ceeb1faa42453484d9cd7866038e7112)()
+coroutine.wrap(Ce3be4efcc98944ddbda4f350ac11c44)()
 
-local function C4136aa3945af4b1da24e526190fa745()
+local function Ce32188f493b640f6a5ec09874c0ab0d()
 local script = Instance.new("LocalScript", TextLabel_1)
 local TextLabel = script.Parent
 
@@ -432,9 +429,9 @@ end
 
 end
 
-coroutine.wrap(C4136aa3945af4b1da24e526190fa745)()
+coroutine.wrap(Ce32188f493b640f6a5ec09874c0ab0d)()
 
-local function Ce7fdcd39173142618c8fdbad02fedab()
+local function Ca14b12be10f541a7abaec2bb2a925a4()
 local script = Instance.new("LocalScript", TextLabel1_1)
 local TextLabel = script.Parent
 
@@ -447,9 +444,9 @@ end
 
 end
 
-coroutine.wrap(Ce7fdcd39173142618c8fdbad02fedab)()
+coroutine.wrap(Ca14b12be10f541a7abaec2bb2a925a4)()
 
-local function Cfa84a153c95c46eabd19817dbc171a8()
+local function C1eaf8c5b112e4031b5b371b14d27374()
 local script = Instance.new("LocalScript", MainFrame_1)
 local UIS = game:GetService("UserInputService")
 local f = script.Parent
@@ -473,9 +470,9 @@ UIS.InputEnded:Connect(function(i)
 end)
 end
 
-coroutine.wrap(Cfa84a153c95c46eabd19817dbc171a8)()
+coroutine.wrap(C1eaf8c5b112e4031b5b371b14d27374)()
 
-local function C2b1634892f8647a99c1321c08c276d8()
+local function C173b075d750749ef845102300185df1()
 local script = Instance.new("LocalScript", TextLabel_2)
 local TextLabel = script.Parent
 
@@ -488,9 +485,9 @@ end
 
 end
 
-coroutine.wrap(C2b1634892f8647a99c1321c08c276d8)()
+coroutine.wrap(C173b075d750749ef845102300185df1)()
 
-local function C5cbc1c625b5b48beaeebb6677d62511()
+local function C5c76af48092c498380621c513a2651f()
 local script = Instance.new("LocalScript", RunButton_1)
 local button = script.Parent
 local gui = button:FindFirstAncestorOfClass("ScreenGui")
@@ -509,9 +506,9 @@ button.MouseButton1Click:Connect(function()
 end)
 end
 
-coroutine.wrap(C5cbc1c625b5b48beaeebb6677d62511)()
+coroutine.wrap(C5c76af48092c498380621c513a2651f)()
 
-local function C1aea7996e2014309858a4258594c973()
+local function C4dedb264e63d43758f4eb5d3cca8e71()
 local script = Instance.new("LocalScript", RunButton_1)
 local TextLabel = script.Parent
 
@@ -524,9 +521,9 @@ end
 
 end
 
-coroutine.wrap(C1aea7996e2014309858a4258594c973)()
+coroutine.wrap(C4dedb264e63d43758f4eb5d3cca8e71)()
 
-local function Cd0aa20423dfa4891b8516c68e7c0f41()
+local function Cab07b3d8d2bf45e691e6157d84ab609()
 local script = Instance.new("LocalScript", ClearButton_1)
 local button = script.Parent
 local gui = button:FindFirstAncestorOfClass("ScreenGui")
@@ -542,9 +539,9 @@ button.MouseButton1Click:Connect(function()
 end)
 end
 
-coroutine.wrap(Cd0aa20423dfa4891b8516c68e7c0f41)()
+coroutine.wrap(Cab07b3d8d2bf45e691e6157d84ab609)()
 
-local function C080910be9888404983d1ac78dedba71()
+local function Cf279c364859144069bd49b3a207e1a4()
 local script = Instance.new("LocalScript", ClearButton_1)
 local TextLabel = script.Parent
 
@@ -557,9 +554,9 @@ end
 
 end
 
-coroutine.wrap(C080910be9888404983d1ac78dedba71)()
+coroutine.wrap(Cf279c364859144069bd49b3a207e1a4)()
 
-local function Ca751063b50084c12befbf771a5a7b05()
+local function Ce2ab8c4466514f27a5fab19f13b42aa()
 local script = Instance.new("LocalScript", SayButton_1)
 local TextChatService = game:GetService("TextChatService")
 local Players = game:GetService("Players")
@@ -602,9 +599,9 @@ button.MouseButton1Click:Connect(function()
 end)
 end
 
-coroutine.wrap(Ca751063b50084c12befbf771a5a7b05)()
+coroutine.wrap(Ce2ab8c4466514f27a5fab19f13b42aa)()
 
-local function C1579febb01df47f0a3ff3c471ea65b4()
+local function C0508eed99f3b4384950b30653bc5ee6()
 local script = Instance.new("LocalScript", SayButton_1)
 local TextLabel = script.Parent
 
@@ -617,9 +614,9 @@ end
 
 end
 
-coroutine.wrap(C1579febb01df47f0a3ff3c471ea65b4)()
+coroutine.wrap(C0508eed99f3b4384950b30653bc5ee6)()
 
-local function Cc64f1b833582465e879203447e9b512()
+local function Cd1b7f260b17d4b359e8a2425fde9c84()
 local script = Instance.new("LocalScript", About_1)
 local button = script.Parent
 
@@ -644,9 +641,9 @@ button.MouseButton1Click:Connect(function()
 end)
 end
 
-coroutine.wrap(Cc64f1b833582465e879203447e9b512)()
+coroutine.wrap(Cd1b7f260b17d4b359e8a2425fde9c84)()
 
-local function C38c30365601d4e9aae67c6040db589a()
+local function C3be142ea30e84eeca0868e12b2ed79a()
 local script = Instance.new("LocalScript", About_1)
 local TextLabel = script.Parent
 
@@ -659,9 +656,9 @@ end
 
 end
 
-coroutine.wrap(C38c30365601d4e9aae67c6040db589a)()
+coroutine.wrap(C3be142ea30e84eeca0868e12b2ed79a)()
 
-local function C3737efd09eda4aa68cfa104e218142e()
+local function Caa241c3f129b4d3bad891e08db9d297()
 local script = Instance.new("LocalScript", ExE_1)
 local TextLabel = script.Parent
 
@@ -674,9 +671,9 @@ end
 
 end
 
-coroutine.wrap(C3737efd09eda4aa68cfa104e218142e)()
+coroutine.wrap(Caa241c3f129b4d3bad891e08db9d297)()
 
-local function C64c83cde42624ac38656d98eb3f9bb9()
+local function C6980526ffbf34e36ae60160e526e7bc()
 local script = Instance.new("LocalScript", ExE_1)
 local button = script.Parent
 
@@ -701,10 +698,10 @@ button.MouseButton1Click:Connect(function()
 end)
 end
 
-coroutine.wrap(C64c83cde42624ac38656d98eb3f9bb9)()
+coroutine.wrap(C6980526ffbf34e36ae60160e526e7bc)()
 
-local function C1a68d9a0b2254303816a785b830d2ee()
-local script = Instance.new("LocalScript", Fake chat_1)
+local function Cdfa9831c13dc43b3a17133f8409ad72()
+local script = Instance.new("LocalScript", Fake_chat_1)
 local TextLabel = script.Parent
 
 while true do
@@ -716,10 +713,10 @@ end
 
 end
 
-coroutine.wrap(C1a68d9a0b2254303816a785b830d2ee)()
+coroutine.wrap(Cdfa9831c13dc43b3a17133f8409ad72)()
 
-local function C3c06716ba7594a9581c7791db7a8b8d()
-local script = Instance.new("LocalScript", Fake chat_1)
+local function C144fb70d414347838ed8eac3aec3fc4()
+local script = Instance.new("LocalScript", Fake_chat_1)
 local button = script.Parent
 
 local framesToHide = {
@@ -743,9 +740,9 @@ button.MouseButton1Click:Connect(function()
 end)
 end
 
-coroutine.wrap(C3c06716ba7594a9581c7791db7a8b8d)()
+coroutine.wrap(C144fb70d414347838ed8eac3aec3fc4)()
 
-local function Cbfab2464da5a4af58cbbf582dc882b6()
+local function C116ae0b0581e4642814701bf41d8d53()
 local script = Instance.new("LocalScript", MoreGui_1)
 local TextLabel = script.Parent
 
@@ -758,15 +755,16 @@ end
 
 end
 
-coroutine.wrap(Cbfab2464da5a4af58cbbf582dc882b6)()
+coroutine.wrap(C116ae0b0581e4642814701bf41d8d53)()
 
-local function Ce64736209f3f4e3086497950c55c1b2()
+local function C424e1f65d9ed45e3b4848171228ac8c()
 local script = Instance.new("LocalScript", MoreGui_1)
 local button = script.Parent
 
 local framesToHide = {
 	button.Parent.Parent.AboutFrame,
 	button.Parent.Parent.ExEFrame,
+	button.Parent.Parent.FakeChatFrame,
 }
 
 local frameToShow = button.Parent.Parent.MoreFrame
@@ -784,9 +782,9 @@ button.MouseButton1Click:Connect(function()
 end)
 end
 
-coroutine.wrap(Ce64736209f3f4e3086497950c55c1b2)()
+coroutine.wrap(C424e1f65d9ed45e3b4848171228ac8c)()
 
-local function Cca84147f7c2e4d7689a3f2d8ed31d8d()
+local function Cf55c7291490b45ea9a632446bd9112d()
 local script = Instance.new("LocalScript", TextButton_1)
 local button = script.Parent
 
@@ -935,9 +933,9 @@ end)
 
 end
 
-coroutine.wrap(Cca84147f7c2e4d7689a3f2d8ed31d8d)()
+coroutine.wrap(Cf55c7291490b45ea9a632446bd9112d)()
 
-local function Cd2f1c2abaf45402599a125bedd729cd()
+local function C828cf22b781246d6a0b56235189c7fe()
 local script = Instance.new("LocalScript", TextButton_1)
 local TextLabel = script.Parent
 
@@ -950,9 +948,9 @@ end
 
 end
 
-coroutine.wrap(Cd2f1c2abaf45402599a125bedd729cd)()
+coroutine.wrap(C828cf22b781246d6a0b56235189c7fe)()
 
-local function C6cfc7dcd43be49e697ccb1175ef9c8e()
+local function Cf46db54a52b34d3ab33dc97e3265530()
 local script = Instance.new("LocalScript", TextButton1_1)
 local button = script.Parent
 
@@ -990,7 +988,6 @@ button.MouseButton1Click:Connect(function()
 	-- StarterGui.Sound.Sound.UI Drag
 	G2L["3"] = Instance.new("LocalScript", G2L["2"]);
 	-- [ERROR] cannot convert Capabilities, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
-	G2L["3"]["Sandboxed"] = true;
 	G2L["3"]["Name"] = [[UI Drag]];
 
 
@@ -1139,9 +1136,9 @@ button.MouseButton1Click:Connect(function()
 end)
 end
 
-coroutine.wrap(C6cfc7dcd43be49e697ccb1175ef9c8e)()
+coroutine.wrap(Cf46db54a52b34d3ab33dc97e3265530)()
 
-local function C41a26bea9fcf422597a26a93a6d7a5c()
+local function Cc73d72103fb14932ac8f0d05fda2b72()
 local script = Instance.new("LocalScript", TextButton1_1)
 local TextLabel = script.Parent
 
@@ -1154,9 +1151,9 @@ end
 
 end
 
-coroutine.wrap(C41a26bea9fcf422597a26a93a6d7a5c)()
+coroutine.wrap(Cc73d72103fb14932ac8f0d05fda2b72)()
 
-local function Cdceca2f3acb643cca1757d2c113c274()
+local function Ce1e12f20f2c645fd9b5dcaed35bded5()
 local script = Instance.new("LocalScript", TextButton2_1)
 local button = script.Parent
 
@@ -1310,71 +1307,8 @@ button.MouseButton1Click:Connect(function()
 
 	-- StarterGui.PlayerSelector.Frame.LocalScript
 	local function C_3()
-		local script = G2L["3"];
-		local Players = game:GetService("Players")
-
-		local gui = script.Parent
-		local frame = gui:WaitForChild("Frame")
-		local dropdownButton = frame:WaitForChild("DropdownButton")
-
-		dropdownButton.Text = "Select Player ▼"
-
-		-- Create the player list
-		local playerList = Instance.new("ScrollingFrame")
-		playerList.Name = "PlayerList"
-		playerList.Size = UDim2.new(1, 0, 0, 200)
-		playerList.Position = UDim2.new(0, 0, 1, 5)
-		playerList.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-		playerList.Visible = false
-		playerList.ScrollBarThickness = 6
-		playerList.Parent = frame
-
-		local layout = Instance.new("UIListLayout")
-		layout.Parent = playerList
-		layout.Padding = UDim.new(0, 2)
-
-		local function updatePlayers()
-			for _, object in ipairs(playerList:GetChildren()) do
-				if object:IsA("TextButton") then
-					object:Destroy()
-				end
-			end
-
-			for _, target in ipairs(Players:GetPlayers()) do
-				local button = Instance.new("TextButton")
-
-				button.Size = UDim2.new(1, -10, 0, 35)
-				button.Text = target.Name
-				button.TextColor3 = Color3.new(1, 1, 1)
-				button.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
-				button.Parent = playerList
-
-				button.MouseButton1Click:Connect(function()
-					dropdownButton.Text = target.Name
-					playerList.Visible = false
-				end)
-			end
-
-			playerList.CanvasSize = UDim2.new(
-				0,
-				0,
-				0,
-				layout.AbsoluteContentSize.Y + 10
-			)
-		end
-
-		dropdownButton.MouseButton1Click:Connect(function()
-			playerList.Visible = not playerList.Visible
-
-			if playerList.Visible then
-				updatePlayers()
-			end
-		end)
-
-		Players.PlayerAdded:Connect(updatePlayers)
-		Players.PlayerRemoving:Connect(updatePlayers)
-
-		updatePlayers()
+		-- Player list is handled by the PlayerDropdown script below.
+		-- The old exporter script looked for a nonexistent "DropdownButton".
 	end;
 	task.spawn(C_3);
 	-- StarterGui.PlayerSelector.Frame.TextLabel.LocalScript
@@ -1622,9 +1556,9 @@ button.MouseButton1Click:Connect(function()
 end)
 end
 
-coroutine.wrap(Cdceca2f3acb643cca1757d2c113c274)()
+coroutine.wrap(Ce1e12f20f2c645fd9b5dcaed35bded5)()
 
-local function Ca7033f787d5f434f8dbc977ba5c609a()
+local function C4505849937004d34bcdd21c3f1e1e1a()
 local script = Instance.new("LocalScript", TextButton2_1)
 local TextLabel = script.Parent
 
@@ -1637,9 +1571,9 @@ end
 
 end
 
-coroutine.wrap(Ca7033f787d5f434f8dbc977ba5c609a)()
+coroutine.wrap(C4505849937004d34bcdd21c3f1e1e1a)()
 
-local function C4957b5f1f89f4b0aa545dce887f0002()
+local function Cb426a5aa5b984943826445db7884448()
 local script = Instance.new("LocalScript", TextButton3_1)
 local button = script.Parent
 
@@ -2153,9 +2087,9 @@ button.MouseButton1Click:Connect(function()
 end)
 end
 
-coroutine.wrap(C4957b5f1f89f4b0aa545dce887f0002)()
+coroutine.wrap(Cb426a5aa5b984943826445db7884448)()
 
-local function Cabaa81d0988742cdbbfc9b50b917bbd()
+local function C3c7e51545cc04f55a5181bf1eebbb59()
 local script = Instance.new("LocalScript", TextButton3_1)
 local TextLabel = script.Parent
 
@@ -2168,9 +2102,9 @@ end
 
 end
 
-coroutine.wrap(Cabaa81d0988742cdbbfc9b50b917bbd)()
+coroutine.wrap(C3c7e51545cc04f55a5181bf1eebbb59)()
 
-local function C91e2f085434145608c5a1138f8c009a()
+local function C6375f2af1aab4afd942384df315d636()
 local script = Instance.new("LocalScript", TextButton4_1)
 local button = script.Parent
 
@@ -2207,7 +2141,6 @@ button.MouseButton1Click:Connect(function()
 	-- StarterGui.ScreenGui.MainGui.UI Drag
 	G2L["3"] = Instance.new("LocalScript", G2L["2"]);
 	-- [ERROR] cannot convert Capabilities, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
-	G2L["3"]["Sandboxed"] = true;
 	G2L["3"]["Name"] = [[UI Drag]];
 
 
@@ -3736,9 +3669,9 @@ button.MouseButton1Click:Connect(function()
 end)
 end
 
-coroutine.wrap(C91e2f085434145608c5a1138f8c009a)()
+coroutine.wrap(C6375f2af1aab4afd942384df315d636)()
 
-local function C4402a9d4e08d43e3b13254e326509c6()
+local function C75406598263e444fb37a80bd2628050()
 local script = Instance.new("LocalScript", TextButton4_1)
 local TextLabel = script.Parent
 
@@ -3751,7 +3684,19 @@ end
 
 end
 
-coroutine.wrap(C4402a9d4e08d43e3b13254e326509c6)()
+coroutine.wrap(C75406598263e444fb37a80bd2628050)()
 
-local function C321dbb1eb1ab49028db4ed9cefb61e9()
+local function C4166012d4cb34f61a9c1771bad378e8()
 local script = Instance.new("LocalScript", TextButton5_1)
+local TextLabel = script.Parent
+
+while true do
+	for hue = 0, 1, 0.01 do
+		TextLabel.TextColor3 = Color3.fromHSV(hue, 1, 1)
+		task.wait(0.03)
+	end
+end
+
+end
+
+coroutine.wrap(C4166012d4cb34f61a9c1771bad378e8)()
