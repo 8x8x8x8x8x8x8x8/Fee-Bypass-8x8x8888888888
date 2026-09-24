@@ -6,6 +6,7 @@ local player = Players.LocalPlayer
 -- PUT ALLOWED USER IDS HERE
 local Whitelist = {
 	[6113961118] = true,
+	[6111640647] = true,
 }
 
 if not Whitelist[player.UserId] then
