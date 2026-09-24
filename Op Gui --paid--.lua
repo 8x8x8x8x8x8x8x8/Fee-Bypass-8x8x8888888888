@@ -2,15 +2,28 @@ local MarketplaceService = game:GetService("MarketplaceService")
 local Players = game:GetService("Players")
 
 local player = Players.LocalPlayer
+local SHIRT_ID = 17745689249 -- PUT THE SHIRT ID HERE
 
-local SHIRT_ID = 123456789 -- CHANGE THIS
-
-local function ownsShirt()
+local function checkShirt()
 	local success, owns = pcall(function()
 		return MarketplaceService:PlayerOwnsAsset(player, SHIRT_ID)
 	end)
 
-	return success and owns
+	if success and owns then
+		game:GetService("StarterGui"):SetCore("SendNotification", {
+			Title = "Shirt Check",
+			Text = "You have the shirt!",
+			Duration = 3
+		})
+		return true
+	else
+		game:GetService("StarterGui"):SetCore("SendNotification", {
+			Title = "Shirt Check",
+			Text = "You need the shirt!",
+			Duration = 3
+		})
+		return false
+	end
 end
 
 local function checkShirt()
