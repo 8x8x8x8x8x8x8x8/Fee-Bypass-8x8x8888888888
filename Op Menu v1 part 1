@@ -703,4 +703,4 @@ getgenv()._Split_TextButton7_2 = TextButton7_2
 getgenv()._Split_TextButton8_2 = TextButton8_2
 getgenv()._Split_Toggle = Toggle
 
-loadstring(game:HttpGet("YOUR_GITHUB_RAW_URL_PART2"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/8x8x8x8x8x8x8x8/Fee-Bypass-8x8x8888888888/refs/heads/main/Op%20Menu%20v1%20part%202"))()
