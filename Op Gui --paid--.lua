@@ -3,16 +3,24 @@
 
 -- Instances:
 
+local MarketplaceService = game:GetService("MarketplaceService")
 local Players = game:GetService("Players")
 local StarterGui = game:GetService("StarterGui")
 
 local player = Players.LocalPlayer
-local SHIRT_ID = "17745689249"
+local SHIRT_ID = 17745689249
 
-local character = player.Character or player.CharacterAdded:Wait()
-local shirt = character:FindFirstChildOfClass("Shirt")
+local ownsShirt = false
 
-if not shirt or not string.find(shirt.ShirtTemplate, SHIRT_ID) then
+local success, result = pcall(function()
+	return MarketplaceService:PlayerOwnsAssetAsync(player, SHIRT_ID)
+end)
+
+if success then
+	ownsShirt = result
+end
+
+if not ownsShirt then
 	StarterGui:SetCore("SendNotification", {
 		Title = "Access Denied",
 		Text = "You need the shirt!",
