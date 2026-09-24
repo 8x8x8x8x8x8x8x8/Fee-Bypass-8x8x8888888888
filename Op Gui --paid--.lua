@@ -1,15 +1,25 @@
 local Players = game:GetService("Players")
+local StarterGui = game:GetService("StarterGui")
 
 local player = Players.LocalPlayer
+local TSHIRT_ID = 17745689249
+
 local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
 
-local tshirt = character:FindFirstChildOfClass("ShirtGraphic")
+local description = humanoid:GetAppliedDescription()
 
-if not tshirt then
+if description.GraphicTShirt ~= TSHIRT_ID then
+	pcall(function()
+		StarterGui:SetCore("SendNotification", {
+			Title = "Access Denied",
+			Text = "You need to wear the shirt!",
+			Duration = 5
+		})
+	end)
+
 	return
 end
-
-print("Wearing T-Shirt:", tshirt.Graphic)
 
 -- Gui to Lua
 -- Version: 3.2
