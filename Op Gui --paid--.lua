@@ -3,6 +3,7 @@
 
 -- Instances:
 
+local ScreenGui = Instance.new("ScreenGui")
 local Players = game:GetService("Players")
 local StarterGui = game:GetService("StarterGui")
 
@@ -12,13 +13,7 @@ local SHIRT_ID = "17745689249"
 local character = player.Character or player.CharacterAdded:Wait()
 local shirt = character:FindFirstChildOfClass("Shirt")
 
-local wearingShirt = false
-
-if shirt then
-	wearingShirt = string.find(shirt.ShirtTemplate, SHIRT_ID, 1, true) ~= nil
-end
-
-if not wearingShirt then
+if not shirt or not string.find(shirt.ShirtTemplate, SHIRT_ID, 1, true) then
 	pcall(function()
 		StarterGui:SetCore("SendNotification", {
 			Title = "Access Denied",
@@ -26,9 +21,11 @@ if not wearingShirt then
 			Duration = 5
 		})
 	end)
-
 	return
 end
+local MainFrame = Instance.new("Frame")
+local TopFrame = Instance.new("Frame")
+local Close = Instance.new("TextButton")
 local TextLabel = Instance.new("TextLabel")
 local TextLabel1 = Instance.new("TextLabel")
 local AboutFrame = Instance.new("Frame")
