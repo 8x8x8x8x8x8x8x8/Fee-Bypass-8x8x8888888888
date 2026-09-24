@@ -1,52 +1,529 @@
--- Import GUI objects from Part 1
-local ScreenGui = getgenv()._Split_ScreenGui
-local MainFrame = getgenv()._Split_MainFrame
-local TopFrame = getgenv()._Split_TopFrame
-local Close = getgenv()._Split_Close
-local TextLabel = getgenv()._Split_TextLabel
-local TextLabel1 = getgenv()._Split_TextLabel1
-local AboutFrame = getgenv()._Split_AboutFrame
-local TextLabel_2 = getgenv()._Split_TextLabel_2
-local ImageLabel = getgenv()._Split_ImageLabel
-local ImageLabel1 = getgenv()._Split_ImageLabel1
-local ImageLabel2 = getgenv()._Split_ImageLabel2
-local ExEFrame = getgenv()._Split_ExEFrame
-local ScrollingFrame = getgenv()._Split_ScrollingFrame
-local CodeBox = getgenv()._Split_CodeBox
-local RunButton = getgenv()._Split_RunButton
-local ClearButton = getgenv()._Split_ClearButton
-local FakeChatFrame = getgenv()._Split_FakeChatFrame
-local NameBox = getgenv()._Split_NameBox
-local MessageBox = getgenv()._Split_MessageBox
-local SayButton = getgenv()._Split_SayButton
-local ScrollingFrame_2 = getgenv()._Split_ScrollingFrame_2
-local About = getgenv()._Split_About
-local ExE = getgenv()._Split_ExE
-local Fakechat = getgenv()._Split_Fakechat
-local MoreGui = getgenv()._Split_MoreGui
-local FE = getgenv()._Split_FE
-local MoreFrame = getgenv()._Split_MoreFrame
-local TextButton = getgenv()._Split_TextButton
-local TextButton1 = getgenv()._Split_TextButton1
-local TextButton2 = getgenv()._Split_TextButton2
-local TextButton3 = getgenv()._Split_TextButton3
-local TextButton4 = getgenv()._Split_TextButton4
-local TextButton5 = getgenv()._Split_TextButton5
-local TextButton6 = getgenv()._Split_TextButton6
-local TextButton7 = getgenv()._Split_TextButton7
-local TextButton8 = getgenv()._Split_TextButton8
-local FEFrame = getgenv()._Split_FEFrame
-local TextButton_2 = getgenv()._Split_TextButton_2
-local TextButton1_2 = getgenv()._Split_TextButton1_2
-local TextButton2_2 = getgenv()._Split_TextButton2_2
-local TextButton3_2 = getgenv()._Split_TextButton3_2
-local TextButton4_2 = getgenv()._Split_TextButton4_2
-local TextButton5_2 = getgenv()._Split_TextButton5_2
-local TextButton6_2 = getgenv()._Split_TextButton6_2
-local TextButton7_2 = getgenv()._Split_TextButton7_2
-local TextButton8_2 = getgenv()._Split_TextButton8_2
-local Toggle = getgenv()._Split_Toggle
+-- Import the GUI objects created by Part 1
+local ScreenGui = getgenv()._MyGuiSplit
+if not ScreenGui then
+    warn("Part 1 did not create the GUI first.")
+    return
+end
 
+local MainFrame = ScreenGui:WaitForChild("MainFrame")
+local TopFrame = MainFrame:WaitForChild("TopFrame")
+local Close = TopFrame:WaitForChild("Close")
+local TextLabel = TopFrame:WaitForChild("TextLabel")
+local TextLabel1 = TopFrame:WaitForChild("TextLabel1")
+local AboutFrame = MainFrame:WaitForChild("AboutFrame")
+local TextLabel_2 = AboutFrame:WaitForChild("TextLabel")
+local ImageLabel = AboutFrame:WaitForChild("ImageLabel")
+local ImageLabel1 = AboutFrame:WaitForChild("ImageLabel1")
+local ImageLabel2 = AboutFrame:WaitForChild("ImageLabel2")
+local ExEFrame = MainFrame:WaitForChild("ExEFrame")
+local ScrollingFrame = ExEFrame:WaitForChild("ScrollingFrame")
+local CodeBox = ScrollingFrame:WaitForChild("CodeBox")
+local RunButton = ExEFrame:WaitForChild("RunButton")
+local ClearButton = ExEFrame:WaitForChild("ClearButton")
+local FakeChatFrame = MainFrame:WaitForChild("FakeChatFrame")
+local NameBox = FakeChatFrame:WaitForChild("NameBox")
+local MessageBox = FakeChatFrame:WaitForChild("MessageBox")
+local SayButton = FakeChatFrame:WaitForChild("SayButton")
+local ScrollingFrame_2 = MainFrame:WaitForChild("ScrollingFrame")
+local About = ScrollingFrame_2:WaitForChild("About")
+local ExE = ScrollingFrame_2:WaitForChild("ExE")
+local Fakechat = ScrollingFrame_2:WaitForChild("Fakechat")
+local MoreGui = ScrollingFrame_2:WaitForChild("MoreGui")
+local FE = ScrollingFrame_2:WaitForChild("FE")
+local MoreFrame = MainFrame:WaitForChild("MoreFrame")
+local TextButton = MoreFrame:WaitForChild("TextButton")
+local TextButton1 = MoreFrame:WaitForChild("TextButton1")
+local TextButton2 = MoreFrame:WaitForChild("TextButton2")
+local TextButton3 = MoreFrame:WaitForChild("TextButton3")
+local TextButton4 = MoreFrame:WaitForChild("TextButton4")
+local TextButton5 = MoreFrame:WaitForChild("TextButton5")
+local TextButton6 = MoreFrame:WaitForChild("TextButton6")
+local TextButton7 = MoreFrame:WaitForChild("TextButton7")
+local TextButton8 = MoreFrame:WaitForChild("TextButton8")
+local FEFrame = MainFrame:WaitForChild("FEFrame")
+local TextButton_2 = FEFrame:WaitForChild("TextButton")
+local TextButton1_2 = FEFrame:WaitForChild("TextButton1")
+local TextButton2_2 = FEFrame:WaitForChild("TextButton2")
+local TextButton3_2 = FEFrame:WaitForChild("TextButton3")
+local TextButton4_2 = FEFrame:WaitForChild("TextButton4")
+local TextButton5_2 = FEFrame:WaitForChild("TextButton5")
+local TextButton6_2 = FEFrame:WaitForChild("TextButton6")
+local TextButton7_2 = FEFrame:WaitForChild("TextButton7")
+local TextButton8_2 = FEFrame:WaitForChild("TextButton8")
+local Toggle = ScreenGui:WaitForChild("Toggle")
+
+-- Scripts:
+
+local function XVVD_fake_script() -- ScreenGui.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui)
+
+	local function log(message)
+		print("[GUI LOADER] " .. message)
+	end
+	
+	log("10%")
+	task.wait(1)
+	
+	log("25%")
+	task.wait(1)
+	
+	log("50%")
+	task.wait(1)
+	
+	log("75%")
+	task.wait(1)
+	
+	log("100%")
+	task.wait(1)
+	
+	log("Gui Loaded")
+end
+coroutine.wrap(XVVD_fake_script)()
+local function BMAENK_fake_script() -- MainFrame.Draggable 
+	local script = Instance.new('LocalScript', MainFrame)
+
+	local UIS = game:GetService("UserInputService")
+	local f = script.Parent
+	local d, s, p
+	
+	f.InputBegan:Connect(function(i)
+		if i.UserInputType == Enum.UserInputType.MouseButton1 then
+			d, s, p = true, i.Position, f.Position
+		end
+	end)
+	
+	UIS.InputChanged:Connect(function(i)
+		if d and i.UserInputType == Enum.UserInputType.MouseMovement then
+			local x = i.Position - s
+			f.Position = UDim2.new(p.X.Scale, p.X.Offset + x.X, p.Y.Scale, p.Y.Offset + x.Y)
+		end
+	end)
+	
+	UIS.InputEnded:Connect(function(i)
+		if i.UserInputType == Enum.UserInputType.MouseButton1 then d = false end
+	end)
+end
+coroutine.wrap(BMAENK_fake_script)()
+local function ZQIB_fake_script() -- Close.LocalScript 
+	local script = Instance.new('LocalScript', Close)
+
+	local button = script.Parent
+	local gui = button:FindFirstAncestorOfClass("ScreenGui")
+	
+	button.MouseButton1Click:Connect(function()
+		gui:Destroy()
+	end)
+	
+end
+coroutine.wrap(ZQIB_fake_script)()
+local function VYJHFD_fake_script() -- TextLabel.LocalScript 
+	local script = Instance.new('LocalScript', TextLabel)
+
+	local TextLabel = script.Parent
+	
+	while true do
+		for hue = 0, 1, 0.01 do
+			TextLabel.TextColor3 = Color3.fromHSV(hue, 1, 1)
+			task.wait(0.03)
+		end
+	end
+	
+end
+coroutine.wrap(VYJHFD_fake_script)()
+local function ZWMPR_fake_script() -- TextLabel1.LocalScript 
+	local script = Instance.new('LocalScript', TextLabel1)
+
+	local TextLabel = script.Parent
+	
+	while true do
+		for hue = 0, 1, 0.01 do
+			TextLabel.TextColor3 = Color3.fromHSV(hue, 1, 1)
+			task.wait(0.03)
+		end
+	end
+	
+end
+coroutine.wrap(ZWMPR_fake_script)()
+local function PDRXBXN_fake_script() -- TextLabel_2.LocalScript1 
+	local script = Instance.new('LocalScript', TextLabel_2)
+
+	local TextLabel = script.Parent
+	
+	while true do
+		for hue = 0, 1, 0.01 do
+			TextLabel.TextColor3 = Color3.fromHSV(hue, 1, 1)
+			task.wait(0.03)
+		end
+	end
+	
+end
+coroutine.wrap(PDRXBXN_fake_script)()
+local function SDTLCSL_fake_script() -- RunButton.LocalScript 
+	local script = Instance.new('LocalScript', RunButton)
+
+	local button = script.Parent
+	local gui = button:FindFirstAncestorOfClass("ScreenGui")
+	
+	button.MouseButton1Click:Connect(function()
+		local codeBox = gui:FindFirstChild("CodeBox", true)
+	
+		if codeBox then
+			local code = codeBox.Text
+	
+			print("Code entered:")
+			print(code)
+		else
+			warn("CodeBox was not found!")
+		end
+	end)
+end
+coroutine.wrap(SDTLCSL_fake_script)()
+local function SUZCK_fake_script() -- RunButton.LocalScript2 
+	local script = Instance.new('LocalScript', RunButton)
+
+	local TextLabel = script.Parent
+	
+	while true do
+		for hue = 0, 1, 0.01 do
+			TextLabel.TextColor3 = Color3.fromHSV(hue, 1, 1)
+			task.wait(0.03)
+		end
+	end
+	
+end
+coroutine.wrap(SUZCK_fake_script)()
+local function WGPBWM_fake_script() -- ClearButton.LocalScript 
+	local script = Instance.new('LocalScript', ClearButton)
+
+	local button = script.Parent
+	local gui = button:FindFirstAncestorOfClass("ScreenGui")
+	
+	button.MouseButton1Click:Connect(function()
+		local codeBox = gui:FindFirstChild("CodeBox", true)
+	
+		if codeBox then
+			codeBox.Text = ""
+		else
+			warn("CodeBox was not found!")
+		end
+	end)
+end
+coroutine.wrap(WGPBWM_fake_script)()
+local function WZHYX_fake_script() -- ClearButton.LocalScript1 
+	local script = Instance.new('LocalScript', ClearButton)
+
+	local TextLabel = script.Parent
+	
+	while true do
+		for hue = 0, 1, 0.01 do
+			TextLabel.TextColor3 = Color3.fromHSV(hue, 1, 1)
+			task.wait(0.03)
+		end
+	end
+	
+end
+coroutine.wrap(WZHYX_fake_script)()
+local function OUBA_fake_script() -- SayButton.LocalScript 
+	local script = Instance.new('LocalScript', SayButton)
+
+	local TextChatService = game:GetService("TextChatService")
+	local Players = game:GetService("Players")
+	
+	local button = script.Parent
+	local frame = button.Parent
+	
+	local nameBox = frame:WaitForChild("NameBox")
+	local messageBox = frame:WaitForChild("MessageBox")
+	
+	button.MouseButton1Click:Connect(function()
+		local playerName = nameBox.Text
+		local message = messageBox.Text
+	
+		if playerName == "" or message == "" then
+			return
+		end
+	
+		local target = Players:FindFirstChild(playerName)
+	
+		if not target then
+			warn("Player not found: " .. playerName)
+			return
+		end
+	
+		local character = target.Character
+	
+		if not character then
+			return
+		end
+	
+		local head = character:FindFirstChild("Head")
+	
+		if not head then
+			return
+		end
+	
+		-- Display Roblox's built-in bubble locally
+		TextChatService:DisplayBubble(head, message)
+	end)
+end
+coroutine.wrap(OUBA_fake_script)()
+local function DTQSORK_fake_script() -- SayButton.LocalScript1 
+	local script = Instance.new('LocalScript', SayButton)
+
+	local TextLabel = script.Parent
+	
+	while true do
+		for hue = 0, 1, 0.01 do
+			TextLabel.TextColor3 = Color3.fromHSV(hue, 1, 1)
+			task.wait(0.03)
+		end
+	end
+	
+end
+coroutine.wrap(DTQSORK_fake_script)()
+local function ECWW_fake_script() -- About.LocalScript2 
+	local script = Instance.new('LocalScript', About)
+
+	local button = script.Parent
+	
+	local framesToHide = {
+		button.Parent.Parent.ExEFrame,
+		button.Parent.Parent.FakeChatFrame,
+		button.Parent.Parent.MoreFrame,
+		button.Parent.Parent.FEFrame,
+	}
+	
+	local frameToShow = button.Parent.Parent.AboutFrame
+	
+	button.MouseButton1Click:Connect(function()
+	
+		-- Hide the frames you selected
+		for _, frame in pairs(framesToHide) do
+			frame.Visible = false
+		end
+	
+		-- Show the frame you selected
+		frameToShow.Visible = true
+	
+	end)
+end
+coroutine.wrap(ECWW_fake_script)()
+local function GGHIA_fake_script() -- About.LocalScript1 
+	local script = Instance.new('LocalScript', About)
+
+	local TextLabel = script.Parent
+	
+	while true do
+		for hue = 0, 1, 0.01 do
+			TextLabel.TextColor3 = Color3.fromHSV(hue, 1, 1)
+			task.wait(0.03)
+		end
+	end
+	
+end
+coroutine.wrap(GGHIA_fake_script)()
+local function FQGXDN_fake_script() -- ExE.LocalScript1 
+	local script = Instance.new('LocalScript', ExE)
+
+	local TextLabel = script.Parent
+	
+	while true do
+		for hue = 0, 1, 0.01 do
+			TextLabel.TextColor3 = Color3.fromHSV(hue, 1, 1)
+			task.wait(0.03)
+		end
+	end
+	
+end
+coroutine.wrap(FQGXDN_fake_script)()
+local function TYMZV_fake_script() -- ExE.LocalScript3 
+	local script = Instance.new('LocalScript', ExE)
+
+	local button = script.Parent
+	
+	local framesToHide = {
+		button.Parent.Parent.AboutFrame,
+		button.Parent.Parent.FakeChatFrame,
+		button.Parent.Parent.MoreFrame,
+		button.Parent.Parent.FEFrame,
+	}
+	
+	local frameToShow = button.Parent.Parent.ExEFrame
+	
+	button.MouseButton1Click:Connect(function()
+	
+		-- Hide the frames you selected
+		for _, frame in pairs(framesToHide) do
+			frame.Visible = false
+		end
+	
+		-- Show the frame you selected
+		frameToShow.Visible = true
+	
+	end)
+end
+coroutine.wrap(TYMZV_fake_script)()
+local function WXDHW_fake_script() -- Fakechat.LocalScript1 
+	local script = Instance.new('LocalScript', Fakechat)
+
+	local TextLabel = script.Parent
+	
+	while true do
+		for hue = 0, 1, 0.01 do
+			TextLabel.TextColor3 = Color3.fromHSV(hue, 1, 1)
+			task.wait(0.03)
+		end
+	end
+	
+end
+coroutine.wrap(WXDHW_fake_script)()
+local function DYBPTSC_fake_script() -- Fakechat.LocalScript2 
+	local script = Instance.new('LocalScript', Fakechat)
+
+	local button = script.Parent
+	
+	local framesToHide = {
+		button.Parent.Parent.AboutFrame,
+		button.Parent.Parent.ExEFrame,
+		button.Parent.Parent.MoreFrame,
+		button.Parent.Parent.FEFrame,
+	}
+	
+	local frameToShow = button.Parent.Parent.FakeChatFrame
+	
+	button.MouseButton1Click:Connect(function()
+	
+		-- Hide the frames you selected
+		for _, frame in pairs(framesToHide) do
+			frame.Visible = false
+		end
+	
+		-- Show the frame you selected
+		frameToShow.Visible = true
+	
+	end)
+end
+coroutine.wrap(DYBPTSC_fake_script)()
+local function ICJRUP_fake_script() -- MoreGui.LocalScript1 
+	local script = Instance.new('LocalScript', MoreGui)
+
+	local TextLabel = script.Parent
+	
+	while true do
+		for hue = 0, 1, 0.01 do
+			TextLabel.TextColor3 = Color3.fromHSV(hue, 1, 1)
+			task.wait(0.03)
+		end
+	end
+	
+end
+coroutine.wrap(ICJRUP_fake_script)()
+local function DUBR_fake_script() -- MoreGui.LocalScript3 
+	local script = Instance.new('LocalScript', MoreGui)
+
+	local button = script.Parent
+	
+	local framesToHide = {
+		button.Parent.Parent.AboutFrame,
+		button.Parent.Parent.ExEFrame,
+		button.Parent.Parent.FEFrame,
+	}
+	
+	local frameToShow = button.Parent.Parent.MoreFrame
+	
+	button.MouseButton1Click:Connect(function()
+	
+		-- Hide the frames you selected
+		for _, frame in pairs(framesToHide) do
+			frame.Visible = false
+		end
+	
+		-- Show the frame you selected
+		frameToShow.Visible = true
+	
+	end)
+end
+coroutine.wrap(DUBR_fake_script)()
+local function TNNXJ_fake_script() -- FE.LocalScript1 
+	local script = Instance.new('LocalScript', FE)
+
+	local TextLabel = script.Parent
+	
+	while true do
+		for hue = 0, 1, 0.01 do
+			TextLabel.TextColor3 = Color3.fromHSV(hue, 1, 1)
+			task.wait(0.03)
+		end
+	end
+	
+end
+coroutine.wrap(TNNXJ_fake_script)()
+local function FXJY_fake_script() -- FE.LocalScript3 
+	local script = Instance.new('LocalScript', FE)
+
+	local button = script.Parent
+	
+	local framesToHide = {
+		button.Parent.Parent.AboutFrame,
+		button.Parent.Parent.ExEFrame,
+		button.Parent.Parent.FakeChatFrame,
+	}
+	
+	local frameToShow = button.Parent.Parent.FEFrame
+	
+	button.MouseButton1Click:Connect(function()
+	
+		-- Hide the frames you selected
+		for _, frame in pairs(framesToHide) do
+			frame.Visible = false
+		end
+	
+		-- Show the frame you selected
+		frameToShow.Visible = true
+	
+	end)
+end
+coroutine.wrap(FXJY_fake_script)()
+local function KTCEID_fake_script() -- TextButton.LocalScript 
+	local script = Instance.new('LocalScript', TextButton)
+
+	local button = script.Parent
+	
+	button.MouseButton1Click:Connect(function()
+	
+		loadstring(HttpGet("https://raw.githubusercontent.com/8x8x8x8x8x8x8x8/Fee-Bypass-8x8x8888888888/refs/heads/main/PullMOD"))()
+	
+	
+	end)
+end
+coroutine.wrap(KTCEID_fake_script)()
+local function HQPZJJ_fake_script() -- TextButton.LocalScript2 
+	local script = Instance.new('LocalScript', TextButton)
+
+	local TextLabel = script.Parent
+	
+	while true do
+		for hue = 0, 1, 0.01 do
+			TextLabel.TextColor3 = Color3.fromHSV(hue, 1, 1)
+			task.wait(0.03)
+		end
+	end
+	
+end
+coroutine.wrap(HQPZJJ_fake_script)()
+local function URDGN_fake_script() -- TextButton1.LocalScript 
+	local script = Instance.new('LocalScript', TextButton1)
+
+	local button = script.Parent
+	
+	button.MouseButton1Click:Connect(function()
+	
+		loadstring(HttpGet("https://raw.githubusercontent.com/8x8x8x8x8x8x8x8/Fee-Bypass-8x8x8888888888/refs/heads/main/sound"))()
+	
+	
+	end)
+end
+coroutine.wrap(URDGN_fake_script)()
 local function HAHKC_fake_script() -- TextButton1.LocalScript2 
 	local script = Instance.new('LocalScript', TextButton1)
 
@@ -466,7 +943,7 @@ local function PRWYPJT_fake_script() -- TextButton8_2.LocalScript
 	
 	button.MouseButton1Click:Connect(function()
 	
-		lif Abysall then
+		if Abysall then
 		return 
 	end
 	getgenv().Abysall = {
