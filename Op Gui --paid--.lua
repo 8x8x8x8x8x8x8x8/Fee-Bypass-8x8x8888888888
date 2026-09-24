@@ -8,12 +8,22 @@ local success, ownsShirt = pcall(function()
 	return MarketplaceService:PlayerOwnsAsset(player, SHIRT_ID)
 end)
 
+local ScreenGui = Instance.new("ScreenGui")
+
+ScreenGui.Parent = player:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = false
+
 if not success or not ownsShirt then
 	game:GetService("StarterGui"):SetCore("SendNotification", {
 		Title = "Access Denied",
 		Text = "You need the shirt!",
 		Duration = 5
 	})
+
+	ScreenGui:Destroy()
+	return
+end
 
 	ScreenGui:Destroy()
 	return
