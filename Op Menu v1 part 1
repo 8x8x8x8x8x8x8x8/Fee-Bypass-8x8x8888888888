@@ -1,3 +1,6 @@
+-- Part 1 loader
+-- This keeps Part 1 and Part 2 in the SAME Lua scope.
+local Part1Source = [[
 -- Gui to Lua
 -- Version: 3.2
 
@@ -627,9 +630,184 @@ Toggle.TextScaled = true
 Toggle.TextSize = 14.000
 Toggle.TextWrapped = true
 
+-- Scripts:
 
--- Save the finished GUI so Part 2 can attach all button scripts.
-getgenv()._MyGuiSplit = ScreenGui
+local function XVVD_fake_script() -- ScreenGui.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui)
 
--- Load Part 2
-loadstring(game:HttpGet("https://raw.githubusercontent.com/8x8x8x8x8x8x8x8/Fee-Bypass-8x8x8888888888/refs/heads/main/Op%20Menu%20v1%20part%202"))()
+	local function log(message)
+		print("[GUI LOADER] " .. message)
+	end
+	
+	log("10%")
+	task.wait(1)
+	
+	log("25%")
+	task.wait(1)
+	
+	log("50%")
+	task.wait(1)
+	
+	log("75%")
+	task.wait(1)
+	
+	log("100%")
+	task.wait(1)
+	
+	log("Gui Loaded")
+end
+coroutine.wrap(XVVD_fake_script)()
+local function BMAENK_fake_script() -- MainFrame.Draggable 
+	local script = Instance.new('LocalScript', MainFrame)
+
+	local UIS = game:GetService("UserInputService")
+	local f = script.Parent
+	local d, s, p
+	
+	f.InputBegan:Connect(function(i)
+		if i.UserInputType == Enum.UserInputType.MouseButton1 then
+			d, s, p = true, i.Position, f.Position
+		end
+	end)
+	
+	UIS.InputChanged:Connect(function(i)
+		if d and i.UserInputType == Enum.UserInputType.MouseMovement then
+			local x = i.Position - s
+			f.Position = UDim2.new(p.X.Scale, p.X.Offset + x.X, p.Y.Scale, p.Y.Offset + x.Y)
+		end
+	end)
+	
+	UIS.InputEnded:Connect(function(i)
+		if i.UserInputType == Enum.UserInputType.MouseButton1 then d = false end
+	end)
+end
+coroutine.wrap(BMAENK_fake_script)()
+local function ZQIB_fake_script() -- Close.LocalScript 
+	local script = Instance.new('LocalScript', Close)
+
+	local button = script.Parent
+	local gui = button:FindFirstAncestorOfClass("ScreenGui")
+	
+	button.MouseButton1Click:Connect(function()
+		gui:Destroy()
+	end)
+	
+end
+coroutine.wrap(ZQIB_fake_script)()
+local function VYJHFD_fake_script() -- TextLabel.LocalScript 
+	local script = Instance.new('LocalScript', TextLabel)
+
+	local TextLabel = script.Parent
+	
+	while true do
+		for hue = 0, 1, 0.01 do
+			TextLabel.TextColor3 = Color3.fromHSV(hue, 1, 1)
+			task.wait(0.03)
+		end
+	end
+	
+end
+coroutine.wrap(VYJHFD_fake_script)()
+local function ZWMPR_fake_script() -- TextLabel1.LocalScript 
+	local script = Instance.new('LocalScript', TextLabel1)
+
+	local TextLabel = script.Parent
+	
+	while true do
+		for hue = 0, 1, 0.01 do
+			TextLabel.TextColor3 = Color3.fromHSV(hue, 1, 1)
+			task.wait(0.03)
+		end
+	end
+	
+end
+coroutine.wrap(ZWMPR_fake_script)()
+local function PDRXBXN_fake_script() -- TextLabel_2.LocalScript1 
+	local script = Instance.new('LocalScript', TextLabel_2)
+
+	local TextLabel = script.Parent
+	
+	while true do
+		for hue = 0, 1, 0.01 do
+			TextLabel.TextColor3 = Color3.fromHSV(hue, 1, 1)
+			task.wait(0.03)
+		end
+	end
+	
+end
+coroutine.wrap(PDRXBXN_fake_script)()
+local function SDTLCSL_fake_script() -- RunButton.LocalScript 
+	local script = Instance.new('LocalScript', RunButton)
+
+	local button = script.Parent
+	local gui = button:FindFirstAncestorOfClass("ScreenGui")
+	
+	button.MouseButton1Click:Connect(function()
+		local codeBox = gui:FindFirstChild("CodeBox", true)
+	
+		if codeBox then
+			local code = codeBox.Text
+	
+			print("Code entered:")
+			print(code)
+		else
+			warn("CodeBox was not found!")
+		end
+	end)
+end
+coroutine.wrap(SDTLCSL_fake_script)()
+local function SUZCK_fake_script() -- RunButton.LocalScript2 
+	local script = Instance.new('LocalScript', RunButton)
+
+	local TextLabel = script.Parent
+	
+	while true do
+		for hue = 0, 1, 0.01 do
+			TextLabel.TextColor3 = Color3.fromHSV(hue, 1, 1)
+			task.wait(0.03)
+		end
+	end
+	
+end
+coroutine.wrap(SUZCK_fake_script)()
+local function WGPBWM_fake_script() -- ClearButton.LocalScript 
+	local script = Instance.new('LocalScript', ClearButton)
+
+	local button = script.Parent
+	local gui = button:FindFirstAncestorOfClass("ScreenGui")
+	
+	button.MouseButton1Click:Connect(function()
+		local codeBox = gui:FindFirstChild("CodeBox", true)
+	
+		if codeBox then
+			codeBox.Text = ""
+		else
+			warn("CodeBox was not found!")
+		end
+	end)
+end
+coroutine.wrap(WGPBWM_fake_script)()
+local function WZHYX_fake_script() -- ClearButton.LocalScript1 
+	local script = Instance.new('LocalScript', ClearButton)
+
+	local TextLabel = script.Parent
+	
+	while true do
+		for hue = 0, 1, 0.01 do
+			TextLabel.TextColor3 = Color3.fromHSV(hue, 1, 1)
+			task.wait(0.03)
+		end
+	end
+	
+end
+coroutine.wrap(WZHYX_fake_script)()
+]]
+
+local Part2Source = game:HttpGet("https://raw.githubusercontent.com/8x8x8x8x8x8x8x8/Fee-Bypass-8x8x8888888888/refs/heads/main/Op%20Menu%20v1%20part%202")
+
+local Combined = Part1Source .. "\n" .. Part2Source
+local Chunk, Error = loadstring(Combined)
+if not Chunk then
+    error("GUI load error: " .. tostring(Error))
+end
+Chunk()
