@@ -1,38 +1,27 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
 local MarketplaceService = game:GetService("MarketplaceService")
 local Players = game:GetService("Players")
+local StarterGui = game:GetService("StarterGui")
 
 local player = Players.LocalPlayer
-local SHIRT_ID = 17745689249 -- YOUR SHIRT ID
+local SHIRT_ID = 17745689249
 
 local success, ownsShirt = pcall(function()
-	return MarketplaceService:PlayerOwnsAsset(player, SHIRT_ID)
+	return MarketplaceService:PlayerOwnsAssetAsync(player, SHIRT_ID)
 end)
 
-local ScreenGui = Instance.new("ScreenGui")
-
-ScreenGui.Parent = player:WaitForChild("PlayerGui")
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-ScreenGui.ResetOnSpawn = false
-
 if not success or not ownsShirt then
-	game:GetService("StarterGui"):SetCore("SendNotification", {
+	StarterGui:SetCore("SendNotification", {
 		Title = "Access Denied",
 		Text = "You need the shirt!",
 		Duration = 5
 	})
-
-	ScreenGui:Destroy()
 	return
 end
-
-	ScreenGui:Destroy()
-	return
-end
-
-local ScreenGui = Instance.new("ScreenGui")
-local MainFrame = Instance.new("Frame")
-local TopFrame = Instance.new("Frame")
-local Close = Instance.new("TextButton")
 local TextLabel = Instance.new("TextLabel")
 local TextLabel1 = Instance.new("TextLabel")
 local AboutFrame = Instance.new("Frame")
