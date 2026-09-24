@@ -2,41 +2,15 @@ local MarketplaceService = game:GetService("MarketplaceService")
 local Players = game:GetService("Players")
 
 local player = Players.LocalPlayer
-local SHIRT_ID = 17745689249 -- PUT THE SHIRT ID HERE
+local SHIRT_ID = 17745689249 -- YOUR SHIRT ID
 
-local function checkShirt()
-	local success, owns = pcall(function()
-		return MarketplaceService:PlayerOwnsAsset(player, SHIRT_ID)
-	end)
+local success, ownsShirt = pcall(function()
+	return MarketplaceService:PlayerOwnsAsset(player, SHIRT_ID)
+end)
 
-	if success and owns then
-		game:GetService("StarterGui"):SetCore("SendNotification", {
-			Title = "Shirt Check",
-			Text = "You have the shirt!",
-			Duration = 3
-		})
-		return true
-	else
-		game:GetService("StarterGui"):SetCore("SendNotification", {
-			Title = "Shirt Check",
-			Text = "You need the shirt!",
-			Duration = 3
-		})
-		return false
-	end
-end
-
-local function checkShirt()
-	if not ownsShirt() then
-		game:GetService("StarterGui"):SetCore("SendNotification", {
-			Title = "Access Denied",
-			Text = "You need the shirt!",
-			Duration = 3
-		})
-		return false
-	end
-
-	return true
+if not success or not ownsShirt then
+	ScreenGui:Destroy()
+	return
 end
 
 local ScreenGui = Instance.new("ScreenGui")
