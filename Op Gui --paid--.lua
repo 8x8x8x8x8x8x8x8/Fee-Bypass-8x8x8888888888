@@ -8,12 +8,12 @@ local Players = game:GetService("Players")
 local StarterGui = game:GetService("StarterGui")
 
 local player = Players.LocalPlayer
-local SHIRT_ID = "17745689249"
+local TSHIRT_ID = "17745689249"
 
 local character = player.Character or player.CharacterAdded:Wait()
-local shirt = character:FindFirstChildOfClass("Shirt")
+local tshirt = character:FindFirstChildOfClass("ShirtGraphic")
 
-if not shirt or not string.find(shirt.ShirtTemplate, SHIRT_ID, 1, true) then
+if not tshirt or not string.find(tshirt.Graphic, TSHIRT_ID, 1, true) then
 	pcall(function()
 		StarterGui:SetCore("SendNotification", {
 			Title = "Access Denied",
