@@ -2,24 +2,25 @@ local Players = game:GetService("Players")
 local StarterGui = game:GetService("StarterGui")
 
 local player = Players.LocalPlayer
-local TSHIRT_ID = 17745689249
 
-local character = player.Character or player.CharacterAdded:Wait()
-local humanoid = character:WaitForChild("Humanoid")
+-- PUT ALLOWED USER IDS HERE
+local Whitelist = {
+	[6113961118] = true,
+}
 
-local description = humanoid:GetAppliedDescription()
-
-if description.GraphicTShirt ~= TSHIRT_ID then
+if not Whitelist[player.UserId] then
 	pcall(function()
 		StarterGui:SetCore("SendNotification", {
-			Title = "Access Denied",
-			Text = "You need to wear the shirt!",
+			Title = "Whitelist",
+			Text = "You are not whitelisted!",
 			Duration = 5
 		})
 	end)
 
 	return
 end
+
+-- YOUR EXISTING GUI SCRIPT GOES BELOW THIS
 
 -- Gui to Lua
 -- Version: 3.2
