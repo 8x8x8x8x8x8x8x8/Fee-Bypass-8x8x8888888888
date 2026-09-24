@@ -3,29 +3,30 @@
 
 -- Instances:
 
-local MarketplaceService = game:GetService("MarketplaceService")
 local Players = game:GetService("Players")
 local StarterGui = game:GetService("StarterGui")
 
 local player = Players.LocalPlayer
-local SHIRT_ID = 17745689249
+local SHIRT_ID = "17745689249"
 
-local ownsShirt = false
+local character = player.Character or player.CharacterAdded:Wait()
+local shirt = character:FindFirstChildOfClass("Shirt")
 
-local success, result = pcall(function()
-	return MarketplaceService:PlayerOwnsAssetAsync(player, SHIRT_ID)
-end)
+local wearingShirt = false
 
-if success then
-	ownsShirt = result
+if shirt then
+	wearingShirt = string.find(shirt.ShirtTemplate, SHIRT_ID, 1, true) ~= nil
 end
 
-if not ownsShirt then
-	StarterGui:SetCore("SendNotification", {
-		Title = "Access Denied",
-		Text = "You need the shirt!",
-		Duration = 5
-	})
+if not wearingShirt then
+	pcall(function()
+		StarterGui:SetCore("SendNotification", {
+			Title = "Access Denied",
+			Text = "You need to wear the shirt!",
+			Duration = 5
+		})
+	end)
+
 	return
 end
 local TextLabel = Instance.new("TextLabel")
