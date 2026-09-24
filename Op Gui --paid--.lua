@@ -9,6 +9,12 @@ local success, ownsShirt = pcall(function()
 end)
 
 if not success or not ownsShirt then
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = "Access Denied",
+		Text = "You need the shirt!",
+		Duration = 5
+	})
+
 	ScreenGui:Destroy()
 	return
 end
