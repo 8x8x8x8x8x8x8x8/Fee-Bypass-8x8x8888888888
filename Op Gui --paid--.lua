@@ -1,28 +1,22 @@
+local Players = game:GetService("Players")
+
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+local tshirt = character:FindFirstChildOfClass("ShirtGraphic")
+
+if not tshirt then
+	return
+end
+
+print("Wearing T-Shirt:", tshirt.Graphic)
+
 -- Gui to Lua
 -- Version: 3.2
 
 -- Instances:
 
 local ScreenGui = Instance.new("ScreenGui")
-local Players = game:GetService("Players")
-local StarterGui = game:GetService("StarterGui")
-
-local player = Players.LocalPlayer
-local TSHIRT_ID = "17745689249"
-
-local character = player.Character or player.CharacterAdded:Wait()
-local tshirt = character:FindFirstChildOfClass("ShirtGraphic")
-
-if not tshirt or not string.find(tshirt.Graphic, TSHIRT_ID, 1, true) then
-	pcall(function()
-		StarterGui:SetCore("SendNotification", {
-			Title = "Access Denied",
-			Text = "You need to wear the shirt!",
-			Duration = 5
-		})
-	end)
-	return
-end
 local MainFrame = Instance.new("Frame")
 local TopFrame = Instance.new("Frame")
 local Close = Instance.new("TextButton")
