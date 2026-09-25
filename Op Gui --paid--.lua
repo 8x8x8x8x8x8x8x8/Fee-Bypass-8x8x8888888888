@@ -1,29 +1,19 @@
+-- WHITELIST
 local Players = game:GetService("Players")
-local player = Players.LocalPlayer
+local LocalPlayer = Players.LocalPlayer
 
-local AllowedUsers = {
-	"8x8x8x8x8x8x8x84",
-	"HJGjuyugiugiguy",
-	"",
+local Whitelist = {
+	["8x8x8x8x8x8x8x84"] = true,
 }
 
-local username = string.lower(player.Name)
-
-local whitelisted = false
-
-for _, name in ipairs(AllowedUsers) do
-	if username == string.lower(name) then
-		whitelisted = true
-		break
-	end
-end
-
-if not whitelisted then
-	player:Kick("You are not whitelisted!")
+if not Whitelist[LocalPlayer.Name] then
 	return
 end
 
-print("WHITELISTED:", player.Name)
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
 
 local ScreenGui = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
