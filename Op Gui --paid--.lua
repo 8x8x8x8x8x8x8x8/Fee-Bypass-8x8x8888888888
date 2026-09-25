@@ -3,7 +3,7 @@ local player = Players.LocalPlayer
 
 local AllowedUsers = {
 	["8x8x8x8x8x8x8x84"] = true,
-	[""] = true,
+	["HJGjuyugiugiguy"] = true,
 }
 
 if not AllowedUsers[player.Name] then
