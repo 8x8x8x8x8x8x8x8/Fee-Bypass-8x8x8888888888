@@ -1,94 +1,150 @@
 -- KEY SYSTEM
--- Styled to match the Super Op 8x menu
+-- Super Op 8x GUI
 
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
+local PlayerGui = LocalPlayer:WaitForChild("PlayerGui")
 
-local CorrectKey = "key-paidmenuisbetter84938474398"
+local CorrectKey = "key-opguiisop8473493447873"
 
 local KeyGui = Instance.new("ScreenGui")
-KeyGui.Name = "KeySystem"
+KeyGui.Name = "SuperOp8xKeySystem"
 KeyGui.ResetOnSpawn = false
-KeyGui.Parent = LocalPlayer:WaitForChild("PlayerGui")
+KeyGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+KeyGui.Parent = PlayerGui
 
-local MainFrame = Instance.new("Frame")
-MainFrame.Size = UDim2.new(0, 425, 0, 260)
-MainFrame.Position = UDim2.new(0.5, -212, 0.5, -130)
-MainFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-MainFrame.BorderSizePixel = 0
-MainFrame.Parent = KeyGui
-
-local Corner = Instance.new("UICorner")
-Corner.CornerRadius = UDim.new(0, 8)
-Corner.Parent = MainFrame
+local KeyFrame = Instance.new("Frame")
+KeyFrame.Name = "KeyFrame"
+KeyFrame.Parent = KeyGui
+KeyFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+KeyFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+KeyFrame.BorderSizePixel = 3
+KeyFrame.Position = UDim2.new(0.5, -212, 0.5, -130)
+KeyFrame.Size = UDim2.new(0, 425, 0, 260)
 
 local TopFrame = Instance.new("Frame")
-TopFrame.Size = UDim2.new(1, 0, 0, 45)
-TopFrame.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
-TopFrame.BorderSizePixel = 0
-TopFrame.Parent = MainFrame
-
-local TopCorner = Instance.new("UICorner")
-TopCorner.CornerRadius = UDim.new(0, 8)
-TopCorner.Parent = TopFrame
+TopFrame.Parent = KeyFrame
+TopFrame.BackgroundColor3 = Color3.fromRGB(128, 128, 128)
+TopFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TopFrame.BorderSizePixel = 3
+TopFrame.Size = UDim2.new(0, 425, 0, 40)
 
 local Title = Instance.new("TextLabel")
-Title.Size = UDim2.new(1, -20, 1, 0)
-Title.Position = UDim2.new(0, 10, 0, 0)
-Title.BackgroundTransparency = 1
-Title.Text = "Super Op 8x gui - Key System"
-Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-Title.TextSize = 18
-Title.Font = Enum.Font.SourceSansBold
-Title.TextXAlignment = Enum.TextXAlignment.Left
 Title.Parent = TopFrame
+Title.BackgroundTransparency = 1
+Title.Position = UDim2.new(0.1, 0, 0, 0)
+Title.Size = UDim2.new(0, 300, 0, 40)
+Title.Font = Enum.Font.Cartoon
+Title.Text = "Super Op 8x gui - Key"
+Title.TextColor3 = Color3.fromRGB(0, 0, 0)
+Title.TextScaled = true
+Title.TextWrapped = true
+
+local Version = Instance.new("TextLabel")
+Version.Parent = TopFrame
+Version.BackgroundTransparency = 1
+Version.Position = UDim2.new(0.82, 0, 0, 0)
+Version.Size = UDim2.new(0, 70, 0, 40)
+Version.Font = Enum.Font.Cartoon
+Version.Text = "v1"
+Version.TextColor3 = Color3.fromRGB(0, 0, 0)
+Version.TextScaled = true
+
+local Info = Instance.new("TextLabel")
+Info.Parent = KeyFrame
+Info.BackgroundTransparency = 1
+Info.Position = UDim2.new(0.1, 0, 0.25, 0)
+Info.Size = UDim2.new(0, 340, 0, 35)
+Info.Font = Enum.Font.Cartoon
+Info.Text = "Enter your key to continue"
+Info.TextColor3 = Color3.fromRGB(0, 0, 0)
+Info.TextScaled = true
 
 local KeyBox = Instance.new("TextBox")
-KeyBox.Size = UDim2.new(0, 350, 0, 45)
-KeyBox.Position = UDim2.new(0.5, -175, 0, 80)
-KeyBox.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
-KeyBox.BorderSizePixel = 0
+KeyBox.Parent = KeyFrame
+KeyBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+KeyBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+KeyBox.BorderSizePixel = 3
+KeyBox.Position = UDim2.new(0.1, 0, 0.42, 0)
+KeyBox.Size = UDim2.new(0, 340, 0, 45)
+KeyBox.Font = Enum.Font.SourceSans
 KeyBox.PlaceholderText = "Enter key..."
 KeyBox.Text = ""
-KeyBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-KeyBox.PlaceholderColor3 = Color3.fromRGB(150, 150, 150)
+KeyBox.TextColor3 = Color3.fromRGB(0, 0, 0)
 KeyBox.TextSize = 16
-KeyBox.Font = Enum.Font.SourceSans
-KeyBox.Parent = MainFrame
-
-local BoxCorner = Instance.new("UICorner")
-BoxCorner.CornerRadius = UDim.new(0, 6)
-BoxCorner.Parent = KeyBox
 
 local EnterButton = Instance.new("TextButton")
-EnterButton.Size = UDim2.new(0, 200, 0, 40)
-EnterButton.Position = UDim2.new(0.5, -100, 0, 145)
-EnterButton.BackgroundColor3 = Color3.fromRGB(45, 120, 255)
-EnterButton.BorderSizePixel = 0
+EnterButton.Parent = KeyFrame
+EnterButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+EnterButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+EnterButton.BorderSizePixel = 3
+EnterButton.Position = UDim2.new(0.25, 0, 0.65, 0)
+EnterButton.Size = UDim2.new(0, 210, 0, 45)
+EnterButton.Font = Enum.Font.Cartoon
 EnterButton.Text = "Enter Key"
-EnterButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-EnterButton.TextSize = 17
-EnterButton.Font = Enum.Font.SourceSansBold
-EnterButton.Parent = MainFrame
-
-local ButtonCorner = Instance.new("UICorner")
-ButtonCorner.CornerRadius = UDim.new(0, 6)
-ButtonCorner.Parent = EnterButton
+EnterButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+EnterButton.TextScaled = true
 
 local Status = Instance.new("TextLabel")
-Status.Size = UDim2.new(1, -20, 0, 30)
-Status.Position = UDim2.new(0, 10, 0, 195)
+Status.Parent = KeyFrame
 Status.BackgroundTransparency = 1
-Status.Text = ""
-Status.TextColor3 = Color3.fromRGB(255, 80, 80)
-Status.TextSize = 15
+Status.Position = UDim2.new(0.05, 0, 0.84, 0)
+Status.Size = UDim2.new(0, 380, 0, 30)
 Status.Font = Enum.Font.SourceSans
-Status.Parent = MainFrame
+Status.Text = ""
+Status.TextColor3 = Color3.fromRGB(255, 0, 0)
+Status.TextScaled = true
+
+-- Make the key window draggable
+local UIS = game:GetService("UserInputService")
+local dragging = false
+local dragStart
+local startPosition
+
+TopFrame.InputBegan:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 then
+		dragging = true
+		dragStart = input.Position
+		startPosition = KeyFrame.Position
+	end
+end)
+
+UIS.InputChanged:Connect(function(input)
+	if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+		local delta = input.Position - dragStart
+
+		KeyFrame.Position = UDim2.new(
+			startPosition.X.Scale,
+			startPosition.X.Offset + delta.X,
+			startPosition.Y.Scale,
+			startPosition.Y.Offset + delta.Y
+		)
+	end
+end)
+
+UIS.InputEnded:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 then
+		dragging = false
+	end
+end)
+
+-- Wait until the correct key is entered
+local KeyAccepted = false
 
 EnterButton.MouseButton1Click:Connect(function()
 	if KeyBox.Text == CorrectKey then
-
+		KeyAccepted = true
 		KeyGui:Destroy()
+	else
+		Status.Text = "Invalid key!"
+		KeyBox.Text = ""
+	end
+end)
+
+while not KeyAccepted do
+	task.wait()
+end
+
 
 -- Gui to Lua
 -- Version: 3.2
@@ -1659,9 +1715,3 @@ local function HEYHF_fake_script() -- Toggle.LocalScript1
 	end)
 end
 coroutine.wrap(HEYHF_fake_script)()
-
-
-	else
-		Status.Text = "Invalid key!"
-	end
-end)
