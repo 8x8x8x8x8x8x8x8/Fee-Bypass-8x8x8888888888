@@ -6,7 +6,7 @@ local player = Players.LocalPlayer
 -- PUT YOUR ROBLOX PROFILE/USER ID HERE
 local Whitelist = {
 	[6113961118] = true,
-	[] = true,
+	[6111640647] = true,
 }
 
 if Whitelist[player.UserId] ~= true then
