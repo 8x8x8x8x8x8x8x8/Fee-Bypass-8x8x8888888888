@@ -14,11 +14,6 @@ end
 
 print("Whitelisted!")
 
--- Gui to Lua
--- Version: 3.2
-
--- Instances:
-
 local ScreenGui = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
 local TopFrame = Instance.new("Frame")
