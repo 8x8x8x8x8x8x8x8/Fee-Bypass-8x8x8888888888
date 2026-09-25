@@ -1,6 +1,5 @@
 local usernames = {
     "8x8x8x8x8x8x8x84",
-    "name2",
 }
 --Put usernames above
 game.Players.PlayerAdded:Connect(function(plr) -- Function gets the player
