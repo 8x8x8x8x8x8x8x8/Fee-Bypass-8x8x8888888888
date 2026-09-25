@@ -1,12 +1,14 @@
-local usernames = {
-    "8x8x8x8x8x8x8x84",
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local AllowedUsers = {
+	["8x8x8x8x8x8x8x84"] = true,
 }
---Put usernames above
-game.Players.PlayerAdded:Connect(function(plr) -- Function gets the player
-	if not table.find(usernames, plr.Name) then --Checks if player is in the table
-		plr:Kick("Private game!") --If the player is not listed inside the table they are kicked
-	end
-end)
+
+if not AllowedUsers[player.Name] then
+	player:Kick("You are not whitelisted!")
+	return
+end
 
 -- Gui to Lua
 -- Version: 3.2
