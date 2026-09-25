@@ -4,6 +4,7 @@ local LocalPlayer = Players.LocalPlayer
 
 local Whitelist = {
 	["8x8x8x8x8x8x8x84"] = true,
+	["HJGjuyugiugiguy"] = true,
 }
 
 if not Whitelist[LocalPlayer.Name] then
