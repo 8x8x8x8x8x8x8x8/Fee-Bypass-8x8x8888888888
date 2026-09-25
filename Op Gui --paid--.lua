@@ -1,29 +1,13 @@
-local Players = game:GetService("Players")
-local StarterGui = game:GetService("StarterGui")
-
-local player = Players.LocalPlayer
-
--- PUT YOUR ROBLOX PROFILE/USER ID HERE
-local Whitelist = {
-	[6113961118] = true,
-	[6111640647] = true,
+local usernames = {
+    "8x8x8x8x8x8x8x84",
+    "name2",
 }
-
-if Whitelist[player.UserId] ~= true then
-	pcall(function()
-		StarterGui:SetCore("SendNotification", {
-			Title = "Whitelist",
-			Text = "You are not whitelisted!",
-			Duration = 5
-		})
-	end)
-
-	return
-end
-
-print("WHITELIST PASSED!")
-
--- EVERYTHING ELSE IN YOUR SCRIPT GOES BELOW THIS
+--Put usernames above
+game.Players.PlayerAdded:Connect(function(plr) -- Function gets the player
+	if not table.find(usernames, plr.Name) then --Checks if player is in the table
+		plr:Kick("Private game!") --If the player is not listed inside the table they are kicked
+	end
+end)
 
 -- Gui to Lua
 -- Version: 3.2
