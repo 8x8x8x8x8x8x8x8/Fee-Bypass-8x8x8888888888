@@ -5,7 +5,7 @@ local player = Players.LocalPlayer
 
 local Whitelist = {
 	["8x8x8x8x8x8x8x84"] = 6113961118,
-	["anotherperson"] = ,
+	["HJGjuyugiugiguy"] = 6111640647,
 	["thirdperson"] = ,
 }
 
