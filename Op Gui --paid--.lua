@@ -6,7 +6,7 @@ local player = Players.LocalPlayer
 -- ADD PROFILE/USER IDs HERE
 local Whitelist = {
 	[6113961118] = true,
-	[] = true,
+	[6111640647] = true,
 	[] = true,
 }
 
