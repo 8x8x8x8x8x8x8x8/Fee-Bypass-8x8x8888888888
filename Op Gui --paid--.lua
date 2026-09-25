@@ -3,16 +3,13 @@ local player = Players.LocalPlayer
 
 local AllowedUsers = {
 	["8x8x8x8x8x8x8x84"] = true,
+	[""] = true,
 }
-
-print("Current username:", player.Name)
 
 if not AllowedUsers[player.Name] then
 	player:Kick("You are not whitelisted!")
 	return
 end
-
-print("Whitelisted!")
 
 local ScreenGui = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
