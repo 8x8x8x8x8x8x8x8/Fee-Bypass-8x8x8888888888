@@ -1,15 +1,94 @@
--- WHITELIST
+-- KEY SYSTEM
+-- Styled to match the Super Op 8x menu
+
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
 
-local Whitelist = {
-	["8x8x8x8x8x8x8x84"] = true,
-	["HJGjuyugiugiguy"] = true,
-}
+local CorrectKey = "key-paidmenuisbetter84938474398"
 
-if not Whitelist[LocalPlayer.Name] then
-	return
-end
+local KeyGui = Instance.new("ScreenGui")
+KeyGui.Name = "KeySystem"
+KeyGui.ResetOnSpawn = false
+KeyGui.Parent = LocalPlayer:WaitForChild("PlayerGui")
+
+local MainFrame = Instance.new("Frame")
+MainFrame.Size = UDim2.new(0, 425, 0, 260)
+MainFrame.Position = UDim2.new(0.5, -212, 0.5, -130)
+MainFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+MainFrame.BorderSizePixel = 0
+MainFrame.Parent = KeyGui
+
+local Corner = Instance.new("UICorner")
+Corner.CornerRadius = UDim.new(0, 8)
+Corner.Parent = MainFrame
+
+local TopFrame = Instance.new("Frame")
+TopFrame.Size = UDim2.new(1, 0, 0, 45)
+TopFrame.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+TopFrame.BorderSizePixel = 0
+TopFrame.Parent = MainFrame
+
+local TopCorner = Instance.new("UICorner")
+TopCorner.CornerRadius = UDim.new(0, 8)
+TopCorner.Parent = TopFrame
+
+local Title = Instance.new("TextLabel")
+Title.Size = UDim2.new(1, -20, 1, 0)
+Title.Position = UDim2.new(0, 10, 0, 0)
+Title.BackgroundTransparency = 1
+Title.Text = "Super Op 8x gui - Key System"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 18
+Title.Font = Enum.Font.SourceSansBold
+Title.TextXAlignment = Enum.TextXAlignment.Left
+Title.Parent = TopFrame
+
+local KeyBox = Instance.new("TextBox")
+KeyBox.Size = UDim2.new(0, 350, 0, 45)
+KeyBox.Position = UDim2.new(0.5, -175, 0, 80)
+KeyBox.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+KeyBox.BorderSizePixel = 0
+KeyBox.PlaceholderText = "Enter key..."
+KeyBox.Text = ""
+KeyBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+KeyBox.PlaceholderColor3 = Color3.fromRGB(150, 150, 150)
+KeyBox.TextSize = 16
+KeyBox.Font = Enum.Font.SourceSans
+KeyBox.Parent = MainFrame
+
+local BoxCorner = Instance.new("UICorner")
+BoxCorner.CornerRadius = UDim.new(0, 6)
+BoxCorner.Parent = KeyBox
+
+local EnterButton = Instance.new("TextButton")
+EnterButton.Size = UDim2.new(0, 200, 0, 40)
+EnterButton.Position = UDim2.new(0.5, -100, 0, 145)
+EnterButton.BackgroundColor3 = Color3.fromRGB(45, 120, 255)
+EnterButton.BorderSizePixel = 0
+EnterButton.Text = "Enter Key"
+EnterButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+EnterButton.TextSize = 17
+EnterButton.Font = Enum.Font.SourceSansBold
+EnterButton.Parent = MainFrame
+
+local ButtonCorner = Instance.new("UICorner")
+ButtonCorner.CornerRadius = UDim.new(0, 6)
+ButtonCorner.Parent = EnterButton
+
+local Status = Instance.new("TextLabel")
+Status.Size = UDim2.new(1, -20, 0, 30)
+Status.Position = UDim2.new(0, 10, 0, 195)
+Status.BackgroundTransparency = 1
+Status.Text = ""
+Status.TextColor3 = Color3.fromRGB(255, 80, 80)
+Status.TextSize = 15
+Status.Font = Enum.Font.SourceSans
+Status.Parent = MainFrame
+
+EnterButton.MouseButton1Click:Connect(function()
+	if KeyBox.Text == CorrectKey then
+
+		KeyGui:Destroy()
 
 -- Gui to Lua
 -- Version: 3.2
@@ -1580,3 +1659,9 @@ local function HEYHF_fake_script() -- Toggle.LocalScript1
 	end)
 end
 coroutine.wrap(HEYHF_fake_script)()
+
+
+	else
+		Status.Text = "Invalid key!"
+	end
+end)
