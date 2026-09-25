@@ -3,13 +3,13 @@ local StarterGui = game:GetService("StarterGui")
 
 local player = Players.LocalPlayer
 
--- PUT ALLOWED USER IDS HERE
 local Whitelist = {
-	[6113961118] = true,
-	[6111640647] = true,
+	["8x8x8x8x8x8x8x84"] = 6113961118,
+	["anotherperson"] = ,
+	["thirdperson"] = ,
 }
 
-if not Whitelist[player.UserId] then
+if not Whitelist[player.Name] then
 	pcall(function()
 		StarterGui:SetCore("SendNotification", {
 			Title = "Whitelist",
@@ -21,7 +21,9 @@ if not Whitelist[player.UserId] then
 	return
 end
 
--- YOUR EXISTING GUI SCRIPT GOES BELOW THIS
+print("Whitelisted!")
+
+-- YOUR EXISTING SCRIPT GOES HERE
 
 -- Gui to Lua
 -- Version: 3.2
