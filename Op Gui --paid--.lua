@@ -2,8 +2,8 @@ local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 
 local AllowedUsers = {
-	["8x8x8x8x8x8x8x84"] = true,
-	["HJGjuyugiugiguy"] = true,
+	["8x8x8x8x8x8x8x8"] = true,
+	["9x9x9x9x9x9x9x9"] = true,
 }
 
 if not AllowedUsers[player.Name] then
