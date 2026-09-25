@@ -5,10 +5,14 @@ local AllowedUsers = {
 	["8x8x8x8x8x8x8x84"] = true,
 }
 
+print("Current username:", player.Name)
+
 if not AllowedUsers[player.Name] then
 	player:Kick("You are not whitelisted!")
 	return
 end
+
+print("Whitelisted!")
 
 -- Gui to Lua
 -- Version: 3.2
