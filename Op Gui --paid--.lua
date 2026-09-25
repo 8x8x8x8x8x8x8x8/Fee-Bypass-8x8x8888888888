@@ -2,14 +2,28 @@ local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 
 local AllowedUsers = {
-	["8x8x8x8x8x8x8x8"] = true,
-	["9x9x9x9x9x9x9x9"] = true,
+	"8x8x8x8x8x8x8x84",
+	"",
+	"",
 }
 
-if not AllowedUsers[player.Name] then
+local username = string.lower(player.Name)
+
+local whitelisted = false
+
+for _, name in ipairs(AllowedUsers) do
+	if username == string.lower(name) then
+		whitelisted = true
+		break
+	end
+end
+
+if not whitelisted then
 	player:Kick("You are not whitelisted!")
 	return
 end
+
+print("WHITELISTED:", player.Name)
 
 local ScreenGui = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
