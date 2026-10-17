@@ -1,0 +1,1471 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel1 = Instance.new("TextLabel")
+local TextLabel2 = Instance.new("TextLabel")
+local TextLabel2_2 = Instance.new("TextLabel")
+local Close = Instance.new("TextButton")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local ScriptBox = Instance.new("TextBox")
+local Rc7Logo = Instance.new("Folder")
+local TextLabel_2 = Instance.new("TextLabel")
+local TextLabel_3 = Instance.new("TextLabel")
+local TextLabel1_2 = Instance.new("TextLabel")
+local Copy = Instance.new("Frame")
+local Frame_2 = Instance.new("Frame")
+local Frame1 = Instance.new("Frame")
+local Frame2 = Instance.new("Frame")
+local Frame3 = Instance.new("Frame")
+local Frame4 = Instance.new("Frame")
+local Frame5 = Instance.new("Frame")
+local Frame6 = Instance.new("Frame")
+local Frame7 = Instance.new("Frame")
+local W = Instance.new("Frame")
+local TextLabel2_3 = Instance.new("TextLabel")
+local ROXPLOIT = Instance.new("Frame")
+local TextLabel_4 = Instance.new("TextLabel")
+local TextLabel1_3 = Instance.new("TextLabel")
+local Wolfy = Instance.new("Frame")
+local TextLabel1_4 = Instance.new("TextLabel")
+local Bar = Instance.new("Frame")
+local Open = Instance.new("TextButton")
+local Execute = Instance.new("TextButton")
+local Clear = Instance.new("TextButton")
+local Console = Instance.new("ScrollingFrame")
+local TextLabel_5 = Instance.new("TextLabel")
+local CopyButton = Instance.new("TextButton")
+local Wbutton = Instance.new("TextButton")
+local Abutton = Instance.new("TextButton")
+local A = Instance.new("Frame")
+local TextLabel2_4 = Instance.new("TextLabel")
+local xploitbutton = Instance.new("TextButton")
+local Wolfybutton = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = false -- This line makes the GUI stay after respawning
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = ScreenGui
+MainFrame.BackgroundColor3 = Color3.fromRGB(18, 50, 68)
+MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MainFrame.BorderSizePixel = 0
+MainFrame.Position = UDim2.new(0.495856076, 0, 0.162198395, 0)
+MainFrame.Size = UDim2.new(0, 304, 0, 307)
+
+Frame.Parent = MainFrame
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Size = UDim2.new(0, 304, 0, 20)
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(164, 176, 182)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(-0.302631587, 0, -1.04999995, 0)
+TextLabel.Size = UDim2.new(0, 200, 0, 58)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "R"
+TextLabel.TextColor3 = Color3.fromRGB(193, 192, 189)
+TextLabel.TextSize = 12.000
+
+TextLabel1.Name = "TextLabel1"
+TextLabel1.Parent = Frame
+TextLabel1.BackgroundColor3 = Color3.fromRGB(164, 176, 182)
+TextLabel1.BackgroundTransparency = 1.000
+TextLabel1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel1.BorderSizePixel = 0
+TextLabel1.Position = UDim2.new(-0.302631587, 0, -1.399997, 0)
+TextLabel1.Size = UDim2.new(0, 211, 0, 64)
+TextLabel1.Font = Enum.Font.SourceSans
+TextLabel1.Text = "c"
+TextLabel1.TextColor3 = Color3.fromRGB(193, 192, 189)
+TextLabel1.TextSize = 10.000
+TextLabel1.TextStrokeColor3 = Color3.fromRGB(193, 192, 189)
+
+TextLabel2.Name = "TextLabel2"
+TextLabel2.Parent = TextLabel1
+TextLabel2.BackgroundColor3 = Color3.fromRGB(164, 176, 182)
+TextLabel2.BackgroundTransparency = 1.000
+TextLabel2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel2.BorderSizePixel = 0
+TextLabel2.Position = UDim2.new(0.042796202, 0, 0.00937497616, 0)
+TextLabel2.Size = UDim2.new(0, 201, 0, 64)
+TextLabel2.Font = Enum.Font.SourceSans
+TextLabel2.Text = "7"
+TextLabel2.TextColor3 = Color3.fromRGB(193, 192, 189)
+
+TextLabel2_2.Name = "TextLabel2"
+TextLabel2_2.Parent = Frame
+TextLabel2_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel2_2.BackgroundTransparency = 1.000
+TextLabel2_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel2_2.BorderSizePixel = 0
+TextLabel2_2.Position = UDim2.new(0.631578922, 0, -0.850000024, 0)
+TextLabel2_2.Size = UDim2.new(0, 200, 0, 50)
+TextLabel2_2.Font = Enum.Font.SourceSans
+TextLabel2_2.Text = "X"
+TextLabel2_2.TextColor3 = Color3.fromRGB(193, 192, 189)
+TextLabel2_2.TextSize = 14.000
+
+Close.Name = "Close"
+Close.Parent = Frame
+Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Close.BackgroundTransparency = 1.000
+Close.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Close.BorderSizePixel = 0
+Close.Position = UDim2.new(0.935828149, 0, 0, 0)
+Close.Size = UDim2.new(0, 18, 0, 20)
+Close.Font = Enum.Font.SourceSans
+Close.Text = ""
+Close.TextColor3 = Color3.fromRGB(0, 0, 0)
+Close.TextSize = 14.000
+
+ScrollingFrame.Parent = Frame
+ScrollingFrame.Active = true
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScrollingFrame.BorderSizePixel = 0
+ScrollingFrame.Position = UDim2.new(0.0427633598, 0, 1.64999998, 0)
+ScrollingFrame.Size = UDim2.new(0, 247, 0, 200)
+
+ScriptBox.Name = "ScriptBox"
+ScriptBox.Parent = ScrollingFrame
+ScriptBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScriptBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScriptBox.BorderSizePixel = 0
+ScriptBox.Size = UDim2.new(0, 247, 0, 580)
+ScriptBox.ClearTextOnFocus = false
+ScriptBox.Text = ""
+ScriptBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+ScriptBox.TextSize = 14.000
+ScriptBox.TextWrapped = true
+ScriptBox.TextXAlignment = Enum.TextXAlignment.Left
+ScriptBox.TextYAlignment = Enum.TextYAlignment.Top
+
+Rc7Logo.Name = "Rc7 Logo"
+Rc7Logo.Parent = MainFrame
+
+TextLabel_2.Parent = Rc7Logo
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Position = UDim2.new(0.86138612, 0, 0.0846905559, 0)
+TextLabel_2.Size = UDim2.new(0, 43, 0, 38)
+TextLabel_2.Font = Enum.Font.FredokaOne
+TextLabel_2.Text = "R"
+TextLabel_2.TextColor3 = Color3.fromRGB(29, 73, 101)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextWrapped = true
+
+TextLabel_3.Parent = Rc7Logo
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.BackgroundTransparency = 1.000
+TextLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_3.BorderSizePixel = 0
+TextLabel_3.Position = UDim2.new(0.86138612, 0, 0.149837136, 0)
+TextLabel_3.Size = UDim2.new(0, 43, 0, 38)
+TextLabel_3.Font = Enum.Font.FredokaOne
+TextLabel_3.Text = "C"
+TextLabel_3.TextColor3 = Color3.fromRGB(29, 73, 101)
+TextLabel_3.TextScaled = true
+TextLabel_3.TextSize = 14.000
+TextLabel_3.TextStrokeColor3 = Color3.fromRGB(25, 64, 91)
+TextLabel_3.TextWrapped = true
+
+TextLabel1_2.Name = "TextLabel1"
+TextLabel1_2.Parent = Rc7Logo
+TextLabel1_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel1_2.BackgroundTransparency = 1.000
+TextLabel1_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel1_2.BorderSizePixel = 0
+TextLabel1_2.Position = UDim2.new(0.86138612, 0, 0.208469048, 0)
+TextLabel1_2.Size = UDim2.new(0, 43, 0, 38)
+TextLabel1_2.Font = Enum.Font.FredokaOne
+TextLabel1_2.Text = "7"
+TextLabel1_2.TextColor3 = Color3.fromRGB(41, 72, 99)
+TextLabel1_2.TextScaled = true
+TextLabel1_2.TextSize = 14.000
+TextLabel1_2.TextWrapped = true
+
+Copy.Name = "Copy"
+Copy.Parent = MainFrame
+Copy.BackgroundColor3 = Color3.fromRGB(31, 72, 97)
+Copy.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Copy.BorderSizePixel = 0
+Copy.Position = UDim2.new(0.884488463, 0, 0.355048865, 0)
+Copy.Size = UDim2.new(0, 28, 0, 31)
+
+Frame_2.Parent = Copy
+Frame_2.BackgroundColor3 = Color3.fromRGB(6, 4, 6)
+Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame_2.BorderSizePixel = 0
+Frame_2.Position = UDim2.new(0.0753239244, 0, 0.0616474152, 0)
+Frame_2.Size = UDim2.new(0, 23, 0, 13)
+
+Frame1.Name = "Frame1"
+Frame1.Parent = Copy
+Frame1.BackgroundColor3 = Color3.fromRGB(6, 4, 6)
+Frame1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame1.BorderSizePixel = 0
+Frame1.Position = UDim2.new(0.0753239244, 0, 0.387940407, 0)
+Frame1.Size = UDim2.new(0, 25, 0, 15)
+
+Frame2.Name = "Frame2"
+Frame2.Parent = Copy
+Frame2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame2.BorderSizePixel = 0
+Frame2.Position = UDim2.new(0.158181325, 0, 0.105681419, 0)
+Frame2.Size = UDim2.new(0, 18, 0, 8)
+
+Frame3.Name = "Frame3"
+Frame3.Parent = Copy
+Frame3.BackgroundColor3 = Color3.fromRGB(10, 2, 2)
+Frame3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame3.BorderSizePixel = 0
+Frame3.Position = UDim2.new(0.557401359, 0, 0.140909195, 0)
+Frame3.Size = UDim2.new(0, 2, 0, 6)
+
+Frame4.Name = "Frame4"
+Frame4.Parent = Copy
+Frame4.BackgroundColor3 = Color3.fromRGB(254, 254, 254)
+Frame4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame4.BorderSizePixel = 0
+Frame4.Position = UDim2.new(0.128051758, 0, 0.449588299, 0)
+Frame4.Size = UDim2.new(0, 21, 0, 11)
+
+Frame5.Name = "Frame5"
+Frame5.Parent = Copy
+Frame5.BackgroundColor3 = Color3.fromRGB(12, 3, 4)
+Frame5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame5.BorderSizePixel = 0
+Frame5.Position = UDim2.new(0.158181325, 0, 0.501988411, 0)
+Frame5.Size = UDim2.new(0, 21, 0, 1)
+
+Frame6.Name = "Frame6"
+Frame6.Parent = Copy
+Frame6.BackgroundColor3 = Color3.fromRGB(12, 3, 4)
+Frame6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame6.BorderSizePixel = 0
+Frame6.Position = UDim2.new(0.158460349, 0, 0.587854862, 0)
+Frame6.Size = UDim2.new(0, 21, 0, 1)
+
+Frame7.Name = "Frame7"
+Frame7.Parent = Copy
+Frame7.BackgroundColor3 = Color3.fromRGB(12, 3, 4)
+Frame7.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame7.BorderSizePixel = 0
+Frame7.Position = UDim2.new(0.158275053, 0, 0.678124905, 0)
+Frame7.Size = UDim2.new(0, 21, 0, 1)
+
+W.Name = "W"
+W.Parent = MainFrame
+W.BackgroundColor3 = Color3.fromRGB(26, 67, 93)
+W.BorderColor3 = Color3.fromRGB(0, 0, 0)
+W.BorderSizePixel = 0
+W.Position = UDim2.new(0.884488463, 0, 0.475570023, 0)
+W.Size = UDim2.new(0, 28, 0, 28)
+
+TextLabel2_3.Name = "TextLabel2"
+TextLabel2_3.Parent = W
+TextLabel2_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel2_3.BackgroundTransparency = 1.000
+TextLabel2_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel2_3.BorderSizePixel = 0
+TextLabel2_3.Position = UDim2.new(-0.0440826416, 0, -0.0244304109, 0)
+TextLabel2_3.Size = UDim2.new(0, 28, 0, 28)
+TextLabel2_3.Font = Enum.Font.FredokaOne
+TextLabel2_3.Text = "W"
+TextLabel2_3.TextColor3 = Color3.fromRGB(41, 72, 99)
+TextLabel2_3.TextScaled = true
+TextLabel2_3.TextSize = 14.000
+TextLabel2_3.TextWrapped = true
+
+ROXPLOIT.Name = "RO-XPLOIT"
+ROXPLOIT.Parent = MainFrame
+ROXPLOIT.BackgroundColor3 = Color3.fromRGB(26, 67, 93)
+ROXPLOIT.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ROXPLOIT.BorderSizePixel = 0
+ROXPLOIT.Position = UDim2.new(0.887912035, 0, 0.713355064, 0)
+ROXPLOIT.Size = UDim2.new(0, 25, 0, 28)
+
+TextLabel_4.Parent = ROXPLOIT
+TextLabel_4.BackgroundColor3 = Color3.fromRGB(48, 71, 97)
+TextLabel_4.BackgroundTransparency = 1.000
+TextLabel_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_4.BorderSizePixel = 0
+TextLabel_4.Position = UDim2.new(-0.0418286137, 0, 0, 0)
+TextLabel_4.Size = UDim2.new(0, 28, 0, 13)
+TextLabel_4.Font = Enum.Font.SourceSans
+TextLabel_4.Text = "RO"
+TextLabel_4.TextColor3 = Color3.fromRGB(41, 72, 99)
+TextLabel_4.TextScaled = true
+TextLabel_4.TextSize = 14.000
+TextLabel_4.TextWrapped = true
+
+TextLabel1_3.Name = "TextLabel1"
+TextLabel1_3.Parent = ROXPLOIT
+TextLabel1_3.BackgroundColor3 = Color3.fromRGB(48, 71, 97)
+TextLabel1_3.BackgroundTransparency = 1.000
+TextLabel1_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel1_3.BorderSizePixel = 0
+TextLabel1_3.Position = UDim2.new(0.0418261737, 0, 0.524585843, 0)
+TextLabel1_3.Size = UDim2.new(0, 22, 0, 11)
+TextLabel1_3.Font = Enum.Font.SourceSans
+TextLabel1_3.Text = "Xploit"
+TextLabel1_3.TextColor3 = Color3.fromRGB(41, 72, 99)
+TextLabel1_3.TextScaled = true
+TextLabel1_3.TextSize = 14.000
+TextLabel1_3.TextWrapped = true
+
+Wolfy.Name = "Wolfy"
+Wolfy.Parent = MainFrame
+Wolfy.BackgroundColor3 = Color3.fromRGB(26, 67, 93)
+Wolfy.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Wolfy.BorderSizePixel = 0
+Wolfy.Position = UDim2.new(0.88490057, 0, 0.84269768, 0)
+Wolfy.Size = UDim2.new(0, 28, 0, 33)
+
+TextLabel1_4.Name = "TextLabel1"
+TextLabel1_4.Parent = Wolfy
+TextLabel1_4.BackgroundColor3 = Color3.fromRGB(48, 71, 97)
+TextLabel1_4.BackgroundTransparency = 1.000
+TextLabel1_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel1_4.BorderSizePixel = 0
+TextLabel1_4.Position = UDim2.new(0.0493360236, 0, 0.260947734, 0)
+TextLabel1_4.Size = UDim2.new(0, 25, 0, 15)
+TextLabel1_4.Font = Enum.Font.SourceSans
+TextLabel1_4.Text = "Wolfy"
+TextLabel1_4.TextColor3 = Color3.fromRGB(41, 72, 99)
+TextLabel1_4.TextScaled = true
+TextLabel1_4.TextSize = 14.000
+TextLabel1_4.TextWrapped = true
+
+Bar.Name = "Bar"
+Bar.Parent = MainFrame
+Bar.BackgroundColor3 = Color3.fromRGB(14, 42, 59)
+Bar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Bar.BorderSizePixel = 0
+Bar.Position = UDim2.new(0.0427634604, 0, 0.758957684, 0)
+Bar.Size = UDim2.new(0, 248, 0, 25)
+
+Open.Name = "Open"
+Open.Parent = Bar
+Open.BackgroundColor3 = Color3.fromRGB(22, 59, 80)
+Open.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Open.BorderSizePixel = 0
+Open.Position = UDim2.new(-2.46109494e-07, 0, 0.0275366213, 0)
+Open.Size = UDim2.new(0, 86, 0, 25)
+Open.Font = Enum.Font.Highway
+Open.Text = "Open"
+Open.TextColor3 = Color3.fromRGB(90, 192, 237)
+Open.TextSize = 16.000
+Open.TextWrapped = true
+
+Execute.Name = "Execute"
+Execute.Parent = Bar
+Execute.BackgroundColor3 = Color3.fromRGB(22, 59, 80)
+Execute.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Execute.BorderSizePixel = 0
+Execute.Position = UDim2.new(0.358870476, 0, 0.0275366213, 0)
+Execute.Size = UDim2.new(0, 83, 0, 25)
+Execute.Font = Enum.Font.Highway
+Execute.Text = "Execute"
+Execute.TextColor3 = Color3.fromRGB(90, 192, 237)
+Execute.TextSize = 16.000
+Execute.TextWrapped = true
+
+Clear.Name = "Clear"
+Clear.Parent = Bar
+Clear.BackgroundColor3 = Color3.fromRGB(22, 59, 80)
+Clear.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Clear.BorderSizePixel = 0
+Clear.Position = UDim2.new(0.705644667, 0, 0.0275366213, 0)
+Clear.Size = UDim2.new(0, 72, 0, 25)
+Clear.Font = Enum.Font.Highway
+Clear.Text = "Clear"
+Clear.TextColor3 = Color3.fromRGB(90, 192, 237)
+Clear.TextSize = 16.000
+Clear.TextWrapped = true
+
+Console.Name = "Console"
+Console.Parent = MainFrame
+Console.Active = true
+Console.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Console.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Console.BorderSizePixel = 0
+Console.Position = UDim2.new(0.0427631587, 0, 0.869706869, 0)
+Console.Size = UDim2.new(0, 247, 0, 34)
+
+TextLabel_5.Parent = Console
+TextLabel_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_5.BorderSizePixel = 0
+TextLabel_5.Position = UDim2.new(0, 0, 0.000520289934, 0)
+TextLabel_5.Size = UDim2.new(0, 247, 0, 357)
+TextLabel_5.Font = Enum.Font.FredokaOne
+TextLabel_5.Text = ""
+TextLabel_5.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_5.TextSize = 14.000
+TextLabel_5.TextWrapped = true
+TextLabel_5.TextXAlignment = Enum.TextXAlignment.Left
+TextLabel_5.TextYAlignment = Enum.TextYAlignment.Top
+
+CopyButton.Name = "CopyButton"
+CopyButton.Parent = MainFrame
+CopyButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CopyButton.BackgroundTransparency = 1.000
+CopyButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CopyButton.BorderSizePixel = 0
+CopyButton.Position = UDim2.new(0.896282792, 0, 0.351791531, 0)
+CopyButton.Size = UDim2.new(0, 24, 0, 32)
+CopyButton.Font = Enum.Font.SourceSans
+CopyButton.Text = ""
+CopyButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+CopyButton.TextSize = 14.000
+
+Wbutton.Name = "Wbutton"
+Wbutton.Parent = MainFrame
+Wbutton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Wbutton.BackgroundTransparency = 1.000
+Wbutton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Wbutton.BorderSizePixel = 0
+Wbutton.Position = UDim2.new(0.896282792, 0, 0.475570023, 0)
+Wbutton.Size = UDim2.new(0, 24, 0, 27)
+Wbutton.Font = Enum.Font.SourceSans
+Wbutton.Text = ""
+Wbutton.TextColor3 = Color3.fromRGB(0, 0, 0)
+Wbutton.TextSize = 14.000
+
+Abutton.Name = "Abutton"
+Abutton.Parent = MainFrame
+Abutton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Abutton.BackgroundTransparency = 1.000
+Abutton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Abutton.BorderSizePixel = 0
+Abutton.Position = UDim2.new(0.896282792, 0, 0.612377822, 0)
+Abutton.Size = UDim2.new(0, 24, 0, 22)
+Abutton.Font = Enum.Font.SourceSans
+Abutton.Text = ""
+Abutton.TextColor3 = Color3.fromRGB(0, 0, 0)
+Abutton.TextSize = 14.000
+
+A.Name = "A"
+A.Parent = MainFrame
+A.BackgroundColor3 = Color3.fromRGB(26, 67, 93)
+A.BorderColor3 = Color3.fromRGB(0, 0, 0)
+A.BorderSizePixel = 0
+A.Position = UDim2.new(0.884488463, 0, 0.592833877, 0)
+A.Size = UDim2.new(0, 28, 0, 28)
+
+TextLabel2_4.Name = "TextLabel2"
+TextLabel2_4.Parent = A
+TextLabel2_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel2_4.BackgroundTransparency = 1.000
+TextLabel2_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel2_4.BorderSizePixel = 0
+TextLabel2_4.Position = UDim2.new(-0.0440826416, 0, -0.0244304109, 0)
+TextLabel2_4.Size = UDim2.new(0, 28, 0, 28)
+TextLabel2_4.Font = Enum.Font.FredokaOne
+TextLabel2_4.Text = "A"
+TextLabel2_4.TextColor3 = Color3.fromRGB(41, 72, 99)
+TextLabel2_4.TextScaled = true
+TextLabel2_4.TextSize = 14.000
+TextLabel2_4.TextWrapped = true
+
+xploitbutton.Name = "xploitbutton"
+xploitbutton.Parent = MainFrame
+xploitbutton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+xploitbutton.BackgroundTransparency = 1.000
+xploitbutton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+xploitbutton.BorderSizePixel = 0
+xploitbutton.Position = UDim2.new(0.896282792, 0, 0.713355064, 0)
+xploitbutton.Size = UDim2.new(0, 24, 0, 28)
+xploitbutton.Font = Enum.Font.SourceSans
+xploitbutton.Text = ""
+xploitbutton.TextColor3 = Color3.fromRGB(0, 0, 0)
+xploitbutton.TextSize = 14.000
+
+Wolfybutton.Name = "Wolfybutton"
+Wolfybutton.Parent = MainFrame
+Wolfybutton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Wolfybutton.BackgroundTransparency = 1.000
+Wolfybutton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Wolfybutton.BorderSizePixel = 0
+Wolfybutton.Position = UDim2.new(0.896282792, 0, 0.840390861, 0)
+Wolfybutton.Size = UDim2.new(0, 24, 0, 33)
+Wolfybutton.Font = Enum.Font.SourceSans
+Wolfybutton.Text = ""
+Wolfybutton.TextColor3 = Color3.fromRGB(0, 0, 0)
+Wolfybutton.TextSize = 14.000
+
+-- Scripts:
+
+local function AOZZ_fake_script() -- MainFrame.Draggable 
+	local script = Instance.new('LocalScript', MainFrame)
+
+	local UIS = game:GetService("UserInputService")
+	local f = script.Parent
+	local d, s, p
+	
+	f.InputBegan:Connect(function(i)
+		if i.UserInputType == Enum.UserInputType.MouseButton1 then
+			d, s, p = true, i.Position, f.Position
+		end
+	end)
+	
+	UIS.InputChanged:Connect(function(i)
+		if d and i.UserInputType == Enum.UserInputType.MouseMovement then
+			local x = i.Position - s
+			f.Position = UDim2.new(p.X.Scale, p.X.Offset + x.X, p.Y.Scale, p.Y.Offset + x.Y)
+		end
+	end)
+	
+	UIS.InputEnded:Connect(function(i)
+		if i.UserInputType == Enum.UserInputType.MouseButton1 then d = false end
+	end)
+end
+coroutine.wrap(AOZZ_fake_script)()
+local function CGBPN_fake_script() -- Close.LocalScript 
+	local script = Instance.new('LocalScript', Close)
+
+	local closeButton = script.Parent
+	
+	-- This searches upwards through the parents until it finds "MainFrame"
+	local mainFrame = closeButton:FindFirstAncestor("MainFrame")
+	
+	closeButton.MouseButton1Click:Connect(function()
+		if mainFrame then
+			mainFrame.Visible = false
+		else
+			warn("Could not find a frame named MainFrame!")
+		end
+	end)
+end
+coroutine.wrap(CGBPN_fake_script)()
+local function IBRUFQL_fake_script() -- Open.LocalScript 
+	local script = Instance.new('LocalScript', Open)
+
+	local button = script.Parent
+	
+	button.MouseButton1Click:Connect(function()
+		-- This triggers the native Roblox notification system
+		game:GetService("StarterGui"):SetCore("SendNotification", {
+			Title = "Error", 
+			Text = "Unable to open", 
+			Duration = 5 -- How many seconds it stays on screen
+		})
+	end)
+end
+coroutine.wrap(IBRUFQL_fake_script)()
+local function GRVDOUS_fake_script() -- Execute.LocalScript 
+	local script = Instance.new('LocalScript', Execute)
+
+	local ExecuteButton = script.Parent
+	local MainFrame = ExecuteButton:FindFirstAncestor("MainFrame")
+	
+	-- SMART FINDER: Finds the textbox regardless of where it is in the GUI
+	local function findScriptBox()
+		if not MainFrame then return nil end
+		for _, v in pairs(MainFrame:GetDescendants()) do
+			if v:IsA("TextBox") and (v.Name == "ScriptBox" or v.Name == "scriptbox") then
+				return v
+			end
+		end
+		return nil
+	end
+	
+	local ScriptBox = findScriptBox()
+	
+	if not ScriptBox then
+		warn("!!! BRAIN ERROR: Could not find 'ScriptBox' inside MainFrame !!!")
+		return
+	end
+	
+	----------------------------------------------------------------
+	-- THE BRAIN (Custom VM Interpreter - 100% Client Sided)
+	----------------------------------------------------------------
+	local Interp = {}
+	local NIL = {}
+	local typeOf = typeof or type
+	local KEYWORDS = {}
+	for w in ("and break continue do else elseif end false for function if in local nil not or repeat return then true until while"):gmatch("%a+") do
+		KEYWORDS[w] = true
+	end
+	local OPS3 = { ["..."] = true, ["..="] = true, ["//="] = true }
+	local OPS2 = {
+		["=="] = true, ["~="] = true, ["<="] = true, [">="] = true, [".."] = true, ["//"] = true,
+		["+="] = true, ["-="] = true, ["*="] = true, ["/="] = true, ["%="] = true, ["^="] = true,
+		["::"] = true, ["->"] = true,
+	}
+	local OPS1 = "+-*/%^#<>=(){}[];:,.?|&"
+	local ESC = { n = "\n", t = "\t", r = "\r", a = "\a", b = "\b", f = "\f", v = "\v", ["\\"] = "\\", ['"'] = '"', ["'"] = "'", ["`"] = "`", ["{"] = "{" }
+	local function lexError(line, msg) error("line " .. line .. ": " .. msg, 0) end
+	local function readString(src, i, q, line)
+		local buf, n = {}, 0
+		local len = #src
+		local startLine = line
+		i = i + 1
+		while true do
+			if i > len then lexError(startLine, "unfinished string") end
+			local c = src:sub(i, i)
+			if c == q then i = i + 1; break
+			elseif c == "\n" then lexError(line, "unfinished string")
+			elseif c == "\\" then
+				local d = src:sub(i + 1, i + 1)
+				if ESC[d] then n = n + 1; buf[n] = ESC[d]; i = i + 2
+				elseif d == "x" then
+					local hex = src:match("^%x%x", i + 2)
+					if not hex then lexError(line, "invalid hex escape") end
+					n = n + 1; buf[n] = string.char(tonumber(hex, 16)); i = i + 4
+				elseif d:match("%d") then
+					local dec = src:match("^%d%d?%d?", i + 1)
+					n = n + 1; buf[n] = string.char(tonumber(dec)); i = i + 1 + #dec
+				elseif d == "z" then
+					local ws = src:match("^%s*", i + 2)
+					for _ in ws:gmatch("\n") do line = line + 1 end
+					i = i + 2 + #ws
+				elseif d == "u" then
+					local hex = src:match("^{(%x+)}", i + 2)
+					if not hex then lexError(line, "invalid unicode escape") end
+					n = n + 1; buf[n] = utf8.char(tonumber(hex, 16)); i = i + 4 + #hex
+				elseif d == "\n" then n = n + 1; buf[n] = "\n"; line = line + 1; i = i + 2
+				else lexError(line, "invalid escape sequence") end
+			else
+				local s, e = src:find("^[^\\\n" .. q .. "]+", i)
+				n = n + 1; buf[n] = src:sub(s, e); i = e + 1
+			end
+		end
+		return table.concat(buf), i, line
+	end
+	local function readLong(src, i, line)
+		local lvl = src:match("^%[(=*)%[", i)
+		if not lvl then return nil end
+		local open = #lvl + 2
+		local close = "]" .. lvl .. "]"
+		local s, e = src:find(close, i + open, true)
+		if not s then lexError(line, "unfinished long string/comment") end
+		local body = src:sub(i + open, s - 1)
+		if body:sub(1, 1) == "\n" then body = body:sub(2) end
+		local newlines = select(2, src:sub(i, e):gsub("\n", ""))
+		return body, e + 1, line + newlines
+	end
+	local function readInterp(src, i, line)
+		local parts, buf = {}, {}
+		local len = #src
+		local startLine = line
+		i = i + 1
+		local function flush() if #buf > 0 then parts[#parts + 1] = table.concat(buf); buf = {} end end
+		while true do
+			if i > len then lexError(startLine, "unfinished string") end
+			local c = src:sub(i, i)
+			if c == "`" then i = i + 1; break
+			elseif c == "\\" then
+				local d = src:sub(i + 1, i + 1)
+				buf[#buf + 1] = ESC[d] or d; i = i + 2
+			elseif c == "{" then
+				flush()
+				local depth, j = 1, i + 1
+				while j <= len and depth > 0 do
+					local cj = src:sub(j, j)
+					if cj == "{" then depth = depth + 1 elseif cj == "}" then depth = depth - 1 end
+					j = j + 1
+				end
+				if depth ~= 0 then lexError(line, "unfinished interpolation") end
+				parts[#parts + 1] = { src = src:sub(i + 1, j - 2), line = line }; i = j
+			else
+				if c == "\n" then line = line + 1 end
+				buf[#buf + 1] = c; i = i + 1
+			end
+		end
+		flush()
+		return parts, i, line
+	end
+	local function tokenize(src, line)
+		line = line or 1
+		local toks, n = {}, 0
+		local i, len = 1, #src
+		local function push(tp, v, parts) n = n + 1; toks[n] = { tp = tp, v = v, line = line, parts = parts } end
+		while i <= len do
+			local c = src:sub(i, i)
+			if c == "\n" then line = line + 1; i = i + 1
+			elseif c == " " or c == "\t" or c == "\r" then i = i + 1
+			elseif c == "-" and src:sub(i + 1, i + 1) == "-" then
+				local body, ni, nl
+				if src:sub(i + 2, i + 2) == "[" then body, ni, nl = readLong(src, i + 2, line) end
+				if body then i, line = ni, nl else local e = src:find("\n", i, true); i = e or (len + 1) end
+			elseif c:match("[%a_]") then
+				local w = src:match("^[%w_]+", i)
+				if KEYWORDS[w] then push("kw", w) else push("name", w) end
+				i = i + #w
+			elseif c:match("%d") or (c == "." and src:sub(i + 1, i + 1):match("%d")) then
+				local num
+				local hex = src:match("^0[xX][%x_]+", i)
+				if hex then num = tonumber((hex:gsub("_", ""))); i = i + #hex
+				else
+					local bin = src:match("^0[bB][01_]+", i)
+					if bin then num = tonumber((bin:sub(3):gsub("_", "")), 2); i = i + #bin
+					else
+						local txt = src:match("^%d[%d_]*%.?[%d_]*[eE][%+%-]?%d+", i) or src:match("^%.%d[%d_]*[eE][%+%-]?%d+", i) or src:match("^%d[%d_]*%.?[%d_]*", i) or src:match("^%.%d[%d_]*", i)
+						num = tonumber((txt:gsub("_", ""))); i = i + #txt
+					end
+				end
+				if num == nil then lexError(line, "malformed number") end
+				push("num", num)
+			elseif c == '"' or c == "'" then
+				local s, ni, nl = readString(src, i, c, line)
+				push("str", s); i, line = ni, nl
+			elseif c == "`" then
+				local parts, ni, nl = readInterp(src, i, line)
+				push("interp", nil, parts); i, line = ni, nl
+			elseif c == "[" and src:match("^%[=*%[", i) then
+				local s, ni, nl = readLong(src, i, line)
+				push("str", s); i, line = ni, nl
+			else
+				local three, two = src:sub(i, i + 2), src:sub(i, i + 1)
+				if OPS3[three] then push("op", three); i = i + 3
+				elseif OPS2[two] then push("op", two); i = i + 2
+				elseif OPS1:find(c, 1, true) then push("op", c); i = i + 1
+				else lexError(line, "unexpected character '" .. c .. "'") end
+			end
+		end
+		push("eof", "<eof>")
+		return toks
+	end
+	local PRI = { ["or"] = { 1, 1 }, ["and"] = { 2, 2 }, ["<"] = { 3, 3 }, [">"] = { 3, 3 }, ["<="] = { 3, 3 }, [">="] = { 3, 3 }, ["~="] = { 3, 3 }, ["=="] = { 3, 3 }, [".."] = { 5, 4 }, ["+"] = { 6, 6 }, ["-"] = { 6, 6 }, ["*"] = { 7, 7 }, ["/"] = { 7, 7 }, ["//"] = { 7, 7 }, ["%"] = { 7, 7 }, ["^"] = { 10, 9 } }
+	local UNARY_PRI = 8
+	local COMPOUND = { ["+="] = "+", ["-="] = "-", ["*="] = "*", ["/="] = "/", ["%="] = "%", ["^="] = "^", ["..="] = "..", ["//="] = "//" }
+	local newParser
+	newParser = function(toks)
+		local pos = 1
+		local P = {}
+		local function peek() return toks[pos] end
+		local function peek2() return toks[pos + 1] or toks[#toks] end
+		local function advance() local t = toks[pos]; if t.tp ~= "eof" then pos = pos + 1 end; return t end
+		local function fail(msg, t) t = t or peek(); error("line " .. t.line .. ": " .. msg, 0) end
+		local function isOp(v) local t = toks[pos]; return t.tp == "op" and t.v == v end
+		local function isKw(v) local t = toks[pos]; return t.tp == "kw" and t.v == v end
+		local function acceptOp(v) if isOp(v) then pos = pos + 1; return true end return false end
+		local function acceptKw(v) if isKw(v) then pos = pos + 1; return true end return false end
+		local function expectOp(v) if not acceptOp(v) then fail("expected '" .. v .. "' near '" .. tostring(peek().v) .. "'") end end
+		local function expectKw(v) if not acceptKw(v) then fail("expected '" .. v .. "' near '" .. tostring(peek().v) .. "'") end end
+		local function expectName() local t = peek(); if t.tp ~= "name" then fail("expected identifier near '" .. tostring(t.v) .. "'") end; pos = pos + 1; return t.v end
+		local function skipBalanced(open, close)
+			local depth = 0
+			repeat
+				local t = advance()
+				if t.tp == "eof" then fail("unbalanced '" .. open .. "'") end
+				if t.tp == "op" then if t.v == open then depth = depth + 1 elseif t.v == close then depth = depth - 1 end end
+			until depth == 0
+		end
+		local skipType
+		skipType = function()
+			local t = peek()
+			if t.tp == "op" and t.v == "(" then skipBalanced("(", ")"); if acceptOp("->") then skipType() end
+			elseif t.tp == "op" and t.v == "{" then skipBalanced("{", "}")
+			elseif t.tp == "op" and t.v == "<" then skipBalanced("<", ">"); skipType()
+			elseif t.tp == "name" then
+				advance()
+				if t.v == "typeof" and isOp("(") then skipBalanced("(", ")") else
+					while isOp(".") do advance(); expectName() end
+					if isOp("<") then skipBalanced("<", ">") end
+				end
+			elseif t.tp == "str" or (t.tp == "kw" and (t.v == "nil" or t.v == "true" or t.v == "false")) then advance()
+			else fail("expected type near '" .. tostring(t.v) .. "'") end
+			while isOp("?") do advance() end
+			if isOp("|") or isOp("&") then advance(); skipType() end
+		end
+		local parseExpr, parseBlock, parseFuncBody, parseStatement, parseIfExpr, parseInterp
+		local function parseExprList() local list = { parseExpr() }; while acceptOp(",") do list[#list + 1] = parseExpr() end; return list end
+		local function parseTable()
+			local line = peek().line; expectOp("{"); local items = {}
+			while not isOp("}") do
+				local t = peek()
+				if t.tp == "op" and t.v == "[" then advance(); local k = parseExpr(); expectOp("]"); expectOp("="); items[#items + 1] = { k = k, v = parseExpr() }
+				elseif t.tp == "name" and peek2().tp == "op" and peek2().v == "=" then advance(); advance(); items[#items + 1] = { k = { t = "Const", v = t.v }, v = parseExpr() }
+				else items[#items + 1] = { v = parseExpr() } end
+				if not (acceptOp(",") or acceptOp(";")) then break end
+			end
+			expectOp("}"); return { t = "Table", items = items, line = line }
+		end
+		local function parseArgs()
+			local t = peek()
+			if t.tp == "str" then advance(); return { { t = "Const", v = t.v } }
+			elseif t.tp == "op" and t.v == "{" then return { parseTable() }
+			elseif t.tp == "op" and t.v == "(" then advance(); if acceptOp(")") then return {} end; local list = parseExprList(); expectOp(")"); return list end
+			fail("function arguments expected near '" .. tostring(t.v) .. "'")
+		end
+		local function parsePrimary()
+			local t = peek()
+			if t.tp == "name" then advance(); return { t = "Name", name = t.v, line = t.line }
+			elseif t.tp == "op" and t.v == "(" then advance(); local e = parseExpr(); expectOp(")"); return { t = "Paren", e = e, line = t.line } end
+			fail("unexpected symbol near '" .. tostring(t.v) .. "'")
+		end
+		local function parseSuffixed()
+			local e = parsePrimary()
+			while true do
+				local t = peek()
+				if t.tp == "op" then
+					if t.v == "." then advance(); local name = expectName(); e = { t = "Index", obj = e, key = { t = "Const", v = name }, line = t.line }
+					elseif t.v == "[" then advance(); local k = parseExpr(); expectOp("]"); e = { t = "Index", obj = e, key = k, line = t.line }
+					elseif t.v == ":" then advance(); local name = expectName(); local args = parseArgs(); e = { t = "MethodCall", obj = e, name = name, args = args, line = t.line }
+					elseif t.v == "(" or t.v == "{" then local args = parseArgs(); e = { t = "Call", fn = e, args = args, line = t.line }
+					else break end
+				elseif t.tp == "str" then local args = parseArgs(); e = { t = "Call", fn = e, args = args, line = t.line }
+				else break end
+			end
+			return e
+		end
+		parseInterp = function(t)
+			local parts = {}
+			for _, p in ipairs(t.parts) do
+				if type(p) == "string" then parts[#parts + 1] = { t = "Const", v = p }
+				else local sub = newParser(tokenize(p.src, p.line)); parts[#parts + 1] = sub.parseExpression() end
+			end
+			return { t = "Interp", parts = parts, line = t.line }
+		end
+		parseIfExpr = function()
+			local line = advance().line
+			local cond = parseExpr(); expectKw("then"); local a = parseExpr()
+			local node = { t = "IfExp", cond = cond, a = a, line = line }
+			if isKw("elseif") then toks[pos] = { tp = "kw", v = "if", line = peek().line }; node.b = parseIfExpr()
+			else expectKw("else"); node.b = parseExpr() end
+			return node
+		end
+		local function parseSimple()
+			local t = peek()
+			local e
+			if t.tp == "num" or t.tp == "str" then advance(); e = { t = "Const", v = t.v }
+			elseif t.tp == "interp" then advance(); e = parseInterp(t)
+			elseif t.tp == "kw" then
+				if t.v == "nil" then advance(); e = { t = "Const", v = nil }
+				elseif t.v == "true" then advance(); e = { t = "Const", v = true }
+				elseif t.v == "false" then advance(); e = { t = "Const", v = false }
+				elseif t.v == "function" then advance(); e = parseFuncBody(false, t.line)
+				elseif t.v == "if" then e = parseIfExpr()
+				else fail("unexpected symbol near '" .. t.v .. "'") end
+			elseif t.tp == "op" and t.v == "..." then advance(); e = { t = "Vararg", line = t.line }
+			elseif t.tp == "op" and t.v == "{" then e = parseTable()
+			else e = parseSuffixed() end
+			while isOp("::") do advance(); skipType() end
+			return e
+		end
+		local function parseSub(limit)
+			local t = peek()
+			local left
+			if (t.tp == "kw" and t.v == "not") or (t.tp == "op" and (t.v == "-" or t.v == "#")) then
+				advance(); local operand = parseSub(UNARY_PRI); left = { t = "Unop", op = t.v, e = operand, line = t.line }
+			else left = parseSimple() end
+			while true do
+				local o = peek()
+				local op = (o.tp == "op" or (o.tp == "kw" and (o.v == "and" or o.v == "or"))) and o.v or nil
+				local pr = op and PRI[op]
+				if not pr or pr[1] <= limit then break end
+				advance(); local right = parseSub(pr[2]); left = { t = "Binop", op = op, a = left, b = right, line = o.line }
+			end
+			return left
+		end
+		parseExpr = function() return parseSub(0) end
+		parseFuncBody = function(isMethod, line)
+			if isOp("<") then skipBalanced("<", ">") end
+			expectOp("(")
+			local params, vararg = {}, false
+			if isMethod then params[1] = "self" end
+			if not isOp(")") then
+				repeat
+					if isOp("...") then advance(); vararg = true; if acceptOp(":") then skipType() end; break end
+					params[#params + 1] = expectName(); if acceptOp(":") then skipType() end
+				until not acceptOp(",")
+			end
+			expectOp(")"); if acceptOp(":") then skipType() end
+			local body = parseBlock(); expectKw("end")
+			return { t = "Function", params = params, vararg = vararg, body = body, line = line }
+		end
+		local function blockEnd()
+			local t = peek()
+			if t.tp == "eof" then return true end
+			return t.tp == "kw" and (t.v == "end" or t.v == "else" or t.v == "elseif" or t.v == "until")
+		end
+		parseBlock = function()
+			local stmts = {}
+			while not blockEnd() do
+				local s = parseStatement()
+				if s then stmts[#stmts + 1] = s; if s.t == "Return" then break end end
+			end
+			return stmts
+		end
+		parseStatement = function()
+			local t = peek()
+			local line = t.line
+			if t.tp == "op" and t.v == ";" then advance(); return nil end
+			if t.tp == "kw" then
+				local k = t.v
+				if k == "if" then
+					advance(); local clauses = {}
+					local cond = parseExpr(); expectKw("then"); clauses[1] = { cond = cond, body = parseBlock() }
+					local elseBody
+					while true do
+						if acceptKw("elseif") then local c = parseExpr(); expectKw("then"); clauses[#clauses + 1] = { cond = c, body = parseBlock() }
+						elseif acceptKw("else") then elseBody = parseBlock(); expectKw("end"); break
+						else expectKw("end"); break end
+					end
+					return { t = "If", clauses = clauses, elseBody = elseBody, line = line }
+				elseif k == "while" then
+					advance(); local cond = parseExpr(); expectKw("do"); local body = parseBlock(); expectKw("end")
+					return { t = "While", cond = cond, body = body, line = line }
+				elseif k == "do" then advance(); local body = parseBlock(); expectKw("end"); return { t = "Do", body = body, line = line }
+				elseif k == "for" then
+					advance(); local n1 = expectName(); if acceptOp(":") then skipType() end
+					if isOp("=") then
+						advance(); local start = parseExpr(); expectOp(","); local limit = parseExpr()
+						local step; if acceptOp(",") then step = parseExpr() end
+						expectKw("do"); local body = parseBlock(); expectKw("end")
+						return { t = "NumFor", var = n1, start = start, limit = limit, step = step, body = body, line = line }
+					end
+					local names = { n1 }; while acceptOp(",") do names[#names + 1] = expectName(); if acceptOp(":") then skipType() end end
+					expectKw("in"); local exprs = parseExprList(); expectKw("do"); local body = parseBlock(); expectKw("end")
+					return { t = "GenFor", names = names, exprs = exprs, body = body, line = line }
+				elseif k == "repeat" then advance(); local body = parseBlock(); expectKw("until"); local cond = parseExpr(); return { t = "Repeat", body = body, cond = cond, line = line }
+				elseif k == "function" then
+					advance(); local target = { t = "Name", name = expectName(), line = line }
+					local isMethod = false
+					while isOp(".") or isOp(":") do local sep = advance().v; local key = expectName(); target = { t = "Index", obj = target, key = { t = "Const", v = key }, line = line }; if sep == ":" then isMethod = true; break end end
+					local fn = parseFuncBody(isMethod, line); return { t = "Assign", targets = { target }, exprs = { fn }, line = line }
+				elseif k == "local" then
+					advance()
+					if acceptKw("function") then local name = expectName(); local fn = parseFuncBody(false, line); return { t = "LocalFunction", name = name, fn = fn, line = line } end
+					local names = {}; repeat names[#names + 1] = expectName(); if acceptOp(":") then skipType() end until not acceptOp(",")
+					local exprs = {}; if acceptOp("=") then exprs = parseExprList() end
+					return { t = "Local", names = names, exprs = exprs, line = line }
+				elseif k == "return" then advance(); local exprs = {}; if not blockEnd() and not isOp(";") then exprs = parseExprList() end; acceptOp(";"); return { t = "Return", exprs = exprs, line = line }
+				elseif k == "break" then advance(); return { t = "Break", line = line }
+				elseif k == "continue" then advance(); return { t = "Continue", line = line } end
+			end
+			if t.tp == "name" then
+				if t.v == "export" and peek2().tp == "name" and peek2().v == "type" then advance(); t = peek() end
+				if t.v == "type" and peek2().tp == "name" then advance(); expectName(); if isOp("<") then skipBalanced("<", ">") end; expectOp("="); skipType(); return nil end
+			end
+			local e = parseSuffixed(); local nt = peek()
+			if nt.tp == "op" and (nt.v == "=" or nt.v == ",") then
+				local targets = { e }; while acceptOp(",") do targets[#targets + 1] = parseSuffixed() end; expectOp("="); local exprs = parseExprList()
+				for _, tg in ipairs(targets) do if tg.t ~= "Name" and tg.t ~= "Index" then fail("cannot assign to this expression", t) end end
+				return { t = "Assign", targets = targets, exprs = exprs, line = line }
+			elseif nt.tp == "op" and COMPOUND[nt.v] then
+				advance(); if e.t ~= "Name" and e.t ~= "Index" then fail("cannot assign to this expression", t) end
+				local rhs = parseExpr(); return { t = "Compound", op = COMPOUND[nt.v], target = e, e = rhs, line = line }
+			end
+			if e.t ~= "Call" and e.t ~= "MethodCall" then fail("syntax error near '" .. tostring(nt.v) .. "'", nt) end
+			return { t = "ExprStat", e = e, line = line }
+		end
+		function P.parseChunk() local body = parseBlock(); if peek().tp ~= "eof" then fail("unexpected '" .. tostring(peek().v) .. "'") end; return body end
+		function P.parseExpression() local e = parseExpr(); if peek().tp ~= "eof" then fail("unexpected '" .. tostring(peek().v) .. "'") end; return e end
+		return P
+	end
+	
+	----------------------------------------------------------------
+	-- EVALUATOR
+	----------------------------------------------------------------
+	local E, S = {}, {}
+	local execBlock, doCall
+	local function rtError(msg) error(msg, 0) end
+	local function newScope(parent) return { vars = {}, parent = parent, env = parent.env, st = parent.st } end
+	local function lookup(scope, name)
+		local s = scope
+		while s do
+			local v = s.vars[name]
+			if v ~= nil then if v == NIL then return nil end; return v end
+			s = s.parent
+		end
+		return scope.env[name]
+	end
+	local function assignVar(scope, name, value)
+		local s = scope
+		while s do
+			if s.vars[name] ~= nil then if value == nil then s.vars[name] = NIL else s.vars[name] = value end; return end
+			s = s.parent
+		end
+		scope.env[name] = value
+	end
+	local function declare(scope, name, value) if value == nil then scope.vars[name] = NIL else scope.vars[name] = value end end
+	local function getVarargs(scope)
+		local s = scope
+		while s do
+			local v = s.vars["..."]
+			if v then return v end
+			s = s.parent
+		end
+		rtError("cannot use '...' outside a vararg function")
+	end
+	local function step(st)
+		if st.stop then error("Execution stopped", 0) end
+		local c = st.steps + 1
+		st.steps = c
+		if c % 256 == 0 then
+			local now = os.clock()
+			if now - st.last > 0.012 then pcall(st.yield); st.last = os.clock() end
+		end
+	end
+	local function eval(n, scope) return (E[n.t](n, scope)) end
+	local function evalList(exprs, scope)
+		local count = #exprs
+		local out = { n = 0 }
+		for i = 1, count do
+			local e = exprs[i]
+			if i == count and (e.t == "Call" or e.t == "MethodCall" or e.t == "Vararg") then
+				local r
+				if e.t == "Vararg" then r = getVarargs(scope) else r = table.pack(doCall(e, scope)) end
+				local base = out.n
+				for j = 1, r.n do out[base + j] = r[j] end
+				out.n = base + r.n
+			else
+				local v = eval(e, scope); out.n = out.n + 1; out[out.n] = v
+			end
+		end
+		return out
+	end
+	
+	doCall = function(n, scope)
+		local fn, args
+		if n.t == "MethodCall" then
+			local self = eval(n.obj, scope); fn = self[n.name]; args = evalList(n.args, scope)
+			local tf = type(fn)
+			if tf ~= "function" and tf ~= "table" and tf ~= "userdata" then rtError("attempt to call a " .. typeOf(fn) .. " value") end
+			return fn(self, table.unpack(args, 1, args.n))
+		end
+		fn = eval(n.fn, scope); args = evalList(n.args, scope)
+		local tf = type(fn)
+		if tf ~= "function" and tf ~= "table" and tf ~= "userdata" then rtError("attempt to call a " .. typeOf(fn) .. " value") end
+		return fn(table.unpack(args, 1, args.n))
+	end
+	
+	local BIN = {
+		["+"] = function(a, b) return a + b end, ["-"] = function(a, b) return a - b end, ["*"] = function(a, b) return a * b end, ["/"] = function(a, b) return a / b end,
+		["//"] = function(a, b) return a // b end, ["%"] = function(a, b) return a % b end, ["^"] = function(a, b) return a ^ b end, [".."] = function(a, b) return a .. b end,
+		["=="] = function(a, b) return a == b end, ["~="] = function(a, b) return a ~= b end, ["<"] = function(a, b) return a < b end, ["<="] = function(a, b) return a <= b end,
+		[">"] = function(a, b) return a > b end, [">="] = function(a, b) return a >= b end,
+	}
+	
+	E.Const = function(n) return n.v end
+	E.Name = function(n, scope) return lookup(scope, n.name) end
+	E.Vararg = function(n, scope) return getVarargs(scope)[1] end
+	E.Paren = function(n, scope) return eval(n.e, scope) end
+	E.Index = function(n, scope) local obj = eval(n.obj, scope); local key = eval(n.key, scope); return obj[key] end
+	E.Call = function(n, scope) return (doCall(n, scope)) end
+	E.MethodCall = E.Call
+	E.Binop = function(n, scope)
+		local op = n.op
+		if op == "and" then local a = eval(n.a, scope); if not a then return a end; return eval(n.b, scope)
+		elseif op == "or" then local a = eval(n.a, scope); if a then return a end; return eval(n.b, scope) end
+		local a = eval(n.a, scope); local b = eval(n.b, scope); return BIN[op](a, b)
+	end
+	E.Unop = function(n, scope)
+		local a = eval(n.e, scope)
+		if n.op == "not" then return not a elseif n.op == "-" then return -a else return #a end
+	end
+	E.IfExp = function(n, scope) if eval(n.cond, scope) then return eval(n.a, scope) end; return eval(n.b, scope) end
+	E.Interp = function(n, scope)
+		local buf = {}
+		for i, p in ipairs(n.parts) do buf[i] = tostring(eval(p, scope)) end
+		return table.concat(buf)
+	end
+	E.Table = function(n, scope)
+		local t = {}
+		local items = n.items
+		local count = #items
+		local idx = 0
+		for i = 1, count do
+			local it = items[i]
+			if it.k then local k = eval(it.k, scope); if k == nil then rtError("table index is nil") end; t[k] = eval(it.v, scope)
+			else
+				local v = it.v
+				if i == count and (v.t == "Call" or v.t == "MethodCall" or v.t == "Vararg") then
+					local r
+					if v.t == "Vararg" then r = getVarargs(scope) else r = table.pack(doCall(v, scope)) end
+					for j = 1, r.n do t[idx + j] = r[j] end; idx = idx + r.n
+				else idx = idx + 1; t[idx] = eval(v, scope) end
+			end
+		end
+		return t
+	end
+	E.Function = function(n, scope)
+		local params, np, vararg, body = n.params, #n.params, n.vararg, n.body
+		return function(...)
+			local st = scope.st
+			if st.stop then error("Execution stopped", 0) end
+			local fs = newScope(scope)
+			local vars = fs.vars
+			local args = table.pack(...)
+			for i = 1, np do local v = args[i]; if v == nil then vars[params[i]] = NIL else vars[params[i]] = v end end
+			if vararg then vars["..."] = table.pack(select(np + 1, ...)) end
+			local sig, vals = execBlock(body, fs)
+			if sig == "return" then return table.unpack(vals, 1, vals.n) end
+		end
+	end
+	
+	execBlock = function(stmts, scope)
+		for i = 1, #stmts do
+			local s = stmts[i]
+			scope.st.line = s.line
+			local sig, vals = S[s.t](s, scope)
+			if sig then return sig, vals end
+		end
+	end
+	
+	S = {}
+	S.ExprStat = function(n, scope) doCall(n.e, scope) end
+	S.Local = function(n, scope)
+		local vals = evalList(n.exprs, scope)
+		local names = n.names
+		for i = 1, #names do declare(scope, names[i], vals[i]) end
+	end
+	S.LocalFunction = function(n, scope)
+		declare(scope, n.name, nil)
+		scope.vars[n.name] = E.Function(n.fn, scope)
+	end
+	S.Assign = function(n, scope)
+		local vals = evalList(n.exprs, scope)
+		local targets = n.targets
+		for i = 1, #targets do
+			local tg = targets[i]
+			local v = vals[i]
+			if tg.t == "Name" then assignVar(scope, tg.name, v)
+			else local obj = eval(tg.obj, scope); local key = eval(tg.key, scope); obj[key] = v end
+		end
+	end
+	S.Compound = function(n, scope)
+		local tg = n.target
+		local op = BIN[n.op]
+		if tg.t == "Name" then
+			local cur = lookup(scope, tg.name)
+			assignVar(scope, tg.name, op(cur, eval(n.e, scope)))
+		else
+			local obj = eval(tg.obj, scope); local key = eval(tg.key, scope); obj[key] = op(obj[key], eval(n.e, scope))
+		end
+	end
+	S.If = function(n, scope)
+		local clauses = n.clauses
+		for i = 1, #clauses do
+			local c = clauses[i]
+			if eval(c.cond, scope) then return execBlock(c.body, newScope(scope)) end
+		end
+		if n.elseBody then return execBlock(n.elseBody, newScope(scope)) end
+	end
+	S.Do = function(n, scope) return execBlock(n.body, newScope(scope)) end
+	S.While = function(n, scope)
+		local st = scope.st
+		while eval(n.cond, scope) do
+			step(st)
+			local sig, vals = execBlock(n.body, newScope(scope))
+			if sig == "break" then break elseif sig == "return" then return sig, vals end
+		end
+	end
+	S.Repeat = function(n, scope)
+		local st = scope.st
+		while true do
+			step(st)
+			local bs = newScope(scope)
+			local sig, vals = execBlock(n.body, bs)
+			if sig == "break" then break elseif sig == "return" then return sig, vals end
+			if eval(n.cond, bs) then break end
+		end
+	end
+	S.NumFor = function(n, scope)
+		local st = scope.st
+		local a, b = eval(n.start, scope), eval(n.limit, scope)
+		local c = 1
+		if n.step then c = eval(n.step, scope) end
+		for i = a, b, c do
+			step(st)
+			local ls = newScope(scope)
+			ls.vars[n.var] = i
+			local sig, vals = execBlock(n.body, ls)
+			if sig == "break" then break elseif sig == "return" then return sig, vals end
+		end
+	end
+	S.GenFor = function(n, scope)
+		local st = scope.st
+		local vals = evalList(n.exprs, scope)
+		local f, s, c = vals[1], vals[2], vals[3]
+		if type(f) == "table" then
+			local mt = getmetatable(f)
+			if not (type(mt) == "table" and mt.__call) then f, s, c = next, f, nil end
+		end
+		if f == nil then rtError("attempt to iterate over a nil value") end
+		local names, nn = n.names, #n.names
+		while true do
+			step(st)
+			local r = table.pack(f(s, c))
+			local first = r[1]
+			if first == nil then break end
+			c = first
+			local ls = newScope(scope)
+			for i = 1, nn do local v = r[i]; if v == nil then ls.vars[names[i]] = NIL else ls.vars[names[i]] = v end end
+			local sig, rv = execBlock(n.body, ls)
+			if sig == "break" then break elseif sig == "return" then return sig, rv end
+		end
+	end
+	S.Return = function(n, scope) return "return", evalList(n.exprs, scope) end
+	S.Break = function() return "break" end
+	S.Continue = function() return "continue" end
+	
+	function Interp.load(src, env, st)
+		local ok, ast = pcall(function() return newParser(tokenize(src)).parseChunk() end)
+		if not ok then return nil, tostring(ast) end
+		return function(...)
+			local scope = { vars = {}, env = env, st = st }
+			scope.vars["..."] = table.pack(...)
+			local sig, vals = execBlock(ast, scope)
+			if sig == "return" then return table.unpack(vals, 1, vals.n) end
+		end
+	end
+	
+	function Interp.createEnv(st, out)
+		local env = {}
+		env.print = function(...)
+			local parts = {}
+			for i = 1, select("#", ...) do parts[i] = tostring((select(i, ...))) end
+			out(table.concat(parts, "\t"), "print")
+		end
+		env.warn = function(...)
+			local parts = {}
+			for i = 1, select("#", ...) do parts[i] = tostring((select(i, ...))) end
+			out(table.concat(parts, " "), "warn")
+		end
+		env.type = type; env.typeof = typeOf; env.tostring = tostring; env.tonumber = tonumber
+		env.pairs = pairs; env.ipairs = ipairs; env.next = next; env.select = select; env.unpack = table.unpack
+		env.rawget, env.rawset, env.rawequal, env.rawlen = rawget, rawset, rawequal, rawlen
+		env.setmetatable, env.getmetatable = setmetatable, getmetatable
+		env.assert = assert; env.xpcall = xpcall
+		env.error = function(m) error(m, 0) end
+		env.pcall = function(f, ...)
+			local r = table.pack(pcall(f, ...))
+			if not r[1] and type(r[2]) == "string" then r[2] = (r[2]:gsub("^[^:\n]*[Ii]nterp[^:\n]*:%d+: ", "", 1)) end
+			return table.unpack(r, 1, r.n)
+		end
+		env.math = math; env.string = string; env.table = table; env.coroutine = coroutine
+		if utf8 then env.utf8 = utf8 end
+		if bit32 then env.bit32 = bit32 end
+		env.os = { time = os.time, clock = os.clock, date = os.date, difftime = os.difftime }
+		env.game, env.workspace, env.shared = game, workspace, shared
+		env.task, env.tick, env.time, env.wait = task, tick, time, wait
+		env.Instance, env.Enum = Instance, Enum
+		env.Vector2, env.Vector3, env.Vector2int16, env.Vector3int16 = Vector2, Vector3, Vector2int16, Vector3int16
+		env.CFrame, env.Color3, env.BrickColor = CFrame, Color3, BrickColor
+		env.UDim, env.UDim2, env.Rect, env.Ray, env.Region3 = UDim, UDim2, Rect, Ray, Region3
+		env.TweenInfo, env.Random, env.Font, env.DateTime = TweenInfo, Random, Font, DateTime
+		env.NumberRange, env.NumberSequence, env.NumberSequenceKeypoint = NumberRange, NumberSequence, NumberSequenceKeypoint
+		env.ColorSequence, env.ColorSequenceKeypoint = ColorSequence, ColorSequenceKeypoint
+		env.PhysicalProperties = PhysicalProperties
+		env._G = env
+		env.loadstring = function(src)
+			if type(src) ~= "string" then error("bad argument #1 to 'loadstring' (string expected)") end
+			local fn, err = Interp.load(src, env, st)
+			if not fn then return nil, err end
+			return fn
+		end
+		return env
+	end
+	
+	----------------------------------------------------------------
+	-- EXECUTION LOGIC
+	----------------------------------------------------------------
+	local function executeCode()
+		local codeToRun = ScriptBox.Text
+		if codeToRun == "" then return end
+	
+		local st = {
+			line = 0,
+			steps = 0,
+			stop = false,
+			last = os.clock(),
+			yield = task.wait, 
+		}
+	
+		local env = Interp.createEnv(st, function(text, kind)
+			if kind == "warn" then warn(text) else print(text) end
+		end)
+	
+		local fn, err = Interp.load(codeToRun, env, st)
+	
+		if fn then
+			task.spawn(function()
+				pcall(fn)
+			end)
+		end
+	end
+	
+	ExecuteButton.MouseButton1Click:Connect(executeCode)
+end
+coroutine.wrap(GRVDOUS_fake_script)()
+local function HDIAN_fake_script() -- Clear.LocalScript 
+	local script = Instance.new('LocalScript', Clear)
+
+	local ClearButton = script.Parent
+	local MainFrame = ClearButton:FindFirstAncestor("MainFrame")
+	
+	ClearButton.MouseButton1Click:Connect(function()
+		if MainFrame then
+			-- Search the whole window for the textbox and clear it
+			for _, v in pairs(MainFrame:GetDescendants()) do
+				if v:IsA("TextBox") and (v.Name == "ScriptBox" or v.Name == "scriptbox") then
+					v.Text = ""
+				end
+			end
+		end
+	end)
+end
+coroutine.wrap(HDIAN_fake_script)()
+local function TJSZYTI_fake_script() -- CopyButton.LocalScript 
+	local script = Instance.new('LocalScript', CopyButton)
+
+	local CopyButton = script.Parent
+	local MainFrame = CopyButton:FindFirstAncestor("MainFrame")
+	
+	-- SMART FINDER: Finds the ScriptBox regardless of where it is in the window
+	local function findScriptBox()
+		if not MainFrame then return nil end
+		for _, v in pairs(MainFrame:GetDescendants()) do
+			if v:IsA("TextBox") and (v.Name == "ScriptBox" or v.Name == "scriptbox") then
+				return v
+			end
+		end
+		return nil
+	end
+	
+	local ScriptBox = findScriptBox()
+	
+	CopyButton.MouseButton1Click:Connect(function()
+		if ScriptBox then
+			local textToCopy = ScriptBox.Text
+	
+			-- Check if the executor supports setclipboard
+			if setclipboard then
+				setclipboard(textToCopy)
+	
+				-- Optional: Send a notification that it worked
+				game:GetService("StarterGui"):SetCore("SendNotification", {
+					Title = "Success",
+					Text = "Script copied to clipboard!",
+					Duration = 3
+				})
+			else
+				-- FALLBACK: This runs if you are testing in standard Roblox Studio
+				warn("setclipboard is only available in executors. Printing text instead:")
+				print("--- COPIED TEXT ---")
+				print(textToCopy)
+				print("-------------------")
+	
+				game:GetService("StarterGui"):SetCore("SendNotification", {
+					Title = "Studio Mode",
+					Text = "Copied to Output window (Studio doesn't support clipboard)",
+					Duration = 5
+				})
+			end
+		else
+			warn("Could not find ScriptBox to copy from!")
+		end
+	end)
+end
+coroutine.wrap(TJSZYTI_fake_script)()
+local function NLXUFCH_fake_script() -- Wbutton.LocalScript 
+	local script = Instance.new('LocalScript', Wbutton)
+
+	local button = script.Parent
+	
+	-- This function contains the code you want to run
+	local function runMyCode()
+	
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+	
+	end
+	
+	-- This part tells the button to run the function above when clicked
+	button.MouseButton1Click:Connect(function()
+		runMyCode()
+	end)
+end
+coroutine.wrap(NLXUFCH_fake_script)()
+local function LSLJI_fake_script() -- Abutton.LocalScript 
+	local script = Instance.new('LocalScript', Abutton)
+
+	local button = script.Parent
+	
+	-- This function contains the code you want to run
+	local function runMyCode()
+	
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/reallya1/Dark-Dex-V5/refs/heads/main/Dark%20Dex%20V5%20script"))()
+	end
+	
+	-- This part tells the button to run the function above when clicked
+	button.MouseButton1Click:Connect(function()
+		runMyCode()
+	end)
+end
+coroutine.wrap(LSLJI_fake_script)()
+local function DLNIJF_fake_script() -- xploitbutton.LocalScript 
+	local script = Instance.new('LocalScript', xploitbutton)
+
+	local button = script.Parent
+	
+	-- This function contains the code you want to run
+	local function runMyCode()
+	
+		loadstring(game:HttpGet("https://scriptblox.com/raw/Universal-Script-RoXploit-by-KrystalTeam-9328"))()
+	end
+	
+	-- This part tells the button to run the function above when clicked
+	button.MouseButton1Click:Connect(function()
+		runMyCode()
+	end)
+end
+coroutine.wrap(DLNIJF_fake_script)()
+local function CLVZLAR_fake_script() -- Wolfybutton.LocalScript 
+	local script = Instance.new('LocalScript', Wolfybutton)
+
+	local button = script.Parent
+	
+	-- This function contains the code you want to run
+	local function runMyCode()
+	
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/ltseverydayyou/Nameless-Admin/main/Source.lua"))()
+	end
+	
+	-- This part tells the button to run the function above when clicked
+	button.MouseButton1Click:Connect(function()
+		runMyCode()
+	end)
+end
+coroutine.wrap(CLVZLAR_fake_script)()
+local function GGPTFF_fake_script() -- MainFrame.LocalScript 
+	local script = Instance.new('LocalScript', MainFrame)
+
+	local UserInputService = game:GetService("UserInputService")
+	local MainFrame = script.Parent -- Since the script is inside MainFrame
+	
+	UserInputService.InputBegan:Connect(function(input, gameProcessed)
+		-- gameProcessed is true if you are typing in chat or a textbox
+		-- We check this so the GUI doesn't toggle while you are typing
+		if gameProcessed then return end
+	
+		-- Check if the key pressed is Right Shift
+		if input.KeyCode == Enum.KeyCode.RightShift then
+			-- This flips the visibility (True becomes False, False becomes True)
+			MainFrame.Visible = not MainFrame.Visible
+		end
+	end)
+	
+end
+coroutine.wrap(GGPTFF_fake_script)()
